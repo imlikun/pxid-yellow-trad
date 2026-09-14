@@ -1,0 +1,62 @@
+# ===== PXID 官网（pxid.appin.site）仓库忽略规则 =====
+# 本仓库 = 线上站的完整源码（含图片，便于本地预览）。
+# 「真相源」三处：本仓库 → 本地工作区 → ECS /www/wwwroot/pxid.appin.site/
+# 部署不走 CI，见 AGENTS.md 第 8 节（ECS-first 直传）。
+
+# --- 🔴 内部稿 / 未定稿（2026-09-14 坤哥：「先别推，改好之后推，或者先把线上的推过去」）---
+# 仓库当前是**公开**的，以下内容不属于「线上站」，暂不入库；磁盘上仍然保留。
+# 等坤哥说「全推」时，把这一节整段删掉再 git add 即可。
+capability-audit.html
+capability-v2.html
+capability-lab.html
+_lab/
+_tools/
+_src-photos/
+AGENTS.md
+HANDOFF-FOR-CODEX.md
+DEPLOY-BT.md
+scripts/
+src/
+build.js
+_mat.js
+_mt.js
+local-preview-server.js
+assets/css/capability-audit-*.css
+assets/js/capability-audit-*.js
+
+# --- 依赖 & 后台/服务端（不属于静态站） ---
+node_modules/
+admin/
+server/
+specs/
+_pdf_seg/
+.uploads/
+.trae/
+
+# --- ⚠️ 禁用 GitHub Actions 自动部署 ---
+# .github/workflows/deploy.yml 是旧方案（部署到 /var/www/yellow-trad + pm2 + nginx），
+# 与现在的 ECS 静态站路径 /www/wwwroot/pxid.appin.site/ 完全不同，
+# 会在 push main 时触发并失败/误部署，故从仓库排除。需要 CI 请先重写该文件。
+.github/
+
+# --- 历史备份（git 本身就是版本历史，不再入库；磁盘上仍保留） ---
+*.bak*
+.gitignore.prev-mediaskip-20260912
+
+# --- 工具产物（_tools 下的脚本保留，排除截图/备份/生成图） ---
+_tools/shots/
+_tools/_bak*/
+_tools/*.jpg
+_tools/*.png
+_tools/*.log
+
+# --- 临时 / 调试产物 ---
+_dm.png
+mt-*-local.png
+advantages-fix.zip
+assets/images.zip
+
+# --- 系统文件 ---
+Thumbs.db
+.DS_Store
+desktop.ini
