@@ -4507,9 +4507,9 @@ img{display:block;max-width:100%}
 /* ---------- #01 四张卖点卡（浅灰斜角卡 + 橙色线性图标 + 背后 ghost 序号） ---------- */
 .zy12 .m01{background:#fff;padding:100px 0 83px}
 .zy12 .m01 .g{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.zy12 .m01 .c{position:relative;background:var(--bg2);padding:34px 28px 38px;border-radius:var(--r);overflow:hidden;
-  transition:.3s;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,0 100%)}
-.zy12 .m01 .c:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.09)}
+.zy12 .m01 .c{position:relative;background:var(--bg2);padding:34px 28px 38px;overflow:hidden;
+  transition:.3s;clip-path:polygon(0 0,79% 0,100% 20%,100% 100%,0 100%)}
+.zy12 .m01 .c:hover{transform:translateY(-6px);background:#f1f1f1}
 .zy12 .m01 .c::after{content:attr(data-n);position:absolute;right:10px;bottom:-14px;
   font:700 78px/1 var(--head);color:#ececec}
 .zy12 .m01 .c .ic{width:46px;height:46px;margin-bottom:20px;position:relative;z-index:2}
@@ -4531,7 +4531,7 @@ img{display:block;max-width:100%}
 .zy12 .m02 .fig{position:relative;margin-top:44px}
 /* 原站只在右上角切了一个斜角，没有四角边框装饰 */
 .zy12 .m02 .fig img{width:100%;height:520px;object-fit:cover;
-  clip-path:polygon(0 0,calc(100% - 118px) 0,100% 118px,100% 100%,0 100%)}
+  clip-path:polygon(0 0,80% 0,100% 20%,100% 100%,0 100%)}
 /* 按钮压在大图上沿、右对齐 —— 不是排在正文里 */
 .zy12 .m02 .fig .btn{position:absolute;left:52%;bottom:calc(100% - 22px);z-index:3}
 
@@ -4554,7 +4554,7 @@ img{display:block;max-width:100%}
   font:600 16px/1.4 var(--head);color:var(--ink);transition:.22s;border:1px solid transparent}
 .zy12 .m04 .tabs button:hover{color:var(--o)}
 .zy12 .m04 .tabs button.on{background:var(--o);color:#fff}
-.zy12 .m04 .pic img{width:100%;height:340px;object-fit:cover;border-radius:var(--r)}
+.zy12 .m04 .pic img{width:100%;height:340px;object-fit:cover;clip-path:polygon(0 0,86% 0,100% 20%,100% 100%,0 100%)}
 .zy12 .m04 .desc h3{font:700 26px/1.35 var(--head);margin-bottom:14px}
 .zy12 .m04 .desc p{font-size:15px;color:var(--ink2);margin-bottom:18px}
 .zy12 .m04 .ck{display:grid;gap:10px;margin-bottom:22px}
@@ -4568,8 +4568,8 @@ img{display:block;max-width:100%}
 .zy12 .m05 .ghost{position:absolute;top:60px;left:0;right:0;text-align:center;z-index:1;pointer-events:none;
   font:700 160px/160px var(--head);letter-spacing:5.6px;color:var(--ghost);white-space:nowrap}
 .zy12 .m05 .g{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:120px}
-.zy12 .m05 .c{position:relative;background:#fff;padding:32px 28px 36px;border-radius:var(--r);overflow:hidden;transition:.3s}
-.zy12 .m05 .c:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.zy12 .m05 .c{position:relative;background:#fff;padding:32px 28px 36px;overflow:hidden;transition:.3s;clip-path:polygon(0 0,79% 0,100% 20%,100% 100%,0 100%)}
+.zy12 .m05 .c:hover{transform:translateY(-6px);box-shadow:none;background:#fcfcfc}
 .zy12 .m05 .c::after{content:attr(data-n);position:absolute;right:14px;bottom:-18px;font:700 92px/1 var(--head);color:#f2f2f2}
 .zy12 .m05 .c .ic{width:42px;height:42px;margin-bottom:18px;position:relative;z-index:2}
 .zy12 .m05 .c .ic svg{width:100%;height:100%;stroke:var(--o);fill:none;stroke-width:1.6}
@@ -4589,14 +4589,15 @@ img{display:block;max-width:100%}
 .zy12 .m06 .track{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:70px;scrollbar-width:thin}
 .zy12 .m06 .track::-webkit-scrollbar{height:4px}
 .zy12 .m06 .track::-webkit-scrollbar-thumb{background:#d8d8d8}
-.zy12 .m06 .card{position:relative;flex:0 0 320px;height:240px;border-radius:var(--r);overflow:hidden}
+.zy12 .m06 .card{position:relative;flex:0 0 320px;height:240px;overflow:hidden;clip-path:polygon(0 0,88% 0,100% 10%,100% 100%,0 100%)}
 .zy12 .m06 .card img{width:100%;height:100%;object-fit:cover;transition:.5s}
 .zy12 .m06 .card:hover img{transform:scale(1.07)}
 .zy12 .m06 .card b{position:absolute;left:0;right:0;bottom:0;background:var(--o);color:#fff;
   padding:11px 16px;font:600 14.5px/1.35 var(--head)}
 
 /* ---------- #07 橙色数据带：负边距压住上一段 + 巨型数字 ---------- */
-.zy12 .m07{background:var(--o);color:#fff;margin-top:-85px;padding:96px 0 78px;position:relative;z-index:4}
+.zy12 .m07{background:var(--o);color:#fff;margin-top:-85px;padding:96px 0 78px;position:relative;z-index:4;
+  clip-path:polygon(15% 0,100% 0,100% 74%,85% 100%,0 100%,0 25%)}
 .zy12 .m07 .g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr) auto;gap:44px;align-items:center}
 .zy12 .m07 .big{font:700 clamp(46px,5vw,68px)/1 var(--head);letter-spacing:-1.5px;display:flex;align-items:flex-start;gap:3px}
 .zy12 .m07 .big .s{font-size:.45em;line-height:1;margin-top:.14em;letter-spacing:0}
@@ -4609,9 +4610,9 @@ img{display:block;max-width:100%}
 .zy12 .m08{background:#fff;padding:105px 85px 112px}
 .zy12 .m08 .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-bottom:46px}
 .zy12 .m08 .g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.zy12 .m08 .c{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);
-  padding:28px 26px 32px;transition:.3s}
-.zy12 .m08 .c:hover{box-shadow:0 18px 40px rgba(0,0,0,.08);transform:translateY(-5px)}
+.zy12 .m08 .c{position:relative;background:#fff;border:1px solid var(--line);
+  padding:28px 26px 32px;transition:.3s;clip-path:polygon(0 0,90% 0,100% 12%,100% 100%,0 100%)}
+.zy12 .m08 .c:hover{border-color:#cfcfcf;transform:translateY(-5px)}
 .zy12 .m08 .c::after{content:"\201D";position:absolute;right:20px;bottom:6px;font:700 78px/1 var(--head);color:#f1f1f1}
 .zy12 .m08 .who{display:flex;gap:13px;align-items:center;margin-bottom:18px;position:relative;z-index:2}
 .zy12 .m08 .av{width:44px;height:44px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;
@@ -4625,14 +4626,14 @@ img{display:block;max-width:100%}
 .zy12 .m09{background:#fff;padding:114px 85px 86px}
 .zy12 .m09 .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-bottom:44px}
 .zy12 .m09 .g{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px}
-.zy12 .m09 .big{border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line);transition:.3s}
-.zy12 .m09 .big:hover{box-shadow:0 20px 46px rgba(0,0,0,.1)}
+.zy12 .m09 .big{overflow:hidden;background:#fff;border:1px solid var(--line);transition:.3s;clip-path:polygon(0 0,94% 0,100% 15%,100% 100%,0 100%)}
+.zy12 .m09 .big:hover{border-color:#cfcfcf;transform:translateY(-4px)}
 .zy12 .m09 .big img{width:100%;height:300px;object-fit:cover}
 .zy12 .m09 .big .b{padding:26px 28px 30px}
 .zy12 .m09 .sm{display:grid;gap:20px}
 .zy12 .m09 .s{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;align-items:center;
-  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;transition:.3s}
-.zy12 .m09 .s:hover{box-shadow:0 14px 34px rgba(0,0,0,.08)}
+  border:1px solid var(--line);overflow:hidden;background:#fff;transition:.3s;clip-path:polygon(0 0,94% 0,100% 15%,100% 100%,0 100%)}
+.zy12 .m09 .s:hover{border-color:#cfcfcf;transform:translateY(-3px)}
 .zy12 .m09 .s img{width:150px;height:100%;min-height:126px;object-fit:cover}
 .zy12 .m09 .s .b{padding:14px 16px 14px 0}
 .zy12 .m09 h3{font:700 21px/1.4 var(--head);margin:8px 0 10px}
@@ -4657,7 +4658,8 @@ img{display:block;max-width:100%}
 .zy12 .m10 .f span{font-size:14px;color:var(--ink2)}
 .zy12 .m10 .trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px;font-size:12.5px;color:var(--ink3)}
 .zy12 .m10 .trust i{color:var(--o);font-style:normal}
-.zy12 .m10 .panel{background:var(--o);border-radius:var(--r);padding:38px 34px 34px;color:#fff}
+.zy12 .m10 .panel{background:var(--o);padding:38px 34px 34px;color:#fff;
+  clip-path:polygon(0 0,calc(100% - 46px) 0,100% 46px,100% 100%,0 100%)}
 .zy12 .m10 .panel h3{font:700 27px/1.3 var(--head);margin-bottom:8px}
 .zy12 .m10 .panel .sub{font-size:14px;opacity:.92;margin-bottom:24px}
 .zy12 .m10 .fi{display:grid;gap:12px}
