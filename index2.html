@@ -147,12 +147,9 @@
 .zy12 .m02 .copy .lead{font:700 20px/1.55 var(--head);color:var(--ink);margin-bottom:18px}
 .zy12 .m02 .copy p{font-size:15.5px;color:var(--ink2);margin-bottom:12px}
 /* 原站这里是一个细线圆圈 + 中心橙点的小装饰，居中放在标题与图片之间 */
-.zy12 .m02 .dot{width:56px;height:56px;border:1px solid #e3e3e3;border-radius:50%;
-  display:grid;place-items:center;margin:52px auto 0}
-.zy12 .m02 .dot::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--o)}
-.zy12 .m02 .fig{position:relative;margin-top:52px}
+.zy12 .m02 .fig{position:relative;margin-top:56px}
 /* 原站只在右上角切了一个斜角，没有四角边框装饰 */
-.zy12 .m02 .fig img{width:100%;height:500px;object-fit:cover;
+.zy12 .m02 .fig img{width:100%;height:660px;object-fit:cover;
   --cut:96px;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
 /* 按钮压在大图上沿、右对齐 —— 不是排在正文里 */
 .zy12 .m02 .fig .zybtn{position:absolute;left:52%;bottom:calc(100% - 22px);z-index:3}
@@ -348,7 +345,7 @@
 @media (max-width:900px){
   .zy12 .h2{font-size:36px;line-height:44px}
   .zy12 .m02 .top{grid-template-columns:1fr;gap:28px}
-  .zy12 .m02 .fig img{height:340px}
+  .zy12 .m02 .fig img{height:420px}
   .zy12 .m03 .g{grid-template-columns:repeat(2,1fr);gap:26px}
   .zy12 .m05 .g{grid-template-columns:1fr;margin-top:60px}
   .zy12 .m05 .ghost{font-size:64px;line-height:1;letter-spacing:2px;white-space:normal}
@@ -455,7 +452,6 @@
         <p>支持汽车零部件、电动出行与工业设备的中小批量需求，按图公差稳定量产，并配套装配与检测。</p>
       </div>
     </div>
-    <div class="dot" aria-hidden="true"></div>
     <div class="fig rv">
       <a class="zybtn btn-o" href="/pxid/yellow-trad/about.html">了解服务流程 <span>&#8594;</span></a>
       <img src="/pxid/yellow-trad/assets/images/cap-01.jpg" alt="品向智造车间" loading="lazy">
