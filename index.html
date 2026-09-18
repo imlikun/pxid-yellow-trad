@@ -55,13 +55,14 @@
 
 <!-- ===== Hero ===== -->
 
-<!-- ===== PXID 改版挑选器 §1 首屏（3 套）===== -->
+<!-- ===== PXID 改版挑选器 §1 首屏（4 套）===== -->
 <div class="pxlab" data-sec="1" data-v="orig">
-  <div class="pxsw"><span class="pxswlb">首屏 · 3 种排版</span>
+  <div class="pxsw"><span class="pxswlb">首屏 · 4 种排版</span>
     <button type="button" data-pxv="orig">原样</button>
     <button type="button" data-pxv="01" title="上方留画面 · 底部巨型标题"><b>01</b>上方留画面 · 底部巨型标题</button>
     <button type="button" data-pxv="02" title="深墨框架 · 视频当展品"><b>02</b>深墨框架 · 视频当展品</button>
     <button type="button" data-pxv="03" title="全屏满幅 · 单行巨型横贯"><b>03</b>全屏满幅 · 单行巨型横贯</button>
+    <button type="button" data-pxv="04" title="全幅图片轮播 · 车间实拍"><b>04</b>全幅图片轮播 · 车间实拍</button>
   </div>
   <div class="pxfr"><iframe title="首屏方案预览"></iframe></div>
 </div>
@@ -571,6 +572,337 @@ video.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;displ
 }
 
 </style>
+<template data-pxsec="1" data-pxv="04"><section class="opt h6">
+  <div class="stage">
+    <div class="sl on" data-nm="注塑成型 · 海天 MA 系列"><img src="/pxid/yellow-trad/assets/images/hero-slide-01.jpg" alt="注塑车间实拍：海天 MA 系列注塑机与正在作业的工程师" fetchpriority="high"></div>
+    <div class="sl" data-nm="数控加工 · 乔峰 HSD1615"><img src="/pxid/yellow-trad/assets/images/hero-slide-02.jpg" alt="数控加工中心实拍，机身铭牌 HSD-1615"></div>
+    <div class="sl" data-nm="模具制造 · 精密装夹"><img src="/pxid/yellow-trad/assets/images/hero-slide-03.jpg" alt="工程师在机床前装夹工件"></div>
+    <div class="sl" data-nm="装配测试 · 批量交付"><img src="/pxid/yellow-trad/assets/images/hero-slide-04.jpg" alt="装配与测试工位实拍，多名工程师在线作业"></div>
+    <div class="sl" data-nm="专用工装夹具"><img src="/pxid/yellow-trad/assets/images/hero-slide-05.jpg" alt="带 PXID 标识的工装夹具特写"></div>
+
+    <div class="wrap ov">
+      <div class="top"><span>PXID · 一站式智造平台</span><span>车间实拍 <i>/ FACTORY FLOOR</i></span></div>
+      <div class="mid">
+        <div class="cap"><span class="idx">01 / 05</span><span class="nm">注塑成型 · 海天 MA 系列</span></div>
+        <h1 class="cn-h1">从设计图纸 到<span class="hlw">批量交付</span></h1>
+        <p class="sub">精密模具设计与制造，到注塑成型、装配与测试 —— 一个供应商交付全套，不用自己拼供应链。</p>
+        <div class="acts"><a class="btn btn-gold" href="#">立即获取报价 →</a><a class="btn btn-line" href="#">了解服务流程</a></div>
+        <div class="dots">
+          <button type="button" class="on" aria-label="看第 1 张"></button>
+          <button type="button" aria-label="看第 2 张"></button>
+          <button type="button" aria-label="看第 3 张"></button>
+          <button type="button" aria-label="看第 4 张"></button>
+          <button type="button" aria-label="看第 5 张"></button>
+        </div>
+        <!-- 箭头放在 .mid 内：桌面靠 .ov 绝对定位到内容列右缘，窄屏回到文档流跟在圆点后，
+             这样不会压进底部 2×2 的数据带里 -->
+        <div class="nav">
+          <button type="button" data-h6-prev aria-label="上一张">&#8592;</button>
+          <button type="button" data-h6-next aria-label="下一张">&#8594;</button>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="c"><div class="num">15<i>+</i></div><div class="lbl">年 制造经验</div></div>
+        <div class="c"><div class="num">10,000<i>+</i></div><div class="lbl">零件交付</div></div>
+        <div class="c"><div class="num">98<i>%</i></div><div class="lbl">准时交付</div></div>
+        <div class="c"><div class="num">500<i>+</i></div><div class="lbl">服务客户</div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function () {
+    var root = document.querySelector('.h6');
+    if (!root) return;                      /* 同一份脚本会被附到别的方案上，那里没有 .h6 */
+    var DUR = 6000;                         /* 必须与 CSS 里 h6pg 的 6s 一致 */
+    var sl = [].slice.call(root.querySelectorAll('.sl'));
+    var dots = [].slice.call(root.querySelectorAll('.dots button'));
+    var capNm = root.querySelector('.cap .nm');
+    var capIx = root.querySelector('.cap .idx');
+    var i = 0, timer = null;
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+
+    function show(n) {
+      i = (n + sl.length) % sl.length;
+      sl.forEach(function (s, k) { s.classList.toggle('on', k === i); });
+      dots.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+      var nm = sl[i].getAttribute('data-nm');
+      if (capNm) capNm.textContent = nm || '';
+      if (capIx) capIx.textContent = pad(i + 1) + ' / ' + pad(sl.length);
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function play() {
+      stop();
+      if (sl.length < 2) return;
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      timer = setInterval(function () { show(i + 1); }, DUR);
+    }
+
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); play(); }); });
+    var pv = root.querySelector('[data-h6-prev]'), nx = root.querySelector('[data-h6-next]');
+    if (pv) pv.addEventListener('click', function () { show(i - 1); play(); });
+    if (nx) nx.addEventListener('click', function () { show(i + 1); play(); });
+
+    /* 鼠标停在首屏上就别抢着翻页（参考站也是 hover 暂停） */
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', play);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', play);
+    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : play(); });
+
+    /* 触屏：首屏横向滑动切帧，纵向仍交给页面滚动 */
+    var x0 = null, y0 = null;
+    root.addEventListener('touchstart', function (e) {
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+    }, { passive: true });
+    root.addEventListener('touchend', function (e) {
+      if (x0 == null) return;
+      var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+      x0 = null;
+      if (Math.abs(dx) > 46 && Math.abs(dx) > Math.abs(dy) * 1.4) { show(dx < 0 ? i + 1 : i - 1); play(); }
+    }, { passive: true });
+
+    show(0); play();
+  })();
+  </script>
+</section></template>
+<style type="text/plain" data-pxcss="1-04">
+:root{
+  --bg:#FFFFFF; --bg-2:#F6F7F5; --bg-3:#F0F1EE;
+  --ink:#232626; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
+  --line:rgba(35,38,38,.10); --line-2:rgba(35,38,38,.22);
+  --gold:#FEDB00; --gold-d:#F5D200;
+  --maxw:1280px;
+  --sans:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:2;-webkit-font-smoothing:antialiased}
+em,i{font-style:normal}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+.opt{padding:0;border-bottom:1px solid var(--line)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;width:100%}
+.opt-label{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;padding:26px 40px 16px;max-width:var(--maxw);margin:0 auto;border-bottom:1px solid var(--line)}
+.opt-label .n{font:800 26px/1 "SF Mono",Consolas,monospace;letter-spacing:-.04em;color:var(--gold-d)}
+.opt-label .t{font-size:19px;font-weight:800}
+.opt-label .d{margin-left:auto;font-size:12.5px;color:var(--ink-3);max-width:560px;line-height:1.85}
+.opt-label .d b{color:var(--ink-2);font-weight:700}
+
+.eb{display:flex;align-items:center;gap:13px;font-size:12px;font-weight:800;letter-spacing:.22em;color:var(--ink-3)}
+.eb::before{content:"";width:28px;height:2px;background:var(--gold);flex:none}
+.cn-h1{font-weight:800;letter-spacing:-.04em;line-height:1.06}
+.en-band{font-weight:800;letter-spacing:-.055em;line-height:.94}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;font-size:15px;font-weight:800;
+  border:1px solid var(--ink);border-radius:0;transition:.18s;cursor:pointer}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:var(--ink-deep);border-color:var(--ink-deep);color:var(--gold)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--ink-deep);color:#fff;border-color:var(--ink-deep)}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.num{font:800 clamp(28px,3.2vw,42px)/1 "SF Mono",Consolas,monospace;letter-spacing:-.05em}
+.num i{color:var(--gold-d);font-style:normal}
+.lbl{font-size:13.5px;font-weight:700;margin-top:9px}
+
+/* 视频背景 */
+video.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+/* ===== H3 底部巨型标题 · 上方留画面 ===== */
+.h3{background:var(--bg)}
+.h3 .stage{position:relative;height:700px;overflow:hidden;background:var(--ink-deep)}
+.h3 .stage::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,11,14,.5) 0%,rgba(10,11,14,.14) 34%,rgba(10,11,14,.44) 66%,rgba(10,11,14,.92) 100%)}
+.h3 .ov{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding-top:42px;padding-bottom:46px}
+.h3 .top{display:flex;justify-content:space-between;align-items:center;
+  font:800 10.5px/1 "SF Mono",Consolas,monospace;letter-spacing:.26em;color:rgba(255,255,255,.66)}
+.h3 .top i{color:var(--gold);font-style:normal}
+.h3 .bot .cn-h1{color:#fff;font-size:clamp(42px,6vw,84px);max-width:1000px}
+.h3 .bot .cn-h1 .hlw{border-bottom:4px solid var(--gold);padding-bottom:5px}
+.h3 .bot .acts{margin-top:34px}
+.h3 .bot .btn-line{color:#fff;border-color:rgba(255,255,255,.45)}
+.h3 .bot .btn-line:hover{background:#fff;color:var(--ink-deep);border-color:#fff}
+.h3 .band{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.h3 .band .c{padding:28px 26px 32px;border-right:1px solid var(--line)}
+.h3 .band .c:last-child{border-right:0}
+
+/* ===== H4 深墨框架 · 视频当展品 ===== */
+.h4{background:var(--ink-deep);color:#fff}
+.h4 .wrap{padding-top:70px;padding-bottom:0}
+.h4 .eb{color:rgba(255,255,255,.52)}
+.h4 .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:56px;align-items:center;margin-top:26px}
+.h4 .en-band{font-size:clamp(34px,4.2vw,54px);color:#fff}
+.h4 .cn-h1{font-size:clamp(22px,2.8vw,34px);color:rgba(255,255,255,.9);margin-top:22px;letter-spacing:-.02em}
+.h4 .cn-h1 .hlw{border-bottom:3px solid var(--gold);padding-bottom:3px}
+.h4 .acts{margin-top:32px}
+.h4 .btn-line{color:#fff;border-color:rgba(255,255,255,.4)}
+.h4 .btn-line:hover{background:#fff;color:var(--ink-deep);border-color:#fff}
+.h4 .frame{position:relative;height:420px;border:1px solid rgba(255,255,255,.22);overflow:hidden}
+.h4 .frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.h4 .frame .cap{position:absolute;left:0;bottom:0;right:0;background:rgba(10,11,14,.78);padding:12px 18px;
+  font:800 10px/1 "SF Mono",Consolas,monospace;letter-spacing:.22em;color:rgba(255,255,255,.72)}
+.h4 .frame .cap i{color:var(--gold);font-style:normal}
+.h4 .band{border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px}
+.h4 .band .c{padding:26px 26px 30px;border-right:1px solid rgba(255,255,255,.14)}
+.h4 .band .c:last-child{border-right:0}
+.h4 .band .num{color:#fff}
+.h4 .band .lbl{color:rgba(255,255,255,.68)}
+
+/* ===== H5 全屏满幅 · 单行巨型横贯（2026-09-16 新增）
+   针对前两套的两个具体问题：
+   ① 01 的 .stage 写死 700px —— 1080 视口下只占 65%，"视频高度不够" → 改成 100svh 满屏
+   ② 02 的视频框只有 420px 高，画面缩在小框里"不够大气" → 视频直接铺满整屏
+   标题用 vw 单位单行横贯整屏（字号跟视口走），四格数据带压在视频最底部、不另占高度 */
+.h5{background:var(--ink-deep)}
+.h5 .stage{position:relative;height:100svh;min-height:640px;overflow:hidden}
+.h5 .stage::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,10,12,.74) 0%,rgba(8,10,12,.28) 28%,rgba(8,10,12,.46) 60%,rgba(8,10,12,.9) 100%)}
+.h5 .ov{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding-top:36px;padding-bottom:0}
+.h5 .top{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,.17);
+  font:800 10.5px/1 "SF Mono",Consolas,monospace;letter-spacing:.26em;color:rgba(255,255,255,.6)}
+.h5 .top i{color:var(--gold);font-style:normal}
+.h5 .mid{margin-top:auto;padding-bottom:clamp(34px,6svh,74px)}
+/* 单行 + vw 字号 = 横贯整屏，这是"大气"的主要来源 */
+.h5 .mega{color:#fff;font-weight:800;letter-spacing:-.055em;line-height:1;
+  font-size:clamp(30px,8.3vw,146px);white-space:nowrap}
+.h5 .mega em{border-bottom:.05em solid var(--gold);padding-bottom:.045em;white-space:nowrap}
+/* 桌面必须单行（大气靠这个）；窄屏才允许断行，且断在「从设计图纸 / 到批量交付」这个语义位置，
+   否则浏览器会把它拆成「…到批量 / 交付」孤字一行 */
+.h5 .mega .br-m{display:none}
+.h5 .acts{margin-top:clamp(24px,3.6svh,42px)}
+.h5 .btn-line{color:#fff;border-color:rgba(255,255,255,.42)}
+.h5 .btn-line:hover{background:#fff;color:var(--ink-deep);border-color:#fff}
+/* 数据带：压在视频最底部，只占自身高度，不再像 01 那样另起一段 */
+.h5 .stats{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(8,10,12,.58);
+  border-top:1px solid rgba(255,255,255,.18)}
+.h5 .stats .c{padding:20px 26px 22px;border-right:1px solid rgba(255,255,255,.14)}
+.h5 .stats .c:last-child{border-right:0}
+.h5 .stats .num{color:#fff;font-size:clamp(24px,2.4vw,34px)}
+.h5 .stats .lbl{color:rgba(255,255,255,.66);font-size:12.5px;margin-top:7px}
+
+@media (max-width:1080px){
+  .h3 .stage{height:560px}
+  .h4 .row{grid-template-columns:1fr;gap:30px}
+  .h4 .en-band{white-space:normal}
+  .h4 .frame{height:300px}
+  .h3 .band,.h4 .band{grid-template-columns:repeat(2,1fr)}
+  /* H5：窄屏标题必须换行，否则单行会溢出 */
+  .h5 .mega{white-space:normal;font-size:clamp(30px,7.6vw,72px)}
+  .h5 .mega .br-m{display:block}
+  .h5 .stats{grid-template-columns:repeat(2,1fr)}
+  .h5 .stats .c:nth-child(2){border-right:0}
+  .h5 .stats .c:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.14)}
+}
+@media (max-width:700px){
+  .wrap{padding:0 22px} .opt-label{padding:22px 22px 14px}
+  .h3 .stage{height:460px}
+  .h3 .band,.h4 .band{grid-template-columns:repeat(2,1fr)}
+  .h3 .top{font-size:9.5px;letter-spacing:.16em}
+  .btn{padding:13px 20px;font-size:14px}
+  .h5 .stage{min-height:560px}
+  .h5 .ov{padding-top:26px}
+  .h5 .top{font-size:9px;letter-spacing:.14em}
+  .h5 .top span:last-child{display:none}
+  .h5 .mega{font-size:40px;letter-spacing:-.045em}
+  .h5 .stats .c{padding:15px 18px 16px}
+  .h5 .stats .num{font-size:26px}
+  .h5 .stats .lbl{font-size:11.5px}
+}
+
+/* ===== H6 全幅图片轮播 · 车间实拍（2026-09-18 新增）
+   形式参考 zhengyuanplastics.com 的 hero：全幅照片 + 左侧固定大标题 +
+   右侧方形箭头 + 底部圆点进度。与 01/02/03 的唯一区别是背景换成 5 张实拍轮播
+   （交叉淡入 + 缓慢推近），用来展示真实车间与设备。
+   ⚠️ iframe 内只有本文件的 CSS，不继承 base.css，所有样式必须自带。
+   ⚠️ 高度用 svh —— pxid-lab.js 的 fixVH() 会把 vh/svh/dvh/lvh 换算成 --pxvh，
+      直接写死像素会复现「iframe 高度循环放大」那个坑。 */
+.h6{background:var(--ink-deep)}
+.h6 .stage{position:relative;height:100svh;min-height:620px;overflow:hidden}
+.h6 .sl{position:absolute;inset:0;z-index:1;opacity:0;transition:opacity 1.15s ease}
+.h6 .sl.on{z-index:2;opacity:1}
+.h6 .sl img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+.h6 .sl.on img{animation:h6kb 9.5s ease-out forwards}
+@keyframes h6kb{from{transform:scale(1.02)}to{transform:scale(1.13)}}
+/* 双层遮罩：横向压深左侧托住标题，纵向压深底部托住数据带 */
+.h6 .stage::after{content:"";position:absolute;inset:0;z-index:3;
+  background:linear-gradient(90deg,rgba(8,10,12,.9) 0%,rgba(8,10,12,.64) 32%,rgba(8,10,12,.16) 64%,rgba(8,10,12,.38) 100%),
+  linear-gradient(180deg,rgba(8,10,12,.62) 0%,rgba(8,10,12,0) 24%,rgba(8,10,12,.3) 66%,rgba(8,10,12,.92) 100%)}
+.h6 .ov{position:relative;z-index:4;height:100%;display:flex;flex-direction:column;padding-top:36px;padding-bottom:0}
+.h6 .top{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,.17);
+  font:800 10.5px/1 "SF Mono",Consolas,monospace;letter-spacing:.26em;color:rgba(255,255,255,.6)}
+.h6 .top i{color:var(--gold);font-style:normal}
+.h6 .mid{margin-top:auto;padding-bottom:clamp(30px,4.6svh,56px)}
+/* 每帧自己的说明，跟着轮播切换 —— 主标题保持不动，避免换帧时文字跳动 */
+.h6 .cap{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;
+  font:800 11px/1 "SF Mono",Consolas,monospace;letter-spacing:.2em;color:rgba(255,255,255,.58)}
+.h6 .cap .idx{color:var(--gold)}
+.h6 .cap .nm{font-family:var(--sans);font-size:14.5px;font-weight:800;letter-spacing:.02em;color:#fff}
+.h6 .cn-h1{color:#fff;font-size:clamp(38px,5.6vw,80px);max-width:13em;text-wrap:balance}
+.h6 .cn-h1 .hlw{border-bottom:4px solid var(--gold);padding-bottom:5px}
+.h6 .sub{color:rgba(255,255,255,.82);font-size:clamp(14px,1.15vw,17px);line-height:1.95;margin-top:22px;max-width:34em}
+.h6 .acts{margin-top:clamp(22px,3.4svh,40px)}
+.h6 .btn-line{color:#fff;border-color:rgba(255,255,255,.42)}
+.h6 .btn-line:hover{background:#fff;color:var(--ink-deep);border-color:#fff}
+/* 箭头：右侧竖排方形按钮（参考站的形式），hover 转金色。
+   绝对定位锚在 .ov（.wrap，position:relative）上 → 跟着 1280 内容列走，不会跑到视口外 */
+.h6 .nav{position:absolute;z-index:5;right:0;top:50%;transform:translateY(-50%);display:grid;gap:10px}
+.h6 .nav button{width:46px;height:46px;display:grid;place-items:center;cursor:pointer;padding:0;
+  border:1px solid rgba(255,255,255,.34);background:rgba(8,10,12,.44);color:#fff;font-size:17px;
+  transition:.18s;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.h6 .nav button:hover,.h6 .nav button:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--ink-deep)}
+/* 圆点即进度条：当前帧底部一道金色从左推到右，时长与 JS 的 DUR 一致 */
+.h6 .dots{display:flex;gap:9px;margin-top:clamp(22px,3.2svh,36px)}
+.h6 .dots button{position:relative;overflow:hidden;width:36px;height:3px;padding:0;cursor:pointer;
+  border:0;background:rgba(255,255,255,.3)}
+.h6 .dots button.on{background:rgba(255,255,255,.42)}
+.h6 .dots button.on::after{content:"";position:absolute;inset:0;background:var(--gold);
+  transform-origin:left;transform:scaleX(0);animation:h6pg 6s linear forwards}
+@keyframes h6pg{to{transform:scaleX(1)}}
+/* 数据带压在轮播最底部，不另占高度（沿用 03 的处理） */
+.h6 .stats{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(8,10,12,.6);
+  border-top:1px solid rgba(255,255,255,.18)}
+.h6 .stats .c{padding:20px 26px 22px;border-right:1px solid rgba(255,255,255,.14)}
+.h6 .stats .c:last-child{border-right:0}
+.h6 .stats .num{color:#fff;font-size:clamp(24px,2.4vw,34px)}
+.h6 .stats .lbl{color:rgba(255,255,255,.66);font-size:12.5px;margin-top:7px}
+
+@media (max-width:1080px){
+  .h6 .stage{min-height:560px}
+  .h6 .cn-h1{font-size:clamp(32px,6.2vw,56px)}
+  .h6 .stats{grid-template-columns:repeat(2,1fr)}
+  .h6 .stats .c:nth-child(2){border-right:0}
+  .h6 .stats .c:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.14)}
+}
+@media (max-width:700px){
+  .h6 .stage{min-height:520px}
+  .h6 .ov{padding-top:24px}
+  .h6 .top{font-size:9px;letter-spacing:.14em}
+  .h6 .top span:last-child{display:none}
+  .h6 .cn-h1{font-size:34px;max-width:none}
+  .h6 .cn-h1 .hlw{border-bottom-width:3px}
+  .h6 .sub{font-size:13.5px;line-height:1.85;margin-top:16px}
+  .h6 .cap{margin-bottom:14px}
+  .h6 .cap .nm{font-size:13px}
+  /* 窄屏箭头回到文档流、跟在圆点下面一行 —— 绝对定位会压进 2×2 的数据带 */
+  .h6 .nav{position:static;transform:none;display:flex;gap:8px;margin-top:14px}
+  .h6 .nav button{width:40px;height:40px;font-size:15px}
+  .h6 .dots button{width:26px}
+  .h6 .stats .c{padding:15px 18px 16px}
+  .h6 .stats .num{font-size:26px}
+  .h6 .stats .lbl{font-size:11.5px}
+}
+/* 触屏：hover 才有的东西等于不存在 —— 箭头/圆点本来就常驻，这里只补按压反馈 */
+@media (hover:none){
+  .h6 .nav button{background:rgba(8,10,12,.6)}
+  .h6 .sl.on img{animation:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .h6 .sl{transition:none}
+  .h6 .sl.on img{animation:none}
+  .h6 .dots button.on::after{animation:none;transform:scaleX(1)}
+}
+</style>
+
 <section data-pxid-sec="1" class="hero" id="top" data-page-node-id="wOZW3B3BVbSn2ffeZhQRy5">
   <video class="bg" autoplay muted loop playsinline preload="metadata" poster="/pxid/yellow-trad/assets/images/hero-poster.jpg" data-page-node-id="9EHDgsxUQok08cJedJYM5l">
     <source src="/pxid/yellow-trad/assets/images/hero.mp4" type="video/mp4" data-page-node-id="KrJ4OhkhIdY7ciRO9J4x4R">
