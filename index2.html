@@ -83,7 +83,7 @@
 /* 原站实测：1440 视口下内容宽 1362（= 1440 - 左右各 40），即不限 1280 那一档 */
 /* 全站母题：右上角 45° 切角。用固定像素而不是百分比 —— 百分比在 2.72:1 的图上会切出扁楔形 */
 .zy12 .nk45{clip-path:polygon(0 0,calc(100% - var(--cut,44px)) 0,100% var(--cut,44px),100% 100%,0 100%)}
-.zy12 .in{max-width:1440px;margin:0 auto;padding:0 40px;width:100%;position:relative;z-index:2}
+.zy12 .in{max-width:1442px;margin:0 auto;padding:0 40px;width:100%;position:relative;z-index:2}
 .zy12 .h2{font:700 52px/58px var(--head);letter-spacing:-.5px;color:var(--ink)}
 .zy12 .eb{display:inline-flex;align-items:center;gap:9px;font:700 13px/1 var(--head);letter-spacing:.16em;
   text-transform:uppercase;color:var(--o);margin-bottom:22px}
@@ -213,7 +213,7 @@
 .zy12 .m06 .track{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;
   padding:0 40px 6px;scrollbar-width:none;margin-bottom:-6px}
 .zy12 .m06 .track::-webkit-scrollbar{display:none}
-.zy12 .m06 .zycard{position:relative;flex:0 0 362px;height:417px;overflow:hidden;background:var(--dark)}
+.zy12 .m06 .zycard{position:relative;flex:0 0 clamp(300px,25vw,470px);aspect-ratio:362/417;height:auto;overflow:hidden;background:var(--dark)}
 .zy12 .m06 .zyph{position:absolute;inset:0;--cut:56px;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
 .zy12 .m06 .zyph img{width:100%;height:100%;object-fit:cover;transition:.5s}
 .zy12 .m06 .zycard:hover .zyph img{transform:scale(1.06)}
