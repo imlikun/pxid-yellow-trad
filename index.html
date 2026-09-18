@@ -4517,26 +4517,33 @@ img{display:block;max-width:100%}
 .zy12 .m01 h3{font:700 23px/32px var(--head);color:var(--ink);position:relative;z-index:2}
 .zy12 .m01 p{font-size:14.5px;color:var(--ink2);margin-top:10px;position:relative;z-index:2}
 
-/* ---------- #02 关于我们：左标题 + 右正文 + 下方大图（橙色边角装饰） ---------- */
+/* ---------- #02 关于我们：左标题 + 右正文（首行加粗）+ 中间装饰圆点 + 下方大图（右上角斜切） ---------- */
 .zy12 .m02{background:#fff;padding:0 0 100px}
-.zy12 .m02 .top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:60px;align-items:start;margin-bottom:56px}
+.zy12 .m02 .top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:60px;align-items:start}
+.zy12 .m02 .h2{font-size:48px;line-height:56px}
 .zy12 .m02 .h2 span{color:var(--o)}
-.zy12 .m02 .copy p{font-size:15.5px;color:var(--ink2);margin-bottom:16px}
-.zy12 .m02 .copy p:first-child{font-weight:600;color:var(--ink)}
-.zy12 .m02 .fig{position:relative}
-.zy12 .m02 .fig img{width:100%;height:520px;object-fit:cover}
-.zy12 .m02 .fig::before,.zy12 .m02 .fig::after{content:"";position:absolute;width:78px;height:78px;border:3px solid var(--o)}
-.zy12 .m02 .fig::before{left:-14px;top:-14px;border-right:0;border-bottom:0}
-.zy12 .m02 .fig::after{right:-14px;bottom:-14px;border-left:0;border-top:0}
-.zy12 .m02 .badge{position:absolute;right:26px;top:26px;background:var(--o);color:#fff;padding:12px 18px;
-  font:700 13px/1.4 var(--head);border-radius:var(--r)}
+.zy12 .m02 .copy .lead{font:700 20px/1.55 var(--head);color:var(--ink);margin-bottom:18px}
+.zy12 .m02 .copy p{font-size:15.5px;color:var(--ink2);margin-bottom:12px}
+/* 原站这里是一个细线圆圈 + 中心橙点的小装饰，居中放在标题与图片之间 */
+.zy12 .m02 .dot{width:56px;height:56px;border:1px solid #e3e3e3;border-radius:50%;
+  display:grid;place-items:center;margin:36px auto 0}
+.zy12 .m02 .dot::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--o)}
+.zy12 .m02 .fig{position:relative;margin-top:44px}
+/* 原站只在右上角切了一个斜角，没有四角边框装饰 */
+.zy12 .m02 .fig img{width:100%;height:520px;object-fit:cover;
+  clip-path:polygon(0 0,calc(100% - 118px) 0,100% 118px,100% 100%,0 100%)}
+/* 按钮压在大图上沿、右对齐 —— 不是排在正文里 */
+.zy12 .m02 .fig .btn{position:absolute;left:52%;bottom:calc(100% - 22px);z-index:3}
 
-/* ---------- #03 数字统计：巨型描边数字 + count-up ---------- */
+/* ---------- #03 数字统计：巨型描边数字（suffix 小一号）+ 每列独立短横线 ---------- */
 .zy12 .m03{background:#fff;padding:0 0 96px}
-.zy12 .m03 .g{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid var(--line);padding-top:56px}
-.zy12 .m03 .n{font:700 clamp(48px,5.4vw,76px)/1 var(--head);color:transparent;
-  -webkit-text-stroke:1.5px #c9ccce;letter-spacing:-2px}
-.zy12 .m03 .l{font-size:14px;color:var(--ink2);margin-top:12px;white-space:nowrap}
+.zy12 .m03 .g{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+.zy12 .m03 .n{display:flex;align-items:flex-start;gap:3px;
+  font:700 clamp(62px,7.3vw,104px)/1 var(--head);color:transparent;
+  -webkit-text-stroke:1.6px #c6c9cb;letter-spacing:-4px}
+.zy12 .m03 .n .s{font-size:.4em;line-height:1;-webkit-text-stroke:1.3px #c6c9cb;letter-spacing:0;margin-top:.16em}
+.zy12 .m03 .rule{height:1px;background:var(--line);margin:26px 0 16px}
+.zy12 .m03 .l{font-size:14.5px;color:var(--ink2);white-space:nowrap}
 
 /* ---------- #04 产品分类：左侧竖排 Tab + 中间图 + 右侧说明 ---------- */
 .zy12 .m04{background:var(--bg2);padding:100px 0}
@@ -4591,7 +4598,8 @@ img{display:block;max-width:100%}
 /* ---------- #07 橙色数据带：负边距压住上一段 + 巨型数字 ---------- */
 .zy12 .m07{background:var(--o);color:#fff;margin-top:-85px;padding:96px 0 78px;position:relative;z-index:4}
 .zy12 .m07 .g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr) auto;gap:44px;align-items:center}
-.zy12 .m07 .big{font:700 clamp(46px,5vw,68px)/1 var(--head);letter-spacing:-1.5px}
+.zy12 .m07 .big{font:700 clamp(46px,5vw,68px)/1 var(--head);letter-spacing:-1.5px;display:flex;align-items:flex-start;gap:3px}
+.zy12 .m07 .big .s{font-size:.45em;line-height:1;margin-top:.14em;letter-spacing:0}
 .zy12 .m07 .big small{display:block;font:600 15px/1 var(--head);opacity:.9;letter-spacing:0;margin-top:10px}
 .zy12 .m07 p{font-size:15.5px;line-height:1.9;opacity:.95}
 .zy12 .m07 .btn{background:#fff;color:var(--ink)}
@@ -4799,14 +4807,15 @@ img{display:block;max-width:100%}
         <h2 class="h2">精密模具 <span>15 年</span>。<br>从图纸到量产，一站搞定。</h2>
       </div>
       <div class="copy">
-        <p>江苏品向智能制造专注精密模具设计与注塑量产，从图纸评审、模具制造到成型、装配与检测，全流程在一个工厂内完成。</p>
-        <p>我们支持汽车零部件、电动出行与工业设备的中小批量需求，按图公差稳定量产，并提供 DFM 建议与装配测试配套。</p>
-        <a class="btn btn-o" href="/pxid/yellow-trad/about.html" style="margin-top:10px">了解服务流程 <span>&#8594;</span></a>
+        <p class="lead">江苏品向智能制造 —— 精密模具设计制造与注塑零件供应商。</p>
+        <p>从 DFM 评审、模具结构到电极、模架与试模，全流程在同一工厂完成。</p>
+        <p>支持汽车零部件、电动出行与工业设备的中小批量需求，按图公差稳定量产，并配套装配与检测。</p>
       </div>
     </div>
+    <div class="dot" aria-hidden="true"></div>
     <div class="fig rv">
+      <a class="btn btn-o" href="/pxid/yellow-trad/about.html">了解服务流程 <span>&#8594;</span></a>
       <img src="/pxid/yellow-trad/assets/images/cap-01.jpg" alt="品向智造车间" loading="lazy">
-      <span class="badge">车间实拍<br>FACTORY FLOOR</span>
     </div>
   </div>
 </section>
@@ -4815,10 +4824,10 @@ img{display:block;max-width:100%}
 <section class="m m03" id="zy-m03">
   <span class="tag">#03 数字统计</span>
   <div class="in"><div class="g">
-    <div class="rv"><div class="n" data-cnt="15" data-suffix="+">0+</div><div class="l">年 制造经验</div></div>
-    <div class="rv" style="--d:.08s"><div class="n" data-cnt="10000" data-suffix="+" data-fmt="k">0+</div><div class="l">零件交付</div></div>
-    <div class="rv" style="--d:.16s"><div class="n" data-cnt="9" data-suffix="">0</div><div class="l">台 数控加工中心</div></div>
-    <div class="rv" style="--d:.24s"><div class="n" data-cnt="98" data-suffix="%">0%</div><div class="l">准时交付</div></div>
+    <div class="rv"><div class="n"><span data-cnt="15">0</span><span class="s">+</span></div><div class="rule"></div><div class="l">年 制造经验</div></div>
+    <div class="rv" style="--d:.08s"><div class="n"><span data-cnt="10">0</span><span class="s">K+</span></div><div class="rule"></div><div class="l">零件交付</div></div>
+    <div class="rv" style="--d:.16s"><div class="n"><span data-cnt="9">0</span></div><div class="rule"></div><div class="l">台 数控加工中心</div></div>
+    <div class="rv" style="--d:.24s"><div class="n"><span data-cnt="98">0</span><span class="s">%</span></div><div class="rule"></div><div class="l">准时交付</div></div>
   </div></div>
 </section>
 
@@ -4896,7 +4905,7 @@ img{display:block;max-width:100%}
 <section class="m m07" id="zy-m07">
   <span class="tag">#07 橙色数据带</span>
   <div class="in"><div class="g">
-    <div class="big" data-cnt="10000" data-suffix="+" data-fmt="k">0+</div>
+    <div class="big"><span data-cnt="10000" data-fmt="c">0</span><span class="s">+</span></div>
     <div>
       <b style="display:block;font:700 19px/1.5 var(--head);margin-bottom:10px">零件已交付</b>
       <p>自有数控加工、放电与中走丝能力，模具与成型在同一工厂完成 —— 报价快、沟通直接、量产稳定，不用自己拼供应链。</p>
@@ -5038,21 +5047,19 @@ img{display:block;max-width:100%}
   /* ---- 数字滚动 ----
      不用 IntersectionObserver：快速滚过时回调到达的时机可能已经错过（实测数字会永远停在 0），
      改成节流滚动检查 —— 只要元素上沿进入折叠线附近就跑一次。 */
-  function fmt(v, mode) {
-    if (mode === 'k') return v >= 1000 ? (v / 1000).toFixed(v % 1000 ? 1 : 0) + 'K' : String(v);
-    return String(v);
-  }
+  /* suffix（+ / % / K）是 markup 里独立的 .s 小字，脚本只写数字本身 */
+  function fmt(v, mode) { return mode === 'c' ? v.toLocaleString('en-US') : String(v); }
   var pend = [].slice.call(root.querySelectorAll('[data-cnt]')).map(function (el) {
-    return { el: el, to: +el.getAttribute('data-cnt'), suf: el.getAttribute('data-suffix') || '', mode: el.getAttribute('data-fmt'), done: false };
+    return { el: el, to: +el.getAttribute('data-cnt'), mode: el.getAttribute('data-fmt'), done: false };
   });
   function runCnt(o) {
     if (o.done) return; o.done = true;
-    if (RM) { o.el.textContent = fmt(o.to, o.mode) + o.suf; return; }
+    if (RM) { o.el.textContent = fmt(o.to, o.mode); return; }
     var t0 = null, D = 1600;
     var step = function (t) {
       if (!t0) t0 = t;
       var k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3);
-      o.el.textContent = fmt(Math.round(o.to * e), o.mode) + o.suf;
+      o.el.textContent = fmt(Math.round(o.to * e), o.mode);
       if (k < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
