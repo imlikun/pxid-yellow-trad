@@ -4466,7 +4466,7 @@ img{display:block;max-width:100%}
 .zy12 .eb{display:inline-flex;align-items:center;gap:9px;font:700 13px/1 var(--head);letter-spacing:.16em;
   text-transform:uppercase;color:var(--o);margin-bottom:22px}
 .zy12 .eb::before{content:"";width:0;height:0;border:5px solid transparent;border-left-color:var(--o)}
-.zy12 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:var(--r);
+.zy12 .zybtn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:var(--r);
   font:600 17px/1 var(--head);transition:.25s;white-space:nowrap}
 .zy12 .btn-o{background:var(--o);color:#fff}
 .zy12 .btn-o:hover{background:var(--o2)}
@@ -4476,7 +4476,7 @@ img{display:block;max-width:100%}
 .zy12 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
 .zy12 .rv.in{opacity:1;transform:none}
 /* 评审用序号角标（定完顺序我删掉） */
-.zy12 .tag{position:absolute;z-index:9;top:0;left:0;background:var(--o);color:#fff;
+.zy12 .zytag{position:absolute;z-index:9;top:0;left:0;background:var(--o);color:#fff;
   font:700 11px/1 var(--mono);letter-spacing:.1em;padding:6px 10px}
 
 /* ---------- #00 HERO：全幅图轮播 + 左侧巨型标题 + 右侧方形箭头 ---------- */
@@ -4533,7 +4533,7 @@ img{display:block;max-width:100%}
 .zy12 .m02 .fig img{width:100%;height:520px;object-fit:cover;
   clip-path:polygon(0 0,80% 0,100% 20%,100% 100%,0 100%)}
 /* 按钮压在大图上沿、右对齐 —— 不是排在正文里 */
-.zy12 .m02 .fig .btn{position:absolute;left:52%;bottom:calc(100% - 22px);z-index:3}
+.zy12 .m02 .fig .zybtn{position:absolute;left:52%;bottom:calc(100% - 22px);z-index:3}
 
 /* ---------- #03 数字统计：巨型描边数字（suffix 小一号）+ 每列独立短横线 ---------- */
 .zy12 .m03{background:#fff;padding:0 0 96px}
@@ -4576,35 +4576,46 @@ img{display:block;max-width:100%}
 .zy12 .m05 h3{font:700 20px/1.4 var(--head);position:relative;z-index:2}
 .zy12 .m05 p{font-size:14px;color:var(--ink2);margin-top:12px;position:relative;z-index:2}
 
-/* ---------- #06 设备库：右上分类 Tab + 横向设备卡轮播（橙色标题条压在图上） ---------- */
-.zy12 .m06{background:#fff;padding:105px 0 0}
-.zy12 .m06 .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-bottom:40px}
-.zy12 .m06 .tabs{display:flex;gap:8px;flex-wrap:wrap}
-.zy12 .m06 .tabs button{padding:10px 20px;background:var(--bg2);border-radius:var(--r);font:600 14px/1 var(--head);transition:.2s}
-.zy12 .m06 .tabs button:hover{color:var(--o)}
-.zy12 .m06 .tabs button.on{background:var(--dark);color:#fff}
-.zy12 .m06 .nav{display:flex;gap:8px;margin-bottom:14px}
-.zy12 .m06 .nav button{width:38px;height:38px;background:var(--bg2);border-radius:var(--r);font-size:15px}
-.zy12 .m06 .nav button:hover{background:var(--o);color:#fff}
-.zy12 .m06 .track{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:70px;scrollbar-width:thin}
-.zy12 .m06 .track::-webkit-scrollbar{height:4px}
-.zy12 .m06 .track::-webkit-scrollbar-thumb{background:#d8d8d8}
-.zy12 .m06 .card{position:relative;flex:0 0 320px;height:240px;overflow:hidden;clip-path:polygon(0 0,88% 0,100% 10%,100% 100%,0 100%)}
-.zy12 .m06 .card img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.zy12 .m06 .card:hover img{transform:scale(1.07)}
-.zy12 .m06 .card b{position:absolute;left:0;right:0;bottom:0;background:var(--o);color:#fff;
-  padding:11px 16px;font:600 14.5px/1.35 var(--head)}
+/* ---------- #06 设备库：横向轮播（实测 卡片 362x417、切角在图片层 88%/10%、
+   说明=橙色胶囊 13px/500 padding 6·14 圆角55px + 白色 20px/700 机器名，叠底部深渐变；
+   箭头 50x50 #f7f7f7/#1f1f1f 圆角2px，放在标题行右侧。原站无分类 Tab） ---------- */
+.zy12 .m06{background:#fff;padding:105px 0 110px}
+.zy12 .m06 .hd{position:relative;margin-bottom:40px}
+.zy12 .m06 .h2{max-width:714px}
+.zy12 .m06 .zynav{position:absolute;right:0;top:0;display:flex;gap:15px}
+.zy12 .m06 .zynav button{width:50px;height:50px;background:var(--bg2);color:var(--ink);
+  border-radius:var(--r);font-size:16px;transition:.2s}
+.zy12 .m06 .zynav button:hover{background:var(--o);color:#fff}
+.zy12 .m06 .track{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;
+  padding-bottom:6px;scrollbar-width:none}
+.zy12 .m06 .track::-webkit-scrollbar{display:none}
+.zy12 .m06 .zycard{position:relative;flex:0 0 362px;height:417px;overflow:hidden;background:var(--dark)}
+.zy12 .m06 .zyph{position:absolute;inset:0;clip-path:polygon(0 0,88% 0,100% 10%,100% 100%,0 100%)}
+.zy12 .m06 .zyph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.zy12 .m06 .zycard:hover .zyph img{transform:scale(1.06)}
+.zy12 .m06 .zycard::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,rgba(8,10,12,0) 42%,rgba(8,10,12,.55) 72%,rgba(8,10,12,.88) 100%)}
+.zy12 .m06 .cap{position:absolute;z-index:3;left:40px;right:26px;bottom:34px}
+.zy12 .m06 .pill{display:inline-block;background:var(--o);color:#fff;
+  font-size:13px;font-weight:500;padding:6px 14px;border-radius:55px;line-height:1.4}
+.zy12 .m06 .cap b{display:block;color:#fff;font:700 20px/1.35 var(--head);margin-top:14px}
 
-/* ---------- #07 橙色数据带：负边距压住上一段 + 巨型数字 ---------- */
-.zy12 .m07{background:var(--o);color:#fff;margin-top:-85px;padding:96px 0 78px;position:relative;z-index:4;
+/* ---------- #07 橙色数据带：实测是收在容器里的橙色块（不是通栏带），
+   margin-top:-85px 压住上面的轮播；按钮 320x58 / 18px·500 / 圆角2px / padding 15·32；
+   标签 20px/400 白；裁切沿用 .counter-top-area.clip_enable（去掉退化重复点） ---------- */
+.zy12 .m07{background:transparent;margin-top:-85px;padding:0 0 96px;position:relative;z-index:4}
+.zy12 .m07 .blk{background:var(--o);color:#fff;padding:92px 60px;align-items:center;
+  display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.25fr) auto;gap:44px;
   clip-path:polygon(15% 0,100% 0,100% 74%,85% 100%,0 100%,0 25%)}
-.zy12 .m07 .g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr) auto;gap:44px;align-items:center}
-.zy12 .m07 .big{font:700 clamp(46px,5vw,68px)/1 var(--head);letter-spacing:-1.5px;display:flex;align-items:flex-start;gap:3px}
+.zy12 .m07 .big{display:flex;align-items:flex-start;gap:3px;
+  font:700 68px/1 var(--head);letter-spacing:-2px}
 .zy12 .m07 .big .s{font-size:.45em;line-height:1;margin-top:.14em;letter-spacing:0}
-.zy12 .m07 .big small{display:block;font:600 15px/1 var(--head);opacity:.9;letter-spacing:0;margin-top:10px}
-.zy12 .m07 p{font-size:15.5px;line-height:1.9;opacity:.95}
-.zy12 .m07 .btn{background:#fff;color:var(--ink)}
-.zy12 .m07 .btn:hover{background:var(--dark);color:#fff}
+.zy12 .m07 .cap{font-size:20px;font-weight:400;margin-top:14px}
+.zy12 .m07 .t b{display:block;font:700 16px/1.6 var(--head);margin-bottom:10px}
+.zy12 .m07 .t span{font-size:15px;line-height:1.85;opacity:.95}
+.zy12 .m07 .zybtn{background:#fff;color:var(--ink);padding:15px 32px;border-radius:var(--r);
+  font:500 18px/1 var(--head);white-space:nowrap}
+.zy12 .m07 .zybtn:hover{background:var(--dark);color:#fff}
 
 /* ---------- #08 客户评价：三张白卡 + 头像 + 五星 + 引号水印 ---------- */
 .zy12 .m08{background:#fff;padding:105px 85px 112px}
@@ -4642,7 +4653,7 @@ img{display:block;max-width:100%}
 .zy12 .m09 .meta{font-size:12.5px;color:var(--ink3);display:flex;gap:10px;align-items:center}
 .zy12 .m09 .meta i{width:5px;height:5px;border-radius:50%;background:var(--o);font-style:normal}
 .zy12 .m09 .ex{font-size:14px;color:var(--ink2)}
-.zy12 .m09 .chip{display:inline-block;background:var(--o);color:#fff;font:600 11.5px/1 var(--head);
+.zy12 .m09 .zychip{display:inline-block;background:var(--o);color:#fff;font:600 11.5px/1 var(--head);
   padding:6px 12px;border-radius:var(--r);margin-top:16px}
 
 /* ---------- #10 询价表单：左说明三行 + 右橙色表单面板 ---------- */
@@ -4704,7 +4715,7 @@ img{display:block;max-width:100%}
   .zy12 .m04 .g{grid-template-columns:210px minmax(0,1fr);gap:28px}
   .zy12 .m04 .desc{grid-column:1/-1}
   .zy12 .m05 .ghost{font-size:110px;line-height:110px}
-  .zy12 .m07 .g{grid-template-columns:1fr;gap:24px}
+  .zy12 .m07 .blk{grid-template-columns:1fr;gap:24px;padding:44px 34px}
   .zy12 .m11 .g{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
@@ -4730,7 +4741,9 @@ img{display:block;max-width:100%}
   .zy12 .m04 .pic img{height:240px}
   .zy12 .m05{padding-bottom:64px}
   .zy12 .m06{padding-top:64px}
-  .zy12 .m06 .card{flex-basis:260px;height:200px}
+  .zy12 .m06 .zycard{flex-basis:286px;height:340px}
+  .zy12 .m06 .cap{left:26px;bottom:26px}
+  .zy12 .m06 .zynav{padding-top:0}
   .zy12 .m07{padding:64px 0 50px;margin-top:-40px}
   .zy12 .m08{padding:64px 22px 70px}
   .zy12 .m09{padding:70px 22px 56px}
@@ -4760,7 +4773,7 @@ img{display:block;max-width:100%}
 
 <!-- ===== #00 HERO ===== -->
 <section class="m m00" id="zy-m00">
-  <span class="tag">#00 首屏轮播</span>
+  <span class="zytag">#00 首屏轮播</span>
   <div class="stage">
     <div class="sl on"><img src="/pxid/yellow-trad/assets/images/hero-slide-01.jpg" alt="海天 MA 系列注塑机车间实拍" fetchpriority="high"></div>
     <div class="sl"><img src="/pxid/yellow-trad/assets/images/hero-slide-02.jpg" alt="乔峰 HSD1615 数控加工中心"></div>
@@ -4768,12 +4781,12 @@ img{display:block;max-width:100%}
     <div class="sl"><img src="/pxid/yellow-trad/assets/images/hero-slide-04.jpg" alt="装配与测试工位"></div>
     <div class="sl"><img src="/pxid/yellow-trad/assets/images/hero-slide-05.jpg" alt="带 PXID 标识的工装夹具"></div>
     <span class="pg" data-zy-pg>1/5</span>
-    <div class="wrap in">
+    <div class="in">
       <span class="eb">Precision Molding</span>
       <h1>从设计图纸<br>到批量交付</h1>
       <p>精密模具设计与制造，到注塑成型、CNC 加工、装配与测试 —— 一个供应商交付全套。上传图纸，当天拿到报价与 DFM 反馈。</p>
       <div class="row">
-        <a class="btn btn-o" href="/pxid/yellow-trad/contact.html">获取报价 <span>&#8594;</span></a>
+        <a class="zybtn btn-o" href="/pxid/yellow-trad/contact.html">获取报价 <span>&#8594;</span></a>
         <a class="play" href="/pxid/yellow-trad/advantages/adv-overview.html" aria-label="看车间设备">&#9654;</a>
       </div>
     </div>
@@ -4786,7 +4799,7 @@ img{display:block;max-width:100%}
 
 <!-- ===== #01 四张卖点卡 ===== -->
 <section class="m m01" id="zy-m01">
-  <span class="tag">#01 卖点四卡</span>
+  <span class="zytag">#01 卖点四卡</span>
   <div class="in"><div class="g">
     <div class="c rv" data-n="01"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4z"/><path d="M8 7V4h8v3M9 12h6"/></svg></div>
       <h3>精密模具设计制造</h3><p>从 DFM 评审到模具结构、电极与模架加工，全流程在厂内完成。</p></div>
@@ -4801,7 +4814,7 @@ img{display:block;max-width:100%}
 
 <!-- ===== #02 关于我们 ===== -->
 <section class="m m02" id="zy-m02">
-  <span class="tag">#02 关于我们</span>
+  <span class="zytag">#02 关于我们</span>
   <div class="in">
     <div class="top">
       <div>
@@ -4816,7 +4829,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="dot" aria-hidden="true"></div>
     <div class="fig rv">
-      <a class="btn btn-o" href="/pxid/yellow-trad/about.html">了解服务流程 <span>&#8594;</span></a>
+      <a class="zybtn btn-o" href="/pxid/yellow-trad/about.html">了解服务流程 <span>&#8594;</span></a>
       <img src="/pxid/yellow-trad/assets/images/cap-01.jpg" alt="品向智造车间" loading="lazy">
     </div>
   </div>
@@ -4824,7 +4837,7 @@ img{display:block;max-width:100%}
 
 <!-- ===== #03 数字统计 ===== -->
 <section class="m m03" id="zy-m03">
-  <span class="tag">#03 数字统计</span>
+  <span class="zytag">#03 数字统计</span>
   <div class="in"><div class="g">
     <div class="rv"><div class="n"><span data-cnt="15">0</span><span class="s">+</span></div><div class="rule"></div><div class="l">年 制造经验</div></div>
     <div class="rv" style="--d:.08s"><div class="n"><span data-cnt="10">0</span><span class="s">K+</span></div><div class="rule"></div><div class="l">零件交付</div></div>
@@ -4835,11 +4848,11 @@ img{display:block;max-width:100%}
 
 <!-- ===== #04 产品分类 Tab ===== -->
 <section class="m m04" id="zy-m04">
-  <span class="tag">#04 产品分类（左 Tab）</span>
+  <span class="zytag">#04 产品分类（左 Tab）</span>
   <div class="in">
     <div class="hd">
       <div><span class="eb">What We Do</span><h2 class="h2">精密模具与注塑零件</h2></div>
-      <a class="btn btn-l" href="/pxid/yellow-trad/advantages/adv-overview.html">查看全部工艺 <span>&#8594;</span></a>
+      <a class="zybtn btn-l" href="/pxid/yellow-trad/advantages/adv-overview.html">查看全部工艺 <span>&#8594;</span></a>
     </div>
     <div class="g">
       <div class="tabs" role="tablist">
@@ -4863,7 +4876,7 @@ img{display:block;max-width:100%}
 
 <!-- ===== #05 工作流程 ===== -->
 <section class="m m05" id="zy-m05">
-  <span class="tag">#05 工作流程（ghost 大字）</span>
+  <span class="zytag">#05 工作流程（ghost 大字）</span>
   <div class="ghost">我们的工作流程</div>
   <div class="in"><div class="g">
     <div class="c rv" data-n="01"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M4 16v4h16v-4"/></svg></div>
@@ -4875,53 +4888,43 @@ img{display:block;max-width:100%}
   </div></div>
 </section>
 
-<!-- ===== #06 设备库（分类 Tab + 横向轮播） ===== -->
+<!-- ===== #06 设备库（横向轮播，原站无分类 Tab） ===== -->
 <section class="m m06" id="zy-m06">
-  <span class="tag">#06 设备库（分类 Tab + 轮播）</span>
+  <span class="zytag">#06 设备库轮播</span>
   <div class="in">
     <div class="hd">
       <div><span class="eb">Equipment</span><h2 class="h2">制造能力</h2></div>
-      <div class="tabs">
-        <button type="button" class="on" data-eq="all">全部</button>
-        <button type="button" data-eq="cnc">数控加工中心</button>
-        <button type="button" data-eq="inj">注塑成型机</button>
-        <button type="button" data-eq="edm">放电与线切割</button>
-        <button type="button" data-eq="cmm">三坐标检测</button>
-      </div>
+      <div class="zynav"><button type="button" data-eq-l aria-label="向左">&#8592;</button><button type="button" data-eq-r aria-label="向右">&#8594;</button></div>
     </div>
-    <div class="nav"><button type="button" data-eq-l aria-label="向左">&#8592;</button><button type="button" data-eq-r aria-label="向右">&#8594;</button></div>
     <div class="track" data-eq-track>
-      <a class="card" data-cat="cnc" href="/pxid/yellow-trad/advantages/adv-cnc-finish.html"><img src="/pxid/yellow-trad/assets/images/hero-slide-02.jpg" alt="乔峰 HSD1615" loading="lazy"><b>乔峰 HSD1615<br>数控加工中心</b></a>
-      <a class="card" data-cat="cnc" href="/pxid/yellow-trad/advantages/adv-cnc-finish.html"><img src="/pxid/yellow-trad/assets/images/cap-03.jpg" alt="永利达 VH11" loading="lazy"><b>永利达 VH11 ×4<br>数控加工中心</b></a>
-      <a class="card" data-cat="cnc" href="/pxid/yellow-trad/advantages/adv-electrode.html"><img src="/pxid/yellow-trad/assets/images/cap-04.jpg" alt="北京精雕 JDLVT500" loading="lazy"><b>北京精雕 JDLVT500<br>电极精雕</b></a>
-      <a class="card" data-cat="inj" href="/pxid/yellow-trad/services/injection.html"><img src="/pxid/yellow-trad/assets/images/hero-slide-01.jpg" alt="海天 MA 系列注塑机" loading="lazy"><b>海天 MA 系列 90–530T<br>注塑成型机 7 台</b></a>
-      <a class="card" data-cat="edm" href="/pxid/yellow-trad/advantages/adv-edm.html"><img src="/pxid/yellow-trad/assets/images/cap-06.jpg" alt="汉霸 G45L 火花机" loading="lazy"><b>汉霸 G45L / 迪蒙 ADI600<br>放电加工</b></a>
-      <a class="card" data-cat="edm" href="/pxid/yellow-trad/advantages/adv-wire-cut.html"><img src="/pxid/yellow-trad/assets/images/cap-07.jpg" alt="霸器 BQ800 中走丝" loading="lazy"><b>霸器 BQ800 / 瑞钧 FR600XS<br>中走丝 ≤±0.005mm</b></a>
-      <a class="card" data-cat="cmm" href="/pxid/yellow-trad/advantages/adv-inspection.html"><img src="/pxid/yellow-trad/assets/images/cap-08.jpg" alt="海克斯康三坐标" loading="lazy"><b>海克斯康 INSPEC70RS<br>三坐标 E0 2.2+3.5L/1000</b></a>
-      <a class="card" data-cat="cnc" href="/pxid/yellow-trad/advantages/adv-mold-base.html"><img src="/pxid/yellow-trad/assets/images/cap-05.jpg" alt="乔峰 LM2013" loading="lazy"><b>乔峰 LM2013<br>模架与粗加工</b></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-cnc-finish.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/hero-slide-02.jpg" alt="乔峰 HSD1615" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>乔峰 HSD1615 加工中心</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-cnc-finish.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-03.jpg" alt="永利达 VH11" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>永利达 VH11 ×4</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-electrode.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-04.jpg" alt="北京精雕 JDLVT500" loading="lazy"></span><span class="cap"><span class="pill">电极加工设备</span><b>北京精雕 JDLVT500</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/services/injection.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/hero-slide-01.jpg" alt="海天 MA 系列注塑机" loading="lazy"></span><span class="cap"><span class="pill">注塑成型设备</span><b>海天 MA 系列 90–530T</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-edm.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-06.jpg" alt="汉霸 G45L 火花机" loading="lazy"></span><span class="cap"><span class="pill">放电加工设备</span><b>汉霸 G45L / 迪蒙 ADI600</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-wire-cut.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-07.jpg" alt="霸器 BQ800 中走丝" loading="lazy"></span><span class="cap"><span class="pill">线切割设备</span><b>霸器 BQ800 中走丝</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-inspection.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-08.jpg" alt="海克斯康三坐标" loading="lazy"></span><span class="cap"><span class="pill">检测设备</span><b>海克斯康 INSPEC70RS</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-mold-base.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-05.jpg" alt="乔峰 LM2013" loading="lazy"></span><span class="cap"><span class="pill">模架加工设备</span><b>乔峰 LM2013 / SV105</b></span></a>
     </div>
   </div>
 </section>
 
-<!-- ===== #07 橙色数据带 ===== -->
+<!-- ===== #07 橙色数据带（容器内橙色块） ===== -->
 <section class="m m07" id="zy-m07">
-  <span class="tag">#07 橙色数据带</span>
-  <div class="in"><div class="g">
-    <div class="big"><span data-cnt="10000" data-fmt="c">0</span><span class="s">+</span></div>
-    <div>
-      <b style="display:block;font:700 19px/1.5 var(--head);margin-bottom:10px">零件已交付</b>
-      <p>自有数控加工、放电与中走丝能力，模具与成型在同一工厂完成 —— 报价快、沟通直接、量产稳定，不用自己拼供应链。</p>
-    </div>
-    <a class="btn" href="/pxid/yellow-trad/advantages/adv-overview.html">查看全部设备 <span>&#8594;</span></a>
+  <span class="zytag">#07 橙色数据块</span>
+  <div class="in"><div class="blk">
+    <div><div class="big"><span data-cnt="10000" data-fmt="c">0</span><span class="s">+</span></div><div class="cap">零件已交付</div></div>
+    <div class="t"><b>自有数控 / 放电 / 中走丝加工与检测。</b><span>模具与成型在同一工厂完成 —— 报价快、沟通直接、量产稳定，不用自己拼供应链。</span></div>
+    <a class="zybtn" href="/pxid/yellow-trad/advantages/adv-overview.html">查看全部设备 <span>&#8594;</span></a>
   </div></div>
 </section>
 
 <!-- ===== #08 客户评价 ===== -->
 <section class="m m08" id="zy-m08">
-  <span class="tag">#08 客户评价（文案占位，待替换真实评价）</span>
+  <span class="zytag">#08 客户评价（文案占位，待替换真实评价）</span>
   <div class="hd">
     <div><span class="eb">Testimonials</span><h2 class="h2">客户怎么说</h2></div>
-    <a class="btn btn-o" href="/pxid/yellow-trad/cases/cases.html">更多案例 <span>&#8594;</span></a>
+    <a class="zybtn btn-o" href="/pxid/yellow-trad/cases/cases.html">更多案例 <span>&#8594;</span></a>
   </div>
   <div class="g">
     <div class="c rv"><div class="who"><span class="av">汽</span><div><b>汽车电子客户</b><span>采购负责人 · 占位</span></div></div>
@@ -4935,10 +4938,10 @@ img{display:block;max-width:100%}
 
 <!-- ===== #09 技术资讯 ===== -->
 <section class="m m09" id="zy-m09">
-  <span class="tag">#09 资讯（真实新闻标题）</span>
+  <span class="zytag">#09 资讯（真实新闻标题）</span>
   <div class="hd">
     <div><span class="eb">Insights</span><h2 class="h2">行业与技术洞察</h2></div>
-    <a class="btn btn-o" href="/pxid/yellow-trad/news/news.html">查看全部 <span>&#8594;</span></a>
+    <a class="zybtn btn-o" href="/pxid/yellow-trad/news/news.html">查看全部 <span>&#8594;</span></a>
   </div>
   <div class="g">
     <a class="big rv" href="/pxid/yellow-trad/news/news-eurobike-frankfurt.html">
@@ -4946,20 +4949,20 @@ img{display:block;max-width:100%}
       <div class="b"><div class="meta">品向智造 <i></i> 行业观察</div>
         <h3>EUROBIKE 2026 法兰克福：全球电助力车、货运车与出行产业趋势</h3>
         <p class="ex">从整车结构件到电助力系统的供应链变化，以及它对精密注塑零件需求的影响。</p>
-        <span class="chip">行业趋势</span></div>
+        <span class="zychip">行业趋势</span></div>
     </a>
     <div class="sm">
       <a class="s rv" style="--d:.08s" href="/pxid/yellow-trad/news/news-mopeds-sea.html">
         <img src="/pxid/yellow-trad/assets/images/biz-06.jpg" alt="东南亚电动摩托" loading="lazy">
-        <div class="b"><div class="meta">品向智造 <i></i> 市场</div><h3>电动摩托在东南亚出行市场崛起</h3><span class="chip">市场</span></div>
+        <div class="b"><div class="meta">品向智造 <i></i> 市场</div><h3>电动摩托在东南亚出行市场崛起</h3><span class="zychip">市场</span></div>
       </a>
       <a class="s rv" style="--d:.16s" href="/pxid/yellow-trad/news/news-freight-volatility.html">
         <img src="/pxid/yellow-trad/assets/images/biz-07.jpg" alt="全球货运波动" loading="lazy">
-        <div class="b"><div class="meta">品向智造 <i></i> 供应链</div><h3>2026 全球货运波动：用包装策略降低物流成本</h3><span class="chip">供应链</span></div>
+        <div class="b"><div class="meta">品向智造 <i></i> 供应链</div><h3>2026 全球货运波动：用包装策略降低物流成本</h3><span class="zychip">供应链</span></div>
       </a>
       <a class="s rv" style="--d:.24s" href="/pxid/yellow-trad/news/news-cargo-urban.html">
         <img src="/pxid/yellow-trad/assets/images/biz-08.jpg" alt="电动货运自行车" loading="lazy">
-        <div class="b"><div class="meta">品向智造 <i></i> 应用</div><h3>电动货运自行车的 5 大城市场景应用</h3><span class="chip">应用</span></div>
+        <div class="b"><div class="meta">品向智造 <i></i> 应用</div><h3>电动货运自行车的 5 大城市场景应用</h3><span class="zychip">应用</span></div>
       </a>
     </div>
   </div>
@@ -4967,7 +4970,7 @@ img{display:block;max-width:100%}
 
 <!-- ===== #10 上传图纸询价表单 ===== -->
 <section class="m m10" id="zy-m10">
-  <span class="tag">#10 图纸询价表单（视觉复刻，提交跳联系页）</span>
+  <span class="zytag">#10 图纸询价表单（视觉复刻，提交跳联系页）</span>
   <div class="in"><div class="g">
     <div>
       <span class="eb">Request A Quote</span>
@@ -5003,7 +5006,7 @@ img{display:block;max-width:100%}
 
 <!-- ===== #11 页脚 ===== -->
 <section class="m m11" id="zy-m11">
-  <span class="tag">#11 页脚（占位联系方式不重复，改走链接）</span>
+  <span class="zytag">#11 页脚（占位联系方式不重复，改走链接）</span>
   <div class="in">
     <div class="g">
       <div><h4>关于品向智造</h4>
@@ -5015,7 +5018,7 @@ img{display:block;max-width:100%}
         <li><a href="/pxid/yellow-trad/about.html">关于我们</a></li><li><a href="/pxid/yellow-trad/contact.html">联系报价</a></li></ul></div>
       <div><h4>工厂与联系</h4>
         <p>地址、电话与邮箱请以站内「联系报价」页为准 —— 当前站点上的联系方式仍为占位内容，待正式替换，故此处不重复展示。</p>
-        <a class="btn btn-o" style="margin-top:18px" href="/pxid/yellow-trad/contact.html">获取联系方式 <span>&#8594;</span></a></div>
+        <a class="zybtn btn-o" style="margin-top:18px" href="/pxid/yellow-trad/contact.html">获取联系方式 <span>&#8594;</span></a></div>
       <div><h4>关注我们</h4>
         <p>行业洞察与技术文章更新见「新闻」栏目。</p>
         <div class="sm">Follow Us</div>
@@ -5126,7 +5129,7 @@ img{display:block;max-width:100%}
   (function () {
     var sec = root.querySelector('.m06'); if (!sec) return;
     var track = sec.querySelector('[data-eq-track]');
-    var cards = [].slice.call(track.querySelectorAll('.card'));
+    var cards = [].slice.call(track.querySelectorAll('.zycard'));
     [].slice.call(sec.querySelectorAll('[data-eq]')).forEach(function (b) {
       b.addEventListener('click', function () {
         sec.querySelectorAll('[data-eq]').forEach(function (x) { x.classList.toggle('on', x === b); });
