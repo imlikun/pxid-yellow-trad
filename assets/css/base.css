@@ -1292,3 +1292,10 @@
 }
 
     /* 「一站式智造 3 步」已并入八大制造能力区（.flow-strip，样式在 index.html 内联） */
+
+/* ===== 「制造能力」导航下拉暂时隐藏（2026-09-16 用户要求）=====
+   ⚠️ 只是隐藏，DOM 还在（想恢复：删掉这一段即可）。
+   注意原来那条 .adv-dropdown{display:none!important} 在 @media(max-width:980px) 里，只管移动端；
+   桌面端是 .has-dropdown:hover .adv-dropdown{display:flex} 在管，所以必须另加这一条全局规则。 */
+.adv-dropdown{display:none!important}
+.has-dropdown .caret{display:none!important}
