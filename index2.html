@@ -80,7 +80,8 @@
 .zy12 img{display:block;max-width:100%}
 .zy12 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .zy12 .m{position:relative;overflow:hidden}
-.zy12 .in{max-width:1280px;margin:0 auto;padding:0 85px;width:100%;position:relative;z-index:2}
+/* 原站实测：1440 视口下内容宽 1362（= 1440 - 左右各 40），即不限 1280 那一档 */
+.zy12 .in{max-width:1440px;margin:0 auto;padding:0 40px;width:100%;position:relative;z-index:2}
 .zy12 .h2{font:700 52px/58px var(--head);letter-spacing:-.5px;color:var(--ink)}
 .zy12 .eb{display:inline-flex;align-items:center;gap:9px;font:700 13px/1 var(--head);letter-spacing:.16em;
   text-transform:uppercase;color:var(--o);margin-bottom:22px}
@@ -137,19 +138,19 @@
 .zy12 .m01 p{font-size:14.5px;color:var(--ink2);margin-top:10px;position:relative;z-index:2}
 
 /* ---------- #02 关于我们：左标题 + 右正文（首行加粗）+ 中间装饰圆点 + 下方大图（右上角斜切） ---------- */
-.zy12 .m02{background:#fff;padding:0 0 100px}
-.zy12 .m02 .top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:60px;align-items:start}
-.zy12 .m02 .h2{font-size:48px;line-height:56px}
+.zy12 .m02{background:#fff;padding:56px 0 110px}
+.zy12 .m02 .top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr);gap:80px;align-items:start}
+.zy12 .m02 .h2{font-size:52px;line-height:60px}
 .zy12 .m02 .h2 span{color:var(--o)}
 .zy12 .m02 .copy .lead{font:700 20px/1.55 var(--head);color:var(--ink);margin-bottom:18px}
 .zy12 .m02 .copy p{font-size:15.5px;color:var(--ink2);margin-bottom:12px}
 /* 原站这里是一个细线圆圈 + 中心橙点的小装饰，居中放在标题与图片之间 */
 .zy12 .m02 .dot{width:56px;height:56px;border:1px solid #e3e3e3;border-radius:50%;
-  display:grid;place-items:center;margin:36px auto 0}
+  display:grid;place-items:center;margin:52px auto 0}
 .zy12 .m02 .dot::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--o)}
-.zy12 .m02 .fig{position:relative;margin-top:44px}
+.zy12 .m02 .fig{position:relative;margin-top:52px}
 /* 原站只在右上角切了一个斜角，没有四角边框装饰 */
-.zy12 .m02 .fig img{width:100%;height:520px;object-fit:cover;
+.zy12 .m02 .fig img{width:100%;height:500px;object-fit:cover;
   clip-path:polygon(0 0,80% 0,100% 20%,100% 100%,0 100%)}
 /* 按钮压在大图上沿、右对齐 —— 不是排在正文里 */
 .zy12 .m02 .fig .zybtn{position:absolute;left:52%;bottom:calc(100% - 22px);z-index:3}
@@ -168,13 +169,13 @@
 /* ---------- #04 产品分类：左侧竖排 Tab + 中间图 + 右侧说明 ---------- */
 .zy12 .m04{background:var(--bg2);padding:100px 0}
 .zy12 .m04 .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:44px;flex-wrap:wrap}
-.zy12 .m04 .g{display:grid;grid-template-columns:250px minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:center}
+.zy12 .m04 .g{display:grid;grid-template-columns:270px minmax(0,1.2fr) minmax(0,1fr);gap:44px;align-items:center}
 .zy12 .m04 .tabs{display:grid;gap:10px}
 .zy12 .m04 .tabs button{display:block;width:100%;text-align:left;padding:11px 22px;background:#fff;border-radius:var(--r);
   font:600 16px/1.4 var(--head);color:var(--ink);transition:.22s;border:1px solid transparent}
 .zy12 .m04 .tabs button:hover{color:var(--o)}
 .zy12 .m04 .tabs button.on{background:var(--o);color:#fff}
-.zy12 .m04 .pic img{width:100%;height:340px;object-fit:cover;clip-path:polygon(0 0,86% 0,100% 20%,100% 100%,0 100%)}
+.zy12 .m04 .pic img{width:100%;height:458px;object-fit:cover;clip-path:polygon(0 0,86% 0,100% 20%,100% 100%,0 100%)}
 .zy12 .m04 .desc h3{font:700 26px/1.35 var(--head);margin-bottom:14px}
 .zy12 .m04 .desc p{font-size:15px;color:var(--ink2);margin-bottom:18px}
 .zy12 .m04 .ck{display:grid;gap:10px;margin-bottom:22px}
@@ -207,7 +208,7 @@
   border-radius:var(--r);font-size:16px;transition:.2s}
 .zy12 .m06 .zynav button:hover{background:var(--o);color:#fff}
 .zy12 .m06 .track{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;
-  padding-bottom:6px;scrollbar-width:none}
+  padding:0 40px 6px;scrollbar-width:none;margin-bottom:-6px}
 .zy12 .m06 .track::-webkit-scrollbar{display:none}
 .zy12 .m06 .zycard{position:relative;flex:0 0 362px;height:417px;overflow:hidden;background:var(--dark)}
 .zy12 .m06 .zyph{position:absolute;inset:0;clip-path:polygon(0 0,88% 0,100% 10%,100% 100%,0 100%)}
@@ -329,8 +330,8 @@
 
 /* ---------- 断点：1024 / 700 ---------- */
 @media (max-width:1180px){
-  .zy12 .in{padding:0 40px}
-  .zy12 .m08,.zy12 .m09{padding-left:40px;padding-right:40px}
+  .zy12 .in{padding:0 28px}
+  .zy12 .m08,.zy12 .m09{padding-left:28px;padding-right:28px}
   .zy12 .m01 .g{grid-template-columns:repeat(2,1fr)}
   .zy12 .m04 .g{grid-template-columns:210px minmax(0,1fr);gap:28px}
   .zy12 .m04 .desc{grid-column:1/-1}
@@ -517,7 +518,8 @@
       <div><span class="eb">Equipment</span><h2 class="h2">制造能力</h2></div>
       <div class="zynav"><button type="button" data-eq-l aria-label="向左">&#8592;</button><button type="button" data-eq-r aria-label="向右">&#8594;</button></div>
     </div>
-    <div class="track" data-eq-track>
+  </div>
+  <div class="track" data-eq-track>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-cnc-finish.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/hero-slide-02.jpg" alt="乔峰 HSD1615" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>乔峰 HSD1615 加工中心</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-cnc-finish.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-03.jpg" alt="永利达 VH11" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>永利达 VH11 ×4</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-electrode.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-04.jpg" alt="北京精雕 JDLVT500" loading="lazy"></span><span class="cap"><span class="pill">电极加工设备</span><b>北京精雕 JDLVT500</b></span></a>
@@ -526,7 +528,6 @@
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-wire-cut.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-07.jpg" alt="霸器 BQ800 中走丝" loading="lazy"></span><span class="cap"><span class="pill">线切割设备</span><b>霸器 BQ800 中走丝</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-inspection.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-08.jpg" alt="海克斯康三坐标" loading="lazy"></span><span class="cap"><span class="pill">检测设备</span><b>海克斯康 INSPEC70RS</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-mold-base.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-05.jpg" alt="乔峰 LM2013" loading="lazy"></span><span class="cap"><span class="pill">模架加工设备</span><b>乔峰 LM2013 / SV105</b></span></a>
-    </div>
   </div>
 </section>
 
