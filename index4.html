@@ -59,20 +59,27 @@
 <main class="q4">
 <div class="q4tip">评审用页（noindex）· 图文错层版：装置取自站内 cndagri 原型页（A 图文错层 / B 五宫格目录 / C 交接卡带 / E 曲线咬合）</div>
 
-<!-- 0 段头：大英文标题 + 中文副标 + 五宫格目录（B） -->
-<section class="qa">
-  <div class="in qa__in">
-    <div class="qa__hd">
-      <h1>From Drawing<br>To Delivery</h1>
-      <p class="qa__cn">从图纸到批量交付</p>
-      <p class="qa__tx">淮安品向智能制造 —— 精密模具设计制造与注塑零件供应商。覆盖 DFM 评审、模具结构、电极、模架、成型、检测与装配的完整流程。</p>
-    </div>
-    <div class="idx5">
-      <div class="idx5__c idx5__c--fill"><i>01</i><b>提交资料</b><em>草图 / 样品 / 3D 图纸</em></div>
-      <div class="idx5__c"><i>02</i><b>需求评估</b><em>24 小时内可行性</em></div>
-      <div class="idx5__c idx5__c--fill"><i>03</i><b>方案报价</b><em>报价单 + 交付计划</em></div>
-      <div class="idx5__c"><i>04</i><b>设计开发</b><em>打样与首样</em></div>
-      <div class="idx5__c idx5__c--fill"><i>05</i><b>量产交付</b><em>质检与出货</em></div>
+<!-- 0 首屏：满幅车间实拍 + 底部超大英文 + 中文压左下（参考站 hero） -->
+<section class="qh">
+  <span class="bg" style="background-image:url('/pxid/yellow-trad/assets/images/process-05.jpg')"></span>
+  <span class="qh__veil"></span>
+  <div class="in qh__in">
+    <h1>From Drawing<br>To Delivery</h1>
+    <p class="qh__cn">从图纸到批量交付</p>
+    <p class="qh__tx">淮安品向智能制造 —— 精密模具设计制造与注塑零件供应商。覆盖 DFM 评审、模具结构、电极、模架、成型、检测与装配的完整流程。</p>
+    <span class="qh__tag">REV A · SCALE 1:1</span>
+  </div>
+</section>
+
+<!-- 0b 流程目录：大序号刻度条（参考站变体 B，比原样五宫格有气势） -->
+<section class="qi">
+  <div class="in">
+    <div class="scale">
+      <div class="scale__c"><b>01</b><i></i><span>提交资料</span><em>草图 / 样品 / 3D 图纸</em></div>
+      <div class="scale__c"><b>02</b><i></i><span>需求评估</span><em>24 小时内可行性</em></div>
+      <div class="scale__c"><b>03</b><i></i><span>方案报价</span><em>报价单 + 交付计划</em></div>
+      <div class="scale__c"><b>04</b><i></i><span>设计开发</span><em>打样与首样</em></div>
+      <div class="scale__c"><b>05</b><i></i><span>量产交付</span><em>质检与出货</em></div>
     </div>
   </div>
 </section>
@@ -238,20 +245,27 @@
 .q4 .btn{display:inline-flex;align-items:center;justify-content:center;font-size:14.5px;font-weight:700;padding:15px 28px;
   background:var(--k);color:var(--y);transition:background .2s,color .2s,transform .25s cubic-bezier(.2,.7,.2,1)}
 .q4 .btn:hover{background:#000;color:#fff;transform:translateY(-2px)}
-/* ===== 0 段头 + B 五宫格 ===== */
-.qa{background:var(--lt);padding:96px 0 104px}
-.qa__hd{max-width:760px}
-.qa h1{font-size:clamp(38px,5.2vw,68px);color:var(--g);letter-spacing:-2.2px;line-height:1.02}
-.qa__cn{font-size:clamp(19px,2vw,25px);font-weight:600;letter-spacing:-.4px;margin-top:22px}
-.qa__tx{font-size:15px;color:var(--i2);margin-top:16px;max-width:660px}
-.q4 .idx5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin-top:64px}
-.q4 .idx5__c{padding:26px 22px 30px;min-height:150px;position:relative;transition:background .24s}
-.q4 .idx5__c--fill{background:#e9e8e4}
-.q4 .idx5__c:not(.idx5__c--fill){background:transparent}
-.q4 .idx5__c:hover{background:var(--y)}
-.q4 .idx5__c i{display:block;font:700 11px/1 ui-monospace,'SF Mono',Consolas,monospace;color:var(--g);letter-spacing:.1em}
-.q4 .idx5__c b{display:block;font-size:19px;font-weight:700;letter-spacing:-.5px;margin-top:16px}
-.q4 .idx5__c em{display:block;font-size:12.5px;color:var(--i3);margin-top:7px;line-height:1.6}
+/* ===== 0 首屏：满幅实拍 + 底部超大英文 + 中文压左下 ===== */
+.qh{min-height:min(86vh,760px);display:flex;align-items:flex-end;padding:0;background:#1b1f20}
+.qh__veil{position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,16,17,.9) 0%,rgba(14,16,17,.52) 42%,rgba(14,16,17,.12) 78%)}
+.qh__in{position:relative;z-index:2;padding-top:120px;padding-bottom:52px}
+.qh h1{color:#fff;font-size:clamp(42px,6.4vw,96px);letter-spacing:-2.6px;line-height:1}
+.qh__cn{font-size:clamp(18px,2vw,25px);font-weight:600;color:#fff;margin-top:20px;letter-spacing:-.3px}
+.qh__tx{font-size:14.5px;color:rgba(255,255,255,.72);margin-top:14px;max-width:600px;line-height:1.85}
+/* 图纸标注母题：参考站用它当签名细节 */
+.qh__tag{display:inline-block;margin-top:26px;font:700 10.5px/1 ui-monospace,'SF Mono',Consolas,monospace;
+  letter-spacing:.18em;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.3);padding:7px 11px}
+/* ===== 0b 大序号刻度条 ===== */
+.qi{background:var(--lt);padding:78px 0 84px;border-bottom:1px solid rgba(35,38,38,.1)}
+.q4 .scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.q4 .scale__c{padding:0 22px 4px;border-left:1px solid rgba(35,38,38,.13)}
+.q4 .scale__c:first-child{padding-left:0;border-left:0}
+.q4 .scale__c b{display:block;font-size:clamp(44px,5.6vw,82px);font-weight:800;color:var(--g);letter-spacing:-3px;line-height:1}
+.q4 .scale__c i{display:block;width:30px;height:3px;background:var(--y);margin:16px 0 18px}
+.q4 .scale__c span{display:block;font-size:17px;font-weight:700;letter-spacing:-.3px}
+.q4 .scale__c em{display:block;font-size:12.5px;color:var(--i3);margin-top:7px;line-height:1.6}
+.q4 .scale__c{transition:background .22s}
+.q4 .scale__c:hover{background:#e9e8e4}
 /* ===== 1–4 A 图文错层 ===== */
 .qs{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);background:#fff;padding:0}
 .qs--flip{grid-template-columns:minmax(0,1fr) minmax(0,1.62fr)}
@@ -358,8 +372,8 @@
   font:600 11px/1.5 ui-monospace,'SF Mono',Consolas,monospace;color:rgba(255,255,255,.5)}
 /* 响应式 */
 @media (max-width:1180px){
-  .q4 .idx5{grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
-  .q4 .idx5__c{background:#e9e8e4 !important}
+  .q4 .scale{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .q4 .scale__c{padding:0 16px 4px}
   .q4 .parts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .qn__n{grid-template-columns:repeat(2,minmax(0,1fr))}
   .qc__in,.qy__in{grid-template-columns:1fr;gap:34px}
@@ -371,15 +385,18 @@
   .qs--flip .qs__fig{order:0}
   .qs--flip .qs__side{order:1}
   .qs__sidein{padding:44px var(--pad)}
-  .qa,.qs__side{padding:0}
+  .qs__side{padding:0}
 }
 @media (max-width:700px){
   .q4{--pad:22px;font-size:14.5px}
   .q4 h1,.q4 h2,.q4 h3{letter-spacing:-.8px}
-  .qa{padding:60px 0 66px}
-  .qa h1{font-size:38px;letter-spacing:-1.6px}
-  .q4 .idx5{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .q4 .idx5__c{min-height:0}
+  .qh{min-height:0}
+  .qh__in{padding-top:150px;padding-bottom:40px}
+  .qh h1{font-size:38px;letter-spacing:-1.4px}
+  .qi{padding:52px 0 58px}
+  .q4 .scale{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 0}
+  .q4 .scale__c b{font-size:46px;letter-spacing:-2px}
+  .q4 .scale__c:nth-child(odd){padding-left:0;border-left:0}
   .qc,.qp,.qn,.qy{padding:66px 0}
   .q4 .parts{grid-template-columns:1fr}
   .qs__tb>div{grid-template-columns:1fr;gap:4px}
