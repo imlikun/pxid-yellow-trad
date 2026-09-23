@@ -20,12 +20,12 @@
 
 /* ---------- 可加工材料 · 跑马灯横带（原 §1 方案 07） ---------- */
 .sec-mat{padding:84px 0 92px}
-.m1-eyebrow{display:flex;align-items:baseline;gap:16px;margin-bottom:28px;flex-wrap:wrap}
-.m1-eyebrow .cn{font-size:13px;font-weight:700;letter-spacing:.22em;color:var(--mute)}
-.m1-eyebrow .en{font-size:32px;font-weight:800;letter-spacing:.03em;color:var(--gold-ink);line-height:1}
-.m5-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:56px}
-.m5-h2{font-size:clamp(28px,3.6vw,46px);font-weight:800;letter-spacing:-.025em;line-height:1.3}
-.m5-note{font-size:15px;line-height:2.05;color:var(--ink-2);max-width:440px}
+/* ---------- 统一标题壳 · 方案B（金大英文 + 中文h2 + 右侧说明） ×3节共用 ---------- */
+.sec-hb{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;flex-wrap:wrap;margin-bottom:56px}
+.sec-hb .head{min-width:0}
+.sec-hb .en{font-size:clamp(44px,6.4vw,80px);font-weight:800;letter-spacing:-.05em;line-height:.95;color:var(--gold-ink);overflow-wrap:anywhere}
+.sec-hb h2{margin-top:14px;font-size:clamp(26px,3.4vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.3}
+.sec-hb .note{font-size:15px;line-height:2.05;color:var(--ink-2);max-width:420px;padding-bottom:8px}
 .m5-bands{border-top:1px solid var(--line)}
 .m5-band{border-bottom:1px solid var(--line);overflow:hidden;position:relative}
 .m5-band:hover .m5-track{animation-play-state:paused}
@@ -40,11 +40,6 @@
 
 /* ---------- 加工服务 · 主图+缩略选择条（原 §2 方案 02） ---------- */
 .sec-svc{padding:72px 0 86px}
-.eb{display:flex;align-items:center;gap:14px;font-size:12.5px;font-weight:800;
-  letter-spacing:.22em;color:var(--ink-3)}
-.eb::before{content:"";width:28px;height:2px;background:var(--gold);flex:none}
-.sec-head{margin-bottom:46px}
-.sec-h2{margin-top:18px;font-size:clamp(26px,3.4vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.3}
 /* 主图 988px（比原880大10%），缩略条收窄 300px 双列 4 行 */
 .g5{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:stretch}
 .g5-main{position:relative;overflow:hidden;background:var(--bg-3)}
@@ -72,15 +67,7 @@
 
 /* ---------- 承接方式 · 深度刻度（原 §3 方案 01） ---------- */
 .sec-take{padding:64px 0 8px}
-.sec-take .eb{display:flex;align-items:center;gap:13px;font-size:12px;font-weight:800;
-  letter-spacing:.22em;color:var(--ink-3)}
-.en-band{font-size:clamp(40px,7.4vw,86px);font-weight:800;letter-spacing:-.05em;
-  line-height:.95;color:var(--ink);overflow-wrap:anywhere}
-.cn-h2{font-size:clamp(26px,3.4vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.32}
-.sec-take .lead{font-size:15.5px;line-height:2.05;color:var(--ink-2)}
 .rule{width:28px;height:2px;background:var(--gold);flex:none}
-.t1-top{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:52px;align-items:end}
-.t1-top .en-band{margin-bottom:26px}
 .t1-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;
   margin-top:74px;border-top:2px solid var(--ink)}
 .t1-stop{position:relative;padding-top:46px}
@@ -100,9 +87,6 @@
   .g5{grid-template-columns:1fr;gap:18px}
   .g5-main{max-width:880px;margin:0 auto}
   .g5-side{grid-template-columns:repeat(4,1fr)}
-}
-@media (max-width:1180px){
-  .t1-top{grid-template-columns:1fr;gap:26px;align-items:start}
 }
 @media (max-width:1080px){
   .inner{padding:0 26px}
@@ -185,12 +169,12 @@
 <!-- ===== 可加工材料（原挑选器 §1 方案 07 · 跑马灯横带） ===== -->
 <section class="sec-mat">
   <div class="inner">
-    <div class="m5-head">
-      <div>
-        <div class="m1-eyebrow"><span class="cn">可加工材料</span><span class="en">MATERIALS</span></div>
-        <h2 class="m5-h2">这些材料我们都能加工</h2>
+    <div class="sec-hb">
+      <div class="head">
+        <div class="en">MATERIALS</div>
+        <h2>这些材料我们都能加工</h2>
       </div>
-      <p class="m5-note">塑料与金属是主力，板材与型材同样覆盖。不确定你的材料能不能做，把图纸发过来我们直接判断。</p>
+      <p class="note">塑料与金属是主力，板材与型材同样覆盖。不确定你的材料能不能做，把图纸发过来我们直接判断。</p>
     </div>
 
     <div class="m5-bands">
@@ -238,9 +222,11 @@
 <!-- ===== 加工服务（原挑选器 §2 方案 02 · 主图+缩略选择条） ===== -->
 <section class="sec-svc">
   <div class="inner">
-    <div class="sec-head">
-      <div class="eb">加工服务 / WHAT WE DO</div>
-      <h2 class="sec-h2">八类加工服务，自己车间完成</h2>
+    <div class="sec-hb">
+      <div class="head">
+        <div class="en">WHAT WE DO</div>
+        <h2>八类加工服务，自己车间完成</h2>
+      </div>
     </div>
 
     <div class="g5">
@@ -306,13 +292,12 @@
 <!-- ===== 承接方式（原挑选器 §3 方案 01 · 深度刻度） ===== -->
 <section class="sec-take">
   <div class="inner">
-    <div class="t1-top">
-      <div>
-        <div class="en-band">HOW WE<br>TAKE WORK</div>
-        <div class="eb">承接方式</div>
-        <h2 class="cn-h2" style="margin-top:20px">原材料、二次加工、成品，都能接</h2>
+    <div class="sec-hb">
+      <div class="head">
+        <div class="en">HOW WE TAKE WORK</div>
+        <h2>原材料、二次加工、成品，都能接</h2>
       </div>
-      <p class="lead">不管你是从零开发，还是已有半成品需要后续工序，都可以直接找我们对接。</p>
+      <p class="note">不管你是从零开发，还是已有半成品需要后续工序，都可以直接找我们对接。</p>
     </div>
 
     <div class="t1-rail">
