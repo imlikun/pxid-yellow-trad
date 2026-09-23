@@ -140,12 +140,13 @@
 .zy12 .m02 .copy .lead{font:700 20px/1.55 var(--head);color:var(--ink);margin-bottom:18px}
 .zy12 .m02 .copy p{font-size:15.5px;color:var(--ink2);margin-bottom:12px}
 /* 原站这里是一个细线圆圈 + 中心橙点的小装饰，居中放在标题与图片之间 */
-.zy12 .m02 .fig{position:relative;margin-top:56px}
-/* 原站只在右上角切了一个斜角，没有四角边框装饰 */
-.zy12 .m02 .fig img{width:100%;height:660px;object-fit:cover;
+/* 按钮压在大图上沿、左缘与右侧正文列起点精确对齐 —— .fig 复用 .top 的网格参数，
+   按钮放第二列起点：列宽/gap 同源，任何窗口宽度下都与正文左缘齐平（不再是约数百分比） */
+.zy12 .m02 .fig{position:relative;margin-top:56px;display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr);gap:80px;align-items:end}
+.zy12 .m02 .fig .zybtn{grid-column:2;grid-row:1;justify-self:start;margin:0 0 18px;z-index:3;position:relative}
+.zy12 .m02 .fig img{grid-column:1/-1;grid-row:2;width:100%;height:660px;object-fit:cover;
   --cut:96px;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
-/* 按钮压在大图上沿、右对齐 —— 不是排在正文里 */
-.zy12 .m02 .fig .zybtn{position:absolute;left:52%;bottom:calc(100% + 18px);z-index:3}
 
 /* ---------- #03 数字统计：巨型描边数字（suffix 小一号）+ 每列独立短横线 ---------- */
 .zy12 .m03{background:#fff;padding:0 0 96px}
@@ -352,6 +353,8 @@
 @media (max-width:900px){
   .zy12 .h2{font-size:36px;line-height:44px}
   .zy12 .m02 .top{grid-template-columns:1fr;gap:28px}
+  .zy12 .m02 .fig{grid-template-columns:1fr;gap:0}
+  .zy12 .m02 .fig .zybtn{grid-column:1}
   .zy12 .m02 .fig img{height:420px}
   .zy12 .m03 .g{grid-template-columns:repeat(2,1fr);gap:26px}
   .zy12 .m05 .g{grid-template-columns:1fr;margin-top:60px}
