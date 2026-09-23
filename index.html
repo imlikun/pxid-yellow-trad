@@ -92,7 +92,7 @@
 .zy12 .btn-l:hover{border-color:var(--o);color:var(--o)}
 /* 滚动入场：Elementor 默认 fade-in-up */
 .zy12 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
-.zy12 .rv.in{opacity:1;transform:none}
+.zy12 .rv.rv-on{opacity:1;transform:none}
 /* 评审用序号角标（定完顺序我删掉） */
 .zy12 .zytag{position:absolute;z-index:9;top:0;left:0;background:var(--o);color:#fff;
   font:700 11px/1 var(--mono);letter-spacing:.1em;padding:6px 10px}
@@ -148,7 +148,7 @@
 .zy12 .m02 .fig img{width:100%;height:660px;object-fit:cover;
   --cut:96px;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
 /* 按钮压在大图上沿、右对齐 —— 不是排在正文里 */
-.zy12 .m02 .fig .zybtn{position:absolute;left:52%;bottom:calc(100% - 22px);z-index:3}
+.zy12 .m02 .fig .zybtn{position:absolute;left:52%;bottom:calc(100% + 18px);z-index:3}
 
 /* ---------- #03 数字统计：巨型描边数字（suffix 小一号）+ 每列独立短横线 ---------- */
 .zy12 .m03{background:#fff;padding:0 0 96px}
@@ -710,10 +710,10 @@
   /* ---- 入场：Elementor 默认 fade-in-up ---- */
   var rvs = [].slice.call(root.querySelectorAll('.rv'));
   if (RM || !('IntersectionObserver' in window)) {
-    rvs.forEach(function (e) { e.classList.add('in'); });
+    rvs.forEach(function (e) { e.classList.add('rv-on'); });
   } else {
     var io = new IntersectionObserver(function (es) {
-      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('rv-on'); io.unobserve(en.target); } });
     }, { threshold: .18, rootMargin: '0px 0px -8% 0px' });
     rvs.forEach(function (e) { io.observe(e); });
   }
