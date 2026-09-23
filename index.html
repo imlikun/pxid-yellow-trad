@@ -154,13 +154,22 @@
 .zy12 .m03{background:#fff;padding:0 0 96px}
 .zy12 .m03 .g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px}
 .zy12 .m03 .n{min-width:0}
-.zy12 .m03 .n{display:flex;align-items:flex-start;gap:3px;
+/* 水位可动画：@property 注册后 --lv 才能在 0%→58% 之间补间 */
+@property --lv{syntax:'<percentage>';inherits:false;initial-value:0%}
+.zy12 .m03 .n{display:flex;align-items:flex-end;gap:3px;
   font:700 clamp(62px,7.3vw,104px)/1 var(--head);color:transparent;
-  -webkit-text-stroke:2px #6b7171;letter-spacing:-4px;transition:-webkit-text-stroke-color .26s ease}
-.zy12 .m03 .n .s{font-size:.4em;line-height:1;-webkit-text-stroke:1.7px #6b7171;letter-spacing:0;margin-top:.16em;transition:-webkit-text-stroke-color .26s ease}
+  -webkit-text-stroke:2px #6b7171;letter-spacing:-4px;
+  background:linear-gradient(to top,var(--o) 0 var(--lv),rgba(0,0,0,0) var(--lv) 100%);
+  -webkit-background-clip:text;background-clip:text;--lv:0%;
+  transition:-webkit-text-stroke-color .26s ease,--lv 1.5s cubic-bezier(.22,.7,.2,1) .18s}
+.zy12 .m03 .n .s{font-size:.4em;line-height:1;-webkit-text-stroke:1.7px #6b7171;letter-spacing:0;
+  transition:-webkit-text-stroke-color .26s ease}
 .zy12 .m03 .rule{height:1px;background:var(--line);margin:26px 0 16px;transform-origin:left center;transition:background .26s ease,transform .26s ease}
 .zy12 .m03 .l{font-size:14.5px;color:var(--ink2);white-space:nowrap;transition:color .26s ease}
 /* 整列 hover：描边转近黑、短横线换品牌黄并 scaleY 加粗（不动 height，避免行高抖动） */
+.zy12 .m03 .rv-on .n{--lv:58%}
+/* hover 灌满 */
+.zy12 .m03 .g>div:hover .n{--lv:100%}
 .zy12 .m03 .g>div:hover .n,.zy12 .m03 .g>div:hover .n .s{-webkit-text-stroke-color:var(--ink)}
 .zy12 .m03 .g>div:hover .rule{background:var(--o);transform:scaleY(3)}
 .zy12 .m03 .g>div:hover .l{color:var(--ink)}
