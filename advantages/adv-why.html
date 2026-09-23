@@ -67,6 +67,8 @@
 .g5-th.on{outline:2px solid var(--gold);outline-offset:-2px}
 .g5-foot{margin-top:20px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--ink-3)}
 .g5-foot .rule{width:28px;height:2px;background:var(--gold);flex:none}
+.svc-flow{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:13px;font-weight:800;color:var(--ink-deep);background:var(--gold);padding:11px 18px;text-decoration:none;letter-spacing:.02em;transition:.2s}
+.svc-flow:hover{background:#e9c800}
 
 /* ---------- 承接方式 · 深度刻度（原 §3 方案 01） ---------- */
 .sec-take{padding:64px 0 8px}
@@ -261,6 +263,7 @@
       </div>
     </div>
     <div class="g5-foot"><span class="rule"></span><span>点右侧缩略图切换上方大图</span></div>
+    <a class="svc-flow" href="adv-overview.html">查看完整制造流程 · 7 大核心工序自主闭环 →</a>
   </div>
 </section>
 
@@ -295,6 +298,8 @@
     });
   });
   img.style.transition='opacity .2s';
+  var q=location.search.match(/[?&]svc=(\d+)/);
+  if(q){var s=parseInt(q[1],10);var t=document.querySelector('.g5-th[data-i="'+s+'"]');if(t)t.click();}
 })();
 </script>
 
