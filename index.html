@@ -456,6 +456,11 @@
 .zy12 .m02 .h2 span{color:var(--ink);padding:0 3px;
   background:linear-gradient(transparent 62%,rgba(188,30,33,.92) 62%,rgba(188,30,33,.92) 92%,transparent 92%)}
 .zy12 .m01 .c .ic svg,.zy12 .m05 .c .ic svg{stroke:#232626}
+/* 卡片 hover：小图标 + ghost 序号变品牌红（2026-09-25 坤哥） */
+.zy12 .m01 .c .ic svg,.zy12 .m05 .c .ic svg{transition:stroke .25s ease}
+.zy12 .m01 .c::after,.zy12 .m05 .c::after{transition:color .25s ease}
+.zy12 .m01 .c:hover .ic svg,.zy12 .m05 .c:hover .ic svg{stroke:var(--o)}
+.zy12 .m01 .c:hover::after,.zy12 .m05 .c:hover::after{color:var(--o)}
 .zy12 .m04 .ck li::before{color:#8a6d00}
 .zy12 .m08 .av{color:#232626}
 .zy12 .m08 .stars,.zy12 .m10 .trust i{color:#B79B00}
