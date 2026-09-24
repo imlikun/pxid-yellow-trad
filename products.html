@@ -257,7 +257,7 @@
 .zy12 .m10 .send{width:100%;background:var(--dark);color:#fff;padding:15px;border-radius:var(--r);
   font:700 15.5px/1 var(--head);transition:.22s}
 .zy12 .m10 .note{font-size:11.5px;opacity:.85;margin-top:14px;line-height:1.7}
-.zy12 .m10 .err{color:#ffe08a;font-size:13px;margin-top:10px;min-height:18px}
+.zy12 .m10 .err{color:#ffd9d9;font-size:13px;margin-top:10px;min-height:18px}
 
 /* ---------- #11 页脚：深色 4 列 + ghost 巨型水印 + 版权条 ---------- */
 .zy12 .m11{background:var(--dark);color:#fff;padding:78px 0 0;position:relative}
@@ -343,7 +343,7 @@
    实测值来源 _scratch/zyp/*.json：
      卡 321x288（外格 col-lg-3 = 347x308）· 图 object-fit:fill
      浮层 .portfolio-det：absolute bottom0 left20 · opacity0 · translateY(-20px) · .4s · 标题 16px/600 #1f1f1f
-     筛选按钮：透明底 · padding 5px 20px · 16px/500 · radius 3px · 选中色 #ff5421（比主橙更亮，实测）
+     筛选按钮：透明底 · padding 5px 20px · 16px/500 · radius 3px · 选中色 var(--o)（比主橙更亮，实测）
    作用域收在 .zy12 下，类名全部 zy/p 前缀，避免 base.css 漏进（见 index2 的教训）
    ========================================================================== */
 .zyp{background:#fff}
@@ -360,9 +360,9 @@
 .zyp .fbar{display:flex;flex-wrap:wrap;gap:6px 4px;margin:38px 0 40px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 .zyp .fbar button{padding:5px 20px;border-radius:3px;background:transparent;color:var(--ink);
   font:500 16px/1.5 var(--sans);transition:.22s;position:relative}
-.zyp .fbar button:hover{color:#ff5421}
-.zyp .fbar button.on{color:#ff5421}
-.zyp .fbar button.on::after{content:"";position:absolute;left:20px;right:20px;bottom:-7px;height:2px;background:#ff5421}
+.zyp .fbar button:hover{color:var(--o)}
+.zyp .fbar button.on{color:var(--o)}
+.zyp .fbar button.on::after{content:"";position:absolute;left:20px;right:20px;bottom:-7px;height:2px;background:var(--o)}
 
 /* ---------- P2 产品网格：4 列，卡 321x288 ---------- */
 .zyp .p2{padding-bottom:96px}
@@ -392,9 +392,9 @@
 .zyp .lk span{display:block;padding:0 18px 16px;font-size:13px;color:var(--ink3)}
 
 /* ---------- 顶部占位提示（换成品向真实产品后整条删掉） ---------- */
-.zyp .notice{background:#fff7e6;border-bottom:1px solid #ffe0a3;color:#8a5a00;
+.zyp .notice{background:#fdf2f2;border-bottom:1px solid #f2d6d7;color:#A81A1D;
   font-size:13.5px;line-height:1.8;padding:14px 0}
-.zyp .notice b{color:#6b4500}
+.zyp .notice b{color:#8E1518}
 
 @media (max-width:1180px){
   .zyp .in{padding:0 28px}
@@ -447,7 +447,7 @@
 
 /* ---- 2. 白底上的"橙字"：黄字对比不够，改近黑 + 黄做标记 ---- */
 .zy12 .eb{color:var(--ink2)}
-.zy12 .eb::before{border-left-color:#C9AC00}
+.zy12 .eb::before{border-left-color:var(--o)}
 .zy12 .m00 .eb,.zy12 .m00 .eb::before{color:#E8555F;border-left-color:#BC1E21}   /* 深底上直接黄 */
 .zy12 .m02 .h2 span{color:var(--ink);padding:0 3px;
   background:linear-gradient(transparent 62%,rgba(188,30,33,.92) 62%,rgba(188,30,33,.92) 92%,transparent 92%)}
@@ -457,9 +457,9 @@
 .zy12 .m01 .c::after,.zy12 .m05 .c::after{transition:color .25s ease}
 .zy12 .m01 .c:hover .ic svg,.zy12 .m05 .c:hover .ic svg{stroke:var(--o)}
 .zy12 .m01 .c:hover::after,.zy12 .m05 .c:hover::after{color:var(--o)}
-.zy12 .m04 .ck li::before{color:#8a6d00}
+.zy12 .m04 .ck li::before{color:var(--o)}
 .zy12 .m08 .av{color:#232626}
-.zy12 .m08 .stars,.zy12 .m10 .trust i{color:#B79B00}
+.zy12 .m08 .stars,.zy12 .m10 .trust i{color:var(--o)}
 
 /* ---- 3. #07 红色大带内部：字白；带上的按钮深底白字（红底会隐身）---- */
 .zy12 .m07 .t span{opacity:.88}

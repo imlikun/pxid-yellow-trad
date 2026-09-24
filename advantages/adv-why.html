@@ -12,7 +12,7 @@
    三套方案样式合并，仅保留用到的规则；配色变量沿用 base.css :root
    ================================================================== */
 :root{
-  --gold-ink:#AE9400;   /* 黄字在浅底的可读版（材料区英文） */
+  --ink-deep:#15191A;   /* 深字（原 --gold-ink 金色已并入品牌红；var(--ink-deep) 此前未定义，2026-09-25 补） */
   --mute:#9AA0A0;
 }
 .inner{max-width:1360px;margin:0 auto;padding:0 36px}
@@ -23,7 +23,7 @@
 /* ---------- 统一标题壳 · 方案B（金大英文 + 中文h2 + 右侧说明） ×3节共用 ---------- */
 .sec-hb{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;flex-wrap:wrap;margin-bottom:56px}
 .sec-hb .head{min-width:0}
-.sec-hb .en{font-size:clamp(44px,6.4vw,80px);font-weight:800;letter-spacing:-.05em;line-height:.95;color:var(--gold-ink);overflow-wrap:anywhere}
+.sec-hb .en{font-size:clamp(44px,6.4vw,80px);font-weight:800;letter-spacing:-.05em;line-height:.95;color:var(--gold);overflow-wrap:anywhere}
 .sec-hb h2{margin-top:14px;font-size:clamp(26px,3.4vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.3}
 .sec-hb .note{font-size:15px;line-height:2.05;color:var(--ink-2);max-width:420px;padding-bottom:8px}
 /* 承接区：英文收紧，标题块左 + 说明右 双列（位置3→左上、位置1→右上） */
@@ -39,7 +39,7 @@
 .m5-i{display:flex;align-items:center;gap:32px;padding:24px 32px;white-space:nowrap;
   font-size:clamp(17px,1.9vw,24px);font-weight:700;letter-spacing:-.01em}
 .m5-i::after{content:"";width:9px;height:9px;background:var(--gold);flex:none;transform:rotate(45deg)}
-.m5-en{font-size:clamp(30px,3.7vw,54px);font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--gold-ink)}
+.m5-en{font-size:clamp(30px,3.7vw,54px);font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--gold)}
 @keyframes m5{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.m5-track{animation:none}}
 
@@ -63,10 +63,10 @@
 .g5-th.on img{filter:none}
 .g5-th .no{position:absolute;left:0;top:0;z-index:2;background:var(--ink-deep);color:#fff;
   font-size:9.5px;font-weight:800;letter-spacing:.12em;line-height:1;padding:5px 7px}
-.g5-th.on .no{background:var(--gold);color:var(--ink-deep)}
+.g5-th.on .no{background:var(--gold);color:#fff}
 .g5-th.on{outline:2px solid var(--gold);outline-offset:-2px}
-.svc-flow{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:800;color:var(--ink-deep);background:var(--gold);padding:11px 18px;text-decoration:none;letter-spacing:.02em;transition:.2s;flex:none}
-.svc-flow:hover{background:#e9c800}
+.svc-flow{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:800;color:#fff;background:var(--gold);padding:11px 18px;text-decoration:none;letter-spacing:.02em;transition:.2s;flex:none}
+.svc-flow:hover{background:var(--gold-d)}
 
 /* ---------- 承接方式 · 深度刻度（原 §3 方案 01） ---------- */
 .sec-take{padding:64px 0 8px}
