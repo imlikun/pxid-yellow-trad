@@ -402,14 +402,14 @@
 </style>
 <style id="zy12-palette">
 /* ============================================================================
-   首页2 配色覆盖层 · 复刻橙 #ea5501 → 主站品牌黄 #FEDB00 + 近黑 #232626
+   首页2 配色覆盖层 · 复刻橙 #ea5501 → 主站品牌黄 #BC1E21 + 近黑 #232626
    ⚠️ 不动 zy-css.css —— 那是 1:1 实测记录（含原站橙色基准），要能一键退回橙色
    ⚠️ 规则一律带 .zy12 前缀且写在 zy-css 之后，同特异性下后者生效
    主站语言：黄只做「色块 / 短线 / 高亮」，字一律近黑或白 —— 所以
      · 黄底上的白字 → 近黑
      · 白底上的橙字 → 近黑 + 黄做底纹/三角/深金点缀
    ========================================================================== */
-.zy12{--o:#FEDB00;--o2:#F5D200;--ink:#232626;--ink2:#3c4141;--ink3:#6b7171;
+.zy12{--o:#BC1E21;--o2:#A81A1D;--ink:#232626;--ink2:#3c4141;--ink3:#6b7171;
   --line:rgba(35,38,38,.10);--bg2:#f6f7f5;--ghost:#ececec;--dark:#15191A}
 
 /* ---- 1. 黄色块上的字：白 → 近黑 ---- */
@@ -417,17 +417,17 @@
 .zy12 .m04 .tabs button.on,.zy12 .m06 .pill,.zy12 .m06 .zynav button:hover,
 .zy12 .m07 .blk,.zy12 .m09 .zychip,.zy12 .m10 .f .ic,.zy12 .m10 .panel{color:#232626}
 .zy12 .btn-o:hover{background:#fff;color:#232626}
-.zy12 .m00 .play:hover{background:#F5D200;color:#232626}
-.zy12 .arrows button:hover{background:#232626;color:#FEDB00}
+.zy12 .m00 .play:hover{background:#A81A1D;color:#232626}
+.zy12 .arrows button:hover{background:#232626;color:#BC1E21}
 .zy12 .m11 .soc a:hover{color:#232626}
 .zy12 .m06 .pill{border:1px solid rgba(35,38,38,.14)}
 
 /* ---- 2. 白底上的"橙字"：黄字对比不够，改近黑 + 黄做标记 ---- */
 .zy12 .eb{color:var(--ink2)}
 .zy12 .eb::before{border-left-color:#C9AC00}
-.zy12 .m00 .eb,.zy12 .m00 .eb::before{color:#FEDB00;border-left-color:#FEDB00}   /* 深底上直接黄 */
+.zy12 .m00 .eb,.zy12 .m00 .eb::before{color:#BC1E21;border-left-color:#BC1E21}   /* 深底上直接黄 */
 .zy12 .m02 .h2 span{color:var(--ink);padding:0 3px;
-  background:linear-gradient(transparent 62%,rgba(254,219,0,.92) 62%,rgba(254,219,0,.92) 92%,transparent 92%)}
+  background:linear-gradient(transparent 62%,rgba(188,30,33,.92) 62%,rgba(188,30,33,.92) 92%,transparent 92%)}
 .zy12 .m01 .c .ic svg,.zy12 .m05 .c .ic svg{stroke:#232626}
 .zy12 .m04 .tabs button:hover,.zy12 .m04 .more:hover{color:#232626}
 .zy12 .m04 .ck li::before{color:#8a6d00}
@@ -437,7 +437,7 @@
 
 /* ---- 3. #07 黄色大带内部 ---- */
 .zy12 .m07 .t span{opacity:.88}
-.zy12 .m07 .zybtn{background:#232626;color:#FEDB00}
+.zy12 .m07 .zybtn{background:#232626;color:#BC1E21}
 .zy12 .m07 .zybtn:hover{background:#fff;color:#232626}
 
 /* ---- 4. #10 黄色面板里的表单：白透明 → 白底深字 ---- */
@@ -446,7 +446,7 @@
 .zy12 .m10 .drop{border-color:rgba(35,38,38,.26);color:#3c4141}
 .zy12 .m10 .drop:hover,.zy12 .m10 .drop.over{background:#fff;border-color:#232626}
 .zy12 .m10 .f .ic svg{stroke:#232626}
-.zy12 .m10 .send{background:#232626;color:#FEDB00}
+.zy12 .m10 .send{background:#232626;color:#BC1E21}
 .zy12 .m10 .send:hover{background:#000;color:#fff}
 </style>
 <!-- ============================================================================
