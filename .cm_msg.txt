@@ -1,5 +1,0 @@
-黑红深色主题全站落地：子页 logo 换白版 + 内联白底/浅色变量翻转深色
-
-- 39 个子页（advantages/cases/services/news/contact/sitemap）：header logo pxid-logo.png → pxid-logo-white.png（深底黑标不可见）
-- 内联 #fff/#eee 等浅底硬编码 → var(--e-bg-2) 等深色变量（dark_e / dark_inline 脚本产物）
-- 与 base.css 深色反转配套；此前已单独提交的 6 文件为红底白字统一 + 去 hover 部分
