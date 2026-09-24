@@ -270,7 +270,7 @@
   .cta-panel .acts{position:relative;z-index:2;display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;justify-content:flex-start}
   .cta-panel .btn{padding:16px 28px;border-radius:999px;font-size:14.5px;font-weight:800;letter-spacing:.02em;justify-content:center}
   .cta-panel .btn-gold{background:var(--gold);color:#fff;box-shadow:0 14px 34px rgba(188,30,33,.20)}
-  .cta-panel .btn-gold:hover{background:#fff;color:#15191a;transform:translateY(-2px);box-shadow:0 22px 46px rgba(188,30,33,.30)}
+  .cta-panel .btn-gold:hover{background:var(--gold-d);color:#fff;transform:translateY(-2px);box-shadow:0 22px 46px rgba(188,30,33,.30)}
   .cta-panel .btn-line{border:1.5px solid rgba(255,255,255,.26);color:#fff;background:transparent}
   .cta-panel .btn-line:hover{border-color:var(--gold);color:var(--gold);background:rgba(188,30,33,.07)}
   .cta-panel .btn .ar{display:inline-block;transition:transform .25s;font-weight:400}
