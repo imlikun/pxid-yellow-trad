@@ -606,6 +606,25 @@
   </div>
 </footer>
 
+
+<script>
+/* ¹û'þó§…þnb */
+(function(){
+  document.querySelectorAll('.cgallery').forEach(function(g){
+    var box=g.querySelector('.main-img'), main=box&&box.querySelector('img');
+    var subs=[].slice.call(g.querySelectorAll('.sub-imgs img'));
+    if(!main||!subs.length) return;
+    box.style.cursor='zoom-in';
+    var i=0;
+    box.addEventListener('click',function(){
+      var cur=main.src;
+      main.src=subs[i].src;
+      subs[i].src=cur;
+      i=(i+1)%subs.length;
+    });
+  });
+})();
+</script>
 <script src="/pxid/yellow-trad/assets/js/nav.js" defer></script>
 </body>
 </html>
