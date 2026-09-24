@@ -172,6 +172,44 @@
 .zy12 .m03 .g>div:hover .rule{background:var(--o);transform:scaleY(3)}
 .zy12 .m03 .g>div:hover .l{color:var(--ink)}
 
+/* 统计区块：行内右侧切换按钮 + 三种展示模式（标准 / 红腰带 / 跑马灯） */
+.zy12 .m03 .in{display:flex;align-items:center;gap:22px}
+.zy12 .m03 .g{flex:1 1 auto;min-width:0}
+.zy12 .m03 .belt-toggle{flex:0 0 auto;align-self:center;display:inline-flex;align-items:center;gap:8px;
+  height:42px;padding:0 18px;border-radius:21px;border:1.5px solid var(--line);background:#fff;
+  color:var(--ink);font:600 13px/1 var(--head);cursor:pointer;white-space:nowrap;
+  transition:border-color .2s ease,color .2s ease,background .2s ease}
+.zy12 .m03 .belt-toggle:hover{border-color:var(--gold);color:var(--gold)}
+.zy12 .m03 .belt-toggle .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);transition:background .2s ease}
+/* A · 红色腰带：整条变品牌红紧凑色带，数字白字 */
+.zy12 .m03.mode-belt{background:var(--gold);padding:24px 0}
+.zy12 .m03.mode-belt .g{gap:18px}
+.zy12 .m03.mode-belt .n{color:#fff;-webkit-text-stroke:0;background:none;-webkit-background-clip:initial;background-clip:initial;
+  font-size:clamp(34px,3.4vw,52px);letter-spacing:-1px}
+.zy12 .m03.mode-belt .n .s{-webkit-text-stroke:0;color:#fff}
+.zy12 .m03.mode-belt .rule{display:none}
+.zy12 .m03.mode-belt .l{color:#fff;font-size:13px}
+.zy12 .m03.mode-belt .g>div:hover .n,.zy12 .m03.mode-belt .g>div:hover .n .s{-webkit-text-stroke-color:#fff}
+.zy12 .m03.mode-belt .belt-toggle{background:rgba(255,255,255,.16);border-color:#fff;color:#fff}
+.zy12 .m03.mode-belt .belt-toggle:hover{background:rgba(255,255,255,.28);border-color:#fff;color:#fff}
+.zy12 .m03.mode-belt .belt-toggle .dot{background:#fff}
+/* B · 跑马灯腰带：深色窄带，四项无限横向滚动 */
+.zy12 .m03.mode-marquee{background:#15191a;padding:0}
+.zy12 .m03.mode-marquee .in{padding:0 40px}
+.zy12 .m03.mode-marquee .g{flex:1 1 auto;display:flex;align-items:center;gap:64px;white-space:nowrap;overflow:hidden;
+  padding:26px 0;animation:zyMarquee 22s linear infinite}
+.zy12 .m03.mode-marquee .g .rv{display:inline-flex;align-items:baseline;gap:10px}
+.zy12 .m03.mode-marquee .n{color:#fff;-webkit-text-stroke:0;background:none;-webkit-background-clip:initial;background-clip:initial;
+  font-size:clamp(30px,3vw,46px);letter-spacing:-1px}
+.zy12 .m03.mode-marquee .n .s{-webkit-text-stroke:0;color:#fff}
+.zy12 .m03.mode-marquee .rule{display:none}
+.zy12 .m03.mode-marquee .l{color:rgba(255,255,255,.72);font-size:13px}
+.zy12 .m03.mode-marquee .g>div:hover .n,.zy12 .m03.mode-marquee .g>div:hover .n .s{-webkit-text-stroke-color:#fff}
+.zy12 .m03.mode-marquee .belt-toggle{flex:0 0 auto;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4);color:#fff}
+.zy12 .m03.mode-marquee .belt-toggle:hover{border-color:#fff;color:#fff}
+.zy12 .m03.mode-marquee .belt-toggle .dot{background:#BC1E21}
+@keyframes zyMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 /* ---------- #04 产品分类：左侧竖排 Tab + 中间图 + 右侧说明 ---------- */
 .zy12 .m04{background:var(--bg2);padding:100px 0}
 .zy12 .m04 .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:44px;flex-wrap:wrap}
@@ -400,6 +438,11 @@
   .zy12 .rv{opacity:1;transform:none;transition:none}
   .zy12 .m00 .sl.on img{animation:none}
 }
+@media (max-width:600px){
+  .zy12 .m03 .in{flex-direction:column;align-items:stretch;gap:16px}
+  .zy12 .m03 .belt-toggle{align-self:flex-start;height:38px}
+  .zy12 .m03.mode-marquee .in{padding:0 22px}
+}
 
 </style>
 <style id="zy12-palette">
@@ -528,7 +571,9 @@
     <div class="rv" style="--d:.08s"><div class="n"><span data-cnt="10">0</span><span class="s">K+</span></div><div class="rule"></div><div class="l">零件交付</div></div>
     <div class="rv" style="--d:.16s"><div class="n"><span data-cnt="9">0</span></div><div class="rule"></div><div class="l">台 数控加工中心</div></div>
     <div class="rv" style="--d:.24s"><div class="n"><span data-cnt="98">0</span><span class="s">%</span></div><div class="rule"></div><div class="l">准时交付</div></div>
-  </div></div>
+  </div>
+  <button type="button" class="belt-toggle" aria-label="切换统计展示模式"><span class="dot"></span><span class="tx">腰带 ⇄</span></button>
+</div>
 </section>
 
 <!-- ===== #04 产品分类 Tab ===== -->
@@ -823,5 +868,33 @@
 </script>
 </main>
 <script src="/pxid/yellow-trad/assets/js/nav.js" defer></script>
+<script>
+(function(){
+  var sec=document.getElementById('zy-m03');if(!sec)return;
+  var btn=sec.querySelector('.belt-toggle');var g=sec.querySelector('.g');
+  var tx=btn.querySelector('.tx');
+  var modes=['','mode-belt','mode-marquee'];
+  var labels=['腰带 ⇄','滚动 ⇄','标准 ⇄'];
+  var idx=0;
+  function apply(){
+    sec.classList.remove('mode-belt','mode-marquee');
+    if(modes[idx])sec.classList.add(modes[idx]);
+    tx.textContent=labels[idx];
+    if(modes[idx]==='mode-marquee'){
+      if(!g.querySelector('.rv.clone')){
+        g.querySelectorAll('.rv:not(.clone)').forEach(function(r){
+          var c=r.cloneNode(true);c.classList.add('clone');
+          var num=c.querySelector('[data-cnt]');if(num)num.textContent=num.getAttribute('data-cnt');
+          g.appendChild(c);
+        });
+      }
+    }else{
+      g.querySelectorAll('.rv.clone').forEach(function(c){c.remove();});
+    }
+  }
+  btn.addEventListener('click',function(){idx=(idx+1)%3;apply();});
+  apply();
+})();
+</script>
 </body>
 </html>
