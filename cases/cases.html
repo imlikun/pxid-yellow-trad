@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  :root{--e-gold:#BC1E21;--e-gold-d:#A81A1D;--e-ink:#EDEFEc;--e-ink-2:#B6BBB9;--e-ink-3:#8A8F8D;--e-line:rgba(255,255,255,.14);--e-bg-2:#1c2126;--e-bg-3:#242b31;--e-mono:'JetBrains Mono',ui-monospace,monospace}
+  :root{--e-gold:#BC1E21;--e-gold-d:#A81A1D;--e-ink:#232626;--e-ink-2:#3c4141;--e-ink-3:#6b7171;--e-line:rgba(35,38,38,.10);--e-bg-2:#f6f7f5;--e-bg-3:#f0f1ee;--e-mono:'JetBrains Mono',ui-monospace,monospace}
 
   .ge{overflow-x:hidden}
   .ge .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
@@ -21,14 +21,16 @@
   .ge-hero .wrap{position:relative;z-index:2;text-align:center;max-width:800px}
   .ge-hero .eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--e-ink-3);font-weight:700;margin-bottom:24px}
   .ge-hero .eyebrow::before,.ge-hero .eyebrow::after{content:"";width:36px;height:2px;background:var(--e-gold)}
-  .ge-hero .eyebrow .en{color:var(--red-ink,#E8555F)}
+  .ge-hero .eyebrow .en{color:var(--e-gold-d)}
   .ge-hero h1{font-size:clamp(36px,5.2vw,68px);line-height:1.1;font-weight:800;letter-spacing:-.015em;margin:0 0 20px}
-  .ge-hero h1 .gold{color:var(--red-ink,#E8555F)}
+  .ge-hero h1 .gold{color:var(--e-gold-d)}
   .ge-hero .sub{font-size:17px;color:var(--e-ink-2);line-height:1.9;margin:0 auto 32px;max-width:600px}
   .ge-hero .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .ge-hero .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:2px;font-weight:800;font-size:14px;transition:.25s}
   .ge-hero .btn-gold{background:var(--e-gold);color:#fff}
+  .ge-hero .btn-gold:hover{background:var(--e-gold-d)}
   .ge-hero .btn-line{border:1px solid var(--e-ink);color:var(--e-ink)}
+  .ge-hero .btn-line:hover{background:var(--e-ink);color:#fff}
 
   /* 章节标题 */
   .ge-sec-head{margin-bottom:40px;max-width:760px}
@@ -38,14 +40,14 @@
 
   /* 筛选 */
   .ge-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-  .ge-filter a{display:inline-block;padding:9px 20px;border-radius:2px;font-size:13.5px;font-weight:700;color:var(--e-ink-2);background:var(--e-bg-2);border:1px solid var(--e-line);transition:.2s}
-  .ge-filter a:hover{border-color:var(--red-ink,#E8555F);color:var(--e-ink)}
-  .ge-filter a.active{background:var(--e-gold);color:#fff;border-color:var(--red-ink,#E8555F)}
+  .ge-filter a{display:inline-block;padding:9px 20px;border-radius:2px;font-size:13.5px;font-weight:700;color:var(--e-ink-2);background:#fff;border:1px solid var(--e-line);transition:.2s}
+  .ge-filter a:hover{border-color:var(--e-gold);color:var(--e-ink)}
+  .ge-filter a.active{background:var(--e-ink);color:var(--e-gold);border-color:var(--e-ink)}
 
   /* 案例网格 */
   .ge-cases{padding:80px 0 60px}
   .ge-case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-  .ge-case{background:var(--e-bg-2);border:1px solid var(--e-line);border-radius:4px;overflow:hidden;transition:.28s;display:flex;flex-direction:column}
+  .ge-case{background:#fff;border:1px solid var(--e-line);border-radius:4px;overflow:hidden;transition:.28s;display:flex;flex-direction:column}
   .ge-case:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(35,38,38,.10);border-color:transparent}
   .ge-case .ph{height:260px;overflow:hidden;background:var(--e-bg-3);position:relative}
   .ge-case .ph img{width:100%;height:100%;object-fit:cover;transition:.6s cubic-bezier(.2,.7,.2,1)}
@@ -57,7 +59,7 @@
   .ge-case .specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
   .ge-case .specs span{font-size:12px;color:var(--e-ink-3);background:var(--e-bg-2);padding:5px 11px;border-radius:2px}
   .ge-case .link{display:inline-flex;align-items:center;gap:8px;margin-top:auto;font-size:13.5px;font-weight:800;color:var(--e-ink);text-decoration:none;border-bottom:2px solid var(--e-gold);padding-bottom:3px;align-self:flex-start;transition:.2s}
-  .ge-case .link:hover{color:var(--red-ink,#E8555F);border-color:var(--red-ink,#E8555F)}
+  .ge-case .link:hover{color:var(--e-gold-d);border-color:var(--e-gold-d)}
   .ge-case .link::after{content:"→";transition:.2s}
   .ge-case .link:hover::after{transform:translateX(4px);display:inline-block}
 
@@ -98,7 +100,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="/pxid/yellow-trad/">
-      <img src="/pxid/yellow-trad/assets/images/pxid-logo-white.png?v=20260924a" alt="PXID 品向智造" style="height:38px;width:auto;">
+      <img src="/pxid/yellow-trad/assets/images/pxid-logo.png?v=20260911d" alt="PXID 品向智造" style="height:38px;width:auto;">
     </a>
     <nav class="menu">
       <a href="/pxid/yellow-trad/advantages/adv-why.html" data-nav="why">核心优势</a>
@@ -226,8 +228,8 @@
    ============================================================ */
 :root{
   --bg:#FFFFFF; --bg-2:#F6F7F5; --bg-3:#F0F1EE;
-  --ink:#EDEFEc; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
-  --line:rgba(255,255,255,.14); --line-2:rgba(35,38,38,.22);
+  --ink:#232626; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
+  --line:rgba(35,38,38,.10); --line-2:rgba(35,38,38,.22);
   --gold:#BC1E21; --gold-d:#A81A1D;
   --sans:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
   --mono:"SF Mono",Consolas,monospace;
@@ -247,7 +249,7 @@ a{color:inherit;text-decoration:none}
 .hero .st{padding:18px 22px 18px 0;border-right:1px solid var(--line)}
 .hero .st:last-child{border-right:0}
 .hero .st b{display:block;font:800 clamp(24px,2.6vw,34px)/1 var(--mono);letter-spacing:-.03em}
-.hero .st b i{font-style:normal;color:var(--red-ink)}
+.hero .st b i{font-style:normal;color:var(--gold-d)}
 .hero .st span{display:block;margin-top:8px;font-size:12.5px;color:var(--ink-3)}
 
 /* 案例：通栏图 → 线下 → 左标题 / 右描述 */
@@ -259,7 +261,7 @@ a{color:inherit;text-decoration:none}
 .cs .bd{display:grid;grid-template-columns:40% 60%;gap:0;padding-top:26px}
 .cs .l{padding-right:40px}
 .cs .top{display:flex;align-items:baseline;gap:14px}
-.cs .no{font:800 12px/1 var(--mono);letter-spacing:.18em;color:var(--red-ink)}
+.cs .no{font:800 12px/1 var(--mono);letter-spacing:.18em;color:var(--gold-d)}
 .cs .ind{font-size:11.5px;font-weight:700;color:var(--ink-3);letter-spacing:.08em}
 .cs h3{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.04em;line-height:1.2;margin:14px 0 0}
 .cs .r{border-left:1px solid var(--line);padding-left:44px}
@@ -374,7 +376,7 @@ a{color:inherit;text-decoration:none}
 .hero .st{padding:18px 22px 18px 0;border-right:1px solid var(--line)}
 .hero .st:last-child{border-right:0}
 .hero .st b{display:block;font:800 clamp(24px,2.6vw,34px)/1 var(--mono);letter-spacing:-.03em;color:#fff}
-.hero .st b i{font-style:normal;color:var(--red-ink)}
+.hero .st b i{font-style:normal;color:var(--gold-d)}
 .hero .st span{display:block;margin-top:8px;font-size:12.5px;color:var(--ink-3)}
 
 .cs{display:grid;grid-template-columns:42% 58%;min-height:min(74vh,680px);
@@ -487,8 +489,8 @@ a{color:inherit;text-decoration:none}
    ============================================================ */
 :root{
   --bg:#FFFFFF; --bg-2:#F6F7F5; --bg-3:#F0F1EE;
-  --ink:#EDEFEc; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
-  --line:rgba(255,255,255,.14); --line-2:rgba(35,38,38,.22);
+  --ink:#232626; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
+  --line:rgba(35,38,38,.10); --line-2:rgba(35,38,38,.22);
   --gold:#BC1E21; --gold-d:#A81A1D;
   --sans:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
   --mono:"SF Mono",Consolas,monospace;
@@ -508,7 +510,7 @@ a{color:inherit;text-decoration:none}
 .hero .st{padding:18px 22px 18px 0;border-right:1px solid var(--line)}
 .hero .st:last-child{border-right:0}
 .hero .st b{display:block;font:800 clamp(24px,2.6vw,34px)/1 var(--mono);letter-spacing:-.03em}
-.hero .st b i{font-style:normal;color:var(--red-ink)}
+.hero .st b i{font-style:normal;color:var(--gold-d)}
 .hero .st span{display:block;margin-top:8px;font-size:12.5px;color:var(--ink-3)}
 
 /* 逐屏：一侧满高图 + 一侧文字，左右交替 */
@@ -520,7 +522,7 @@ a{color:inherit;text-decoration:none}
 .sc .ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .sc .tx{display:flex;flex-direction:column;justify-content:center;padding:56px clamp(32px,5vw,76px)}
 .sc .tx .top{display:flex;align-items:baseline;gap:14px}
-.sc .no{font:800 12px/1 var(--mono);letter-spacing:.18em;color:var(--red-ink)}
+.sc .no{font:800 12px/1 var(--mono);letter-spacing:.18em;color:var(--gold-d)}
 .sc .ind{font-size:11.5px;font-weight:700;color:var(--ink-3);letter-spacing:.08em}
 .sc h3{font-size:clamp(24px,2.8vw,38px);font-weight:800;letter-spacing:-.04em;line-height:1.18;margin:18px 0 0}
 .sc p{font-size:14px;line-height:2.05;color:var(--ink-2);margin:22px 0 0;max-width:520px}
@@ -699,8 +701,8 @@ a{color:inherit;text-decoration:none}
    ============================================================ */
 :root{
   --bg:#FFFFFF; --bg-2:#F6F7F5; --bg-3:#F0F1EE;
-  --ink:#EDEFEc; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
-  --line:rgba(255,255,255,.14); --line-2:rgba(35,38,38,.22);
+  --ink:#232626; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
+  --line:rgba(35,38,38,.10); --line-2:rgba(35,38,38,.22);
   --gold:#BC1E21; --gold-d:#A81A1D;
   --sans:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
   --mono:"SF Mono",Consolas,monospace;
@@ -721,7 +723,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero .st{padding:18px 22px 18px 0;border-right:1px solid var(--line)}
 .hero .st:last-child{border-right:0}
 .hero .st b{display:block;font:800 clamp(24px,2.6vw,34px)/1 var(--mono);letter-spacing:-.03em}
-.hero .st b i{font-style:normal;color:var(--red-ink)}
+.hero .st b i{font-style:normal;color:var(--gold-d)}
 .hero .st span{display:block;margin-top:8px;font-size:12.5px;color:var(--ink-3)}
 
 /* ── 阅读器 ── */
@@ -920,8 +922,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
    ============================================================ */
 :root{
   --bg:#FFFFFF; --bg-2:#F6F7F5; --bg-3:#F0F1EE;
-  --ink:#EDEFEc; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
-  --line:rgba(255,255,255,.14); --line-2:rgba(35,38,38,.22);
+  --ink:#232626; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
+  --line:rgba(35,38,38,.10); --line-2:rgba(35,38,38,.22);
   --gold:#BC1E21; --gold-d:#A81A1D;
   --sans:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
   --mono:"SF Mono",Consolas,monospace;
@@ -942,7 +944,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero .st{padding:18px 22px 18px 0;border-right:1px solid var(--line)}
 .hero .st:last-child{border-right:0}
 .hero .st b{display:block;font:800 clamp(24px,2.6vw,34px)/1 var(--mono);letter-spacing:-.03em}
-.hero .st b i{font-style:normal;color:var(--red-ink)}
+.hero .st b i{font-style:normal;color:var(--gold-d)}
 .hero .st span{display:block;margin-top:8px;font-size:12.5px;color:var(--ink-3)}
 
 /* ── 筛选条 ── */
@@ -972,7 +974,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .it:hover .ph img{transform:scale(1.028)}
 .it .cap{padding-top:22px}
 .it .r1{display:flex;align-items:baseline;gap:13px}
-.it .no{font:800 12px/1 var(--mono);letter-spacing:.18em;color:var(--red-ink)}
+.it .no{font:800 12px/1 var(--mono);letter-spacing:.18em;color:var(--gold-d)}
 .it .ind{font-size:11.5px;font-weight:700;color:var(--ink-3);letter-spacing:.08em}
 .it h3{font-size:clamp(20px,2vw,27px);font-weight:800;letter-spacing:-.035em;line-height:1.24;margin:11px 0 0;
   display:inline;background-image:linear-gradient(var(--gold-d),var(--gold-d));
@@ -1155,8 +1157,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
    ============================================================ */
 :root{
   --bg:#FFFFFF; --bg-2:#F6F7F5; --bg-3:#F0F1EE;
-  --ink:#EDEFEc; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
-  --line:rgba(255,255,255,.14); --line-2:rgba(35,38,38,.22);
+  --ink:#232626; --ink-deep:#15191A; --ink-2:#3C4141; --ink-3:#6B7171;
+  --line:rgba(35,38,38,.10); --line-2:rgba(35,38,38,.22);
   --gold:#BC1E21; --gold-d:#A81A1D;
   --sans:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
   --mono:"SF Mono",Consolas,monospace;
@@ -1176,7 +1178,7 @@ a{color:inherit;text-decoration:none}
 .hero .st{padding:18px 22px 18px 0;border-right:1px solid var(--line)}
 .hero .st:last-child{border-right:0}
 .hero .st b{display:block;font:800 clamp(24px,2.6vw,34px)/1 var(--mono);letter-spacing:-.03em}
-.hero .st b i{font-style:normal;color:var(--red-ink)}
+.hero .st b i{font-style:normal;color:var(--gold-d)}
 .hero .st span{display:block;margin-top:8px;font-size:12.5px;color:var(--ink-3)}
 
 /* ── 一条案例 ── */
@@ -1194,7 +1196,7 @@ a{color:inherit;text-decoration:none}
 .tri .lb{display:flex;align-items:baseline;gap:9px;padding-bottom:10px;border-bottom:1px solid var(--line-2)}
 .tri .lb b{font:800 12.5px/1 var(--sans);letter-spacing:.04em}
 .tri .lb span{font:800 10.5px/1 var(--mono);letter-spacing:.16em;color:var(--ink-3)}
-.tri .lb i{margin-left:auto;font:800 10.5px/1 var(--mono);letter-spacing:.16em;color:var(--red-ink);font-style:normal}
+.tri .lb i{margin-left:auto;font:800 10.5px/1 var(--mono);letter-spacing:.16em;color:var(--gold-d);font-style:normal}
 .tri .ph{overflow:hidden;background:var(--bg-3);margin-top:0}
 .tri img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
 .tri figure:hover img{transform:scale(1.045)}
@@ -1367,14 +1369,14 @@ a{color:inherit;text-decoration:none}
   .sf-logo{height:34px;width:auto;display:block;margin-bottom:16px}
   .sf-brand b{color:#fff;font-size:16px;font-weight:800}
   .sf-brand p{margin-top:12px;color:rgba(255,255,255,.55);line-height:1.7;max-width:280px}
-  .sf-col h5{color:var(--red-ink,#E8555F);font-size:12px;letter-spacing:.08em;font-weight:800;margin-bottom:16px;text-transform:uppercase}
+  .sf-col h5{color:var(--e-gold,#BC1E21);font-size:12px;letter-spacing:.08em;font-weight:800;margin-bottom:16px;text-transform:uppercase}
   .sf-col a{display:block;color:rgba(255,255,255,.66);text-decoration:none;padding:5px 0;transition:.2s;font-size:13px}
-  .sf-col a:hover{color:var(--red-ink,#E8555F)}
+  .sf-col a:hover{color:var(--e-gold,#BC1E21)}
   .sf-col .sf-more{color:rgba(255,255,255,.4);font-size:12px;padding:5px 0}
   .sf-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:48px;padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:rgba(255,255,255,.45);font-size:12px}
   .sf-bottom .sf-links a{color:rgba(255,255,255,.6);text-decoration:none;margin-left:18px;transition:.2s}
   .sf-bottom .sf-links a:first-child{margin-left:0}
-  .sf-bottom .sf-links a:hover{color:var(--red-ink,#E8555F)}
+  .sf-bottom .sf-links a:hover{color:var(--e-gold,#BC1E21)}
   @media (max-width:1100px){
     .sf-grid{grid-template-columns:repeat(3,1fr);gap:28px}
     .sf-brand{grid-column:1 / -1}
@@ -1389,7 +1391,7 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="sf-grid">
       <div class="sf-brand">
-        <img class="sf-logo" style="height:34px;width:auto;display:block;margin-bottom:16px" src="/pxid/yellow-trad/assets/images/pxid-logo-white.png?v=20260911d" alt="PXID 品向智造">
+        <img class="sf-logo" style="height:34px;width:auto;display:block;margin-bottom:16px" src="/pxid/yellow-trad/assets/images/pxid-logo.png?v=20260924b" alt="PXID 品向智造">
         <b>品向智造 PXID</b>
         <p>源自 PXID，专注小件产品设计、快速打样、精密制造与批量生产。用数字化平台和一站式制造能力，让创新落地更简单。</p>
       </div>
