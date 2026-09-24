@@ -364,7 +364,7 @@
   .phero p{max-width:600px;margin:0 auto;font-size:15.5px;line-height:1.7;color:var(--txt-2)}
 
   /* ===== 概览条 ===== */
-  .ovbar{border-bottom:1px solid var(--card-border);background:var(--bg2)}
+  .ovbar{border-bottom:1px solid var(--card-border);background:rgba(17,17,17,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:sticky;top:68px;z-index:40}
   .ovbar .grid{display:grid;grid-template-columns:repeat(7,1fr)}
   .ovbar a{display:block;padding:14px 10px;border-right:1px solid var(--card-border);text-align:center;transition:.2s}
   .ovbar a:last-child{border-right:0}
@@ -375,7 +375,7 @@
 
   /* ========== 核心：全屏背景 section + 半透明卡片浮层 ========== */
   .stage{
-    position:relative; min-height:620px; overflow:hidden;
+    position:relative; min-height:100vh; overflow:hidden;
     display:flex; align-items:center; justify-content:center;
     padding:50px 0;
     border-bottom:1px solid rgba(255,255,255,.03)
