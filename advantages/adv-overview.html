@@ -402,7 +402,8 @@
     border:1px solid rgba(255,255,255,.09);
     box-shadow:0 8px 40px rgba(0,0,0,.45), 0 1px 0 rgba(255,255,255,.04) inset;
     max-width:1000px; width:92%;
-    overflow:hidden
+    overflow:hidden;
+    height:calc(100vh - 100px); display:flex; flex-direction:column
   }
 
   /* 卡片顶栏 */
@@ -425,8 +426,8 @@
   .card .ctags span{font:700 10.5px/1 "SF Mono",Consolas,monospace;letter-spacing:.06em;color:var(--gold);
     border:1px solid rgba(254,219,0,.3);padding:6px 10px;background:rgba(254,219,0,.05)}
 
-  /* 图区：左大图 + 右3张辅图 */
-  .card .cgallery{display:grid;grid-template-columns:1fr 180px;border-top:1px solid var(--card-border);background:rgba(255,255,255,.03)}
+  /* 图区：左大图 + 右3张辅图（flex 填满卡片剩余空间） */
+  .card .cgallery{display:grid;grid-template-columns:1fr 180px;border-top:1px solid var(--card-border);background:rgba(255,255,255,.03);flex:1;min-height:0}
   .card .main-img{position:relative;min-height:360px;overflow:hidden;background:#f5f5f4;display:flex;align-items:center;justify-content:center}
   .card .main-img img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.02);transition:transform .5s ease}
   .card .main-img:hover img{transform:scale(1.02)}
@@ -475,7 +476,7 @@
     .ovbar .grid{grid-template-columns:repeat(2,1fr)}
     .ovbar a{border-bottom:1px solid var(--card-border)}
     .stage{min-height:auto; padding:36px 0}
-    .stage .card{width:96%}
+    .stage .card{width:96%;height:auto}
     .card .cgallery{grid-template-columns:1fr}
     .card .sub-imgs{flex-direction:row;border-left:none;border-top:1px solid var(--card-border)}
     .card .sub-imgs a{min-width:33.33%;border-bottom:0;border-right:1px solid var(--card-border)}
