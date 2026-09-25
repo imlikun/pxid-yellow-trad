@@ -243,13 +243,18 @@
 .zy12 .m06 .zynav{display:none}/* 两排网格后箭头无作用，隐藏 */
 .zy12 .m06 .zynav button{width:50px;height:50px;background:var(--bg2);color:var(--ink);
   border-radius:var(--r);font-size:16px;transition:.2s}
-.zy12 .m06 .track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;
+.zy12 .m06 .track{display:flex;flex-direction:column;gap:12px;
   max-width:1442px;margin:0 auto;padding:0 40px}
+.zy12 .m06 .eqrow{display:flex;gap:12px}
 .zy12 .m06 .track::-webkit-scrollbar{display:none}
 /* 卡片本身不能铺深色底：否则 45° 切口露出的是卡底暗色，和暗图混在一起，等于「没切」。
    切角加在整张卡上，让底部渐变与文字条一起被切齐。 */
-.zy12 .m06 .zycard{position:relative;aspect-ratio:362/417;min-width:0;overflow:hidden;background:none;
+.zy12 .m06 .zycard{position:relative;flex:1 1 0;min-width:0;overflow:hidden;background:none;
+  height:calc((min(100vw,1442px) - 116px)*.288);/* 362/417 比例的行高等效：卡宽=(容器-80padding-36gap)/4 */
+  transition:flex-grow .5s cubic-bezier(.33,0,.2,1);
   --cut:68px;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
+/* hover 某卡：该卡 flex-grow:3、其余 1 → 宽度比 3:1:1:1 = 2份 : 2/3份×3，行总宽不变 */
+.zy12 .m06 .zycard:hover{flex-grow:3}
 .zy12 .m06 .zyph{position:absolute;inset:0}
 .zy12 .m06 .zyph img{width:100%;height:100%;object-fit:cover;transition:.5s}
 .zy12 .m06 .zycard:hover .zyph img{transform:scale(1.06)}
@@ -365,7 +370,8 @@
 
 /* ---------- 断点：1024 / 700 ---------- */
 @media (max-width:1180px){
-  .zy12 .m06 .track{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .zy12 .m06 .eqrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .zy12 .m06 .zycard{height:auto;aspect-ratio:362/417;transition:none}
 
   .zy12 .in{padding:0 28px}
   .zy12 .m08,.zy12 .m09{padding-left:28px;padding-right:28px}
@@ -402,7 +408,8 @@
   .zy12 .m04 .pic img{height:240px}
   .zy12 .m05{padding-bottom:64px}
   .zy12 .m06{padding-top:64px}
-  .zy12 .m06 .track{grid-template-columns:1fr;padding:0 22px}
+  .zy12 .m06 .track{padding:0 22px}
+  .zy12 .m06 .eqrow{grid-template-columns:1fr}
   .zy12 .m06 .cap{left:26px;bottom:26px}
   .zy12 .m06 .zynav{padding-top:0}
   .zy12 .m07{padding:64px 0 50px;margin-top:-40px}
@@ -608,14 +615,18 @@
     </div>
   </div>
   <div class="track" data-eq-track>
+    <div class="eqrow">
       <a class="zycard" href="/pxid/yellow-trad/services/cnc.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/hero-slide-02.jpg" alt="乔峰 HSD1615" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>乔峰 HSD1615 加工中心</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/services/cnc.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-03.jpg" alt="永利达 VH11" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>永利达 VH11 ×4</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-electrode.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-04.jpg" alt="北京精雕 JDLVT500" loading="lazy"></span><span class="cap"><span class="pill">电极加工设备</span><b>北京精雕 JDLVT500</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/services/injection.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/hero-slide-01.jpg" alt="海天 MA 系列注塑机" loading="lazy"></span><span class="cap"><span class="pill">注塑成型设备</span><b>海天 MA 系列 90–530T</b></span></a>
+    </div>
+    <div class="eqrow">
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-edm.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-06.jpg" alt="汉霸 G45L 火花机" loading="lazy"></span><span class="cap"><span class="pill">放电加工设备</span><b>汉霸 G45L / 迪蒙 ADI600</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-wire-cut.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-07.jpg" alt="霸器 BQ800 中走丝" loading="lazy"></span><span class="cap"><span class="pill">线切割设备</span><b>霸器 BQ800 中走丝</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-inspection.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-08.jpg" alt="海克斯康三坐标" loading="lazy"></span><span class="cap"><span class="pill">检测设备</span><b>海克斯康 INSPEC70RS</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-mold-base.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-05.jpg" alt="乔峰 LM2013" loading="lazy"></span><span class="cap"><span class="pill">模架加工设备</span><b>乔峰 LM2013 / SV105</b></span></a>
+    </div>
   </div>
 </section>
 
