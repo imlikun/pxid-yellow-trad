@@ -340,6 +340,10 @@
   .ovbar a{display:block;padding:18px 10px;border-right:1px solid var(--card-border);text-align:center;transition:.2s}
   .ovbar a:last-child{border-right:0}
   .ovbar a:hover{background:var(--bg3)}
+  .ovbar a.on{background:var(--gold);box-shadow:inset 0 0 0 2px var(--gold)}
+  .ovbar a.on .n,.ovbar a.on .t{color:#fff}
+  .ovbar a.on .e{color:rgba(255,255,255,.72)}
+  .stage{scroll-margin-top:170px}
   .ovbar a .n{font:800 15px/1 "SF Mono",Consolas,monospace;color:var(--red-ink);letter-spacing:.08em}
   .ovbar a .t{display:block;margin-top:8px;font-size:15px;font-weight:800;color:var(--txt)}
   .ovbar a .e{display:block;margin-top:4px;font:700 11px/1.3 "SF Mono",Consolas,monospace;letter-spacing:.14em;color:var(--txt-3);text-transform:uppercase}
@@ -601,7 +605,33 @@
     });
   });
 })();
-/* site nav auto-hide: hide when scrolling down, show when scrolling up */
+/* ovbar <-> section 双向绑定：点腰带滚到 section；滚到 section 腰带对应格变品牌红底 */
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.ovbar .grid a'));
+  if(!links.length) return;
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(a.getAttribute('href'));
+      if(!t) return;
+      e.preventDefault();
+      t.scrollIntoView({behavior:'smooth'});
+      history.replaceState(null,'',a.getAttribute('href'));
+    });
+  });
+  var stages=links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  var cur=null;
+  function paint(id){
+    if(cur===id) return; cur=id;
+    links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href')==='#'+id); });
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(en.isIntersecting) paint(en.target.id);
+    });
+  },{rootMargin:'-35% 0px -55% 0px',threshold:0});
+  stages.forEach(function(s){ io.observe(s); });
+  if(stages.length){ paint(stages[0].id); }
+})();
 (function(){
   var last=window.scrollY||0;
   var hero=document.querySelector('.phero');
