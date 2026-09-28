@@ -335,13 +335,14 @@
   /* ===== 概览条 ===== */
   .ovbar{border-bottom:1px solid var(--card-border);background:rgba(17,17,17,.97);position:sticky;top:68px;z-index:40;transition:top .3s ease}
   body.nav-hide .ovbar{top:0}
+  .ovbar .wrap{width:75%;max-width:none}
   .ovbar .grid{display:grid;grid-template-columns:repeat(7,1fr)}
-  .ovbar a{display:block;padding:14px 10px;border-right:1px solid var(--card-border);text-align:center;transition:.2s}
+  .ovbar a{display:block;padding:18px 10px;border-right:1px solid var(--card-border);text-align:center;transition:.2s}
   .ovbar a:last-child{border-right:0}
   .ovbar a:hover{background:var(--bg3)}
-  .ovbar a .n{font:800 13px/1 "SF Mono",Consolas,monospace;color:var(--red-ink);letter-spacing:.08em}
-  .ovbar a .t{display:block;margin-top:6px;font-size:12.5px;font-weight:700;color:var(--txt)}
-  .ovbar a .e{display:block;margin-top:3px;font:600 9px/1.3 "SF Mono",Consolas,monospace;letter-spacing:.14em;color:var(--txt-3);text-transform:uppercase}
+  .ovbar a .n{font:800 15px/1 "SF Mono",Consolas,monospace;color:var(--red-ink);letter-spacing:.08em}
+  .ovbar a .t{display:block;margin-top:8px;font-size:15px;font-weight:800;color:var(--txt)}
+  .ovbar a .e{display:block;margin-top:4px;font:700 11px/1.3 "SF Mono",Consolas,monospace;letter-spacing:.14em;color:var(--txt-3);text-transform:uppercase}
 
   /* ========== 核心：全屏背景 section + 半透明卡片浮层 ========== */
   .stage{
@@ -443,6 +444,7 @@
 
   /* ===== 响应式 ===== */
   @media(max-width:980px){
+    .ovbar .wrap{width:96%}
     .ovbar .grid{grid-template-columns:repeat(2,1fr)}
     .ovbar a{border-bottom:1px solid var(--card-border)}
     .stage{min-height:auto; padding:36px 0}
