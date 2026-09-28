@@ -423,6 +423,7 @@
 
   /* ===== 外协 ===== */
   .boundary{padding:70px 0;border-top:1px solid var(--card-border);background:var(--bg2);position:relative}
+  .boundary .wrap,.cta .wrap{width:80%;max-width:1400px}
   .boundary .eyebrow{font:700 11px/1 "SF Mono",Consolas,monospace;letter-spacing:.2em;color:var(--txt-3);text-transform:uppercase;margin-bottom:12px;display:inline-block;
     padding-left:12px;border-left:3px solid var(--gold)}
   .boundary .eyebrow .en{color:var(--red-ink)}
@@ -448,6 +449,7 @@
 
   /* ===== 响应式 ===== */
   @media(max-width:980px){
+    .boundary .wrap,.cta .wrap{width:92%}
     .ovbar .wrap{width:96%}
     .ovbar .grid{grid-template-columns:repeat(2,1fr)}
     .ovbar a{border-bottom:1px solid var(--card-border)}
