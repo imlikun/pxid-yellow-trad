@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>服务流程 | PXID 品向智造 · 一站式智造平台</title>
-<meta name="description" content="从概念设计到批量交付的九步全流程服务，设计制造一体化协同，让产品开发更高效。">
+<meta name="description" content="从需求沟通到批量交付的十三步全流程服务，设计制造一体化协同，让产品开发更高效。">
 <link rel="stylesheet" href="../assets/css/base.css?v=20260912b">
 <style>
 /* ==================================================================
@@ -112,6 +112,63 @@ a{text-decoration:none;color:inherit}
   .a5 .c::before{left:22px}
   .a5 .c{padding:32px 22px 38px}
 }
+
+/* Process reference layout — scoped to this page; shared navigation is unchanged. */
+.pr-hero{position:relative;isolation:isolate;min-height:455px;padding:0;background:#f6f7f7;overflow:hidden}
+.pr-hero-photo{position:absolute;inset:0 0 0 34%;z-index:-2;background:url('/pxid/yellow-trad/assets/images/adv-核心优势-hero.jpg') center/cover no-repeat;filter:grayscale(1);opacity:.19}
+.pr-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#fff 0%,#fff 37%,rgba(255,255,255,.95) 54%,rgba(255,255,255,.72) 77%,rgba(255,255,255,.58) 100%)}
+.pr-hero-layout{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);align-items:center;min-height:455px;gap:6%;padding-top:45px;padding-bottom:45px}
+.pr-hero-copy{min-width:0;padding-right:32px}
+.pr-hero .eyebrow{color:#888e91;font-size:11px;font-weight:800;letter-spacing:.09em;margin-bottom:16px}
+.pr-hero .eyebrow::before{content:"";display:inline-block;vertical-align:middle;width:26px;height:2px;background:#e10e1a;margin-right:12px}
+.pr-hero h1{font-size:clamp(36px,4.1vw,55px);font-weight:900;line-height:1.17;letter-spacing:-.045em;color:#111;margin-bottom:17px}
+.pr-hero h1 .gold{color:#111}
+.pr-hero .lead{font-size:15px;line-height:1.9;color:#646b70;max-width:575px;margin-bottom:24px}
+.pr-hero .acts{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.pr-hero .acts .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;font-size:13px;font-weight:800;border-radius:2px}
+.pr-hero .acts .btn-gold{background:#e41120;color:#fff;border:1px solid #e41120}
+.pr-hero .acts .btn-line{background:#fff;color:#20282c;border:1px solid #9aa2a7}
+.pr-hero-benefits{border-left:1px solid #ced2d4;padding-left:8%;position:relative;z-index:1}
+.pr-benefit{display:grid;grid-template-columns:48px minmax(0,1fr);gap:17px;align-items:start;padding:17px 0}
+.pr-benefit+.pr-benefit{border-top:1px solid rgba(55,68,76,.10)}
+.pr-benefit-icon{display:flex;color:#e41120;width:38px;height:38px;align-items:center;justify-content:center}
+.pr-benefit-icon svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.pr-benefit h2{font-size:17px;line-height:1.5;color:#101416;font-weight:850;margin:0 0 2px}
+.pr-benefit p{font-size:13px;line-height:1.7;color:#686f73;margin:0}
+.pr-phase{padding:38px 0 42px;scroll-margin-top:74px}
+.pr-phase--collab{background:#fff}
+.pr-phase--delivery{background:#f4f5f5;padding-bottom:52px}
+.pr-phase-head{display:flex;gap:22px;align-items:center;margin-bottom:24px}
+.pr-phase-head h2{font-size:23px;line-height:1.35;letter-spacing:-.015em;color:#101416;font-weight:850;white-space:nowrap}
+.pr-phase-head h2 span{font-size:25px;font-weight:900;margin-right:15px}
+.pr-phase-rule{height:1px;background:#cbd0d1;flex:1;min-width:32px}
+.pr-phase-head p{font-size:12px;color:#838a8e;white-space:nowrap;letter-spacing:.015em}
+.pr-first-line{position:relative;max-width:980px;margin:auto}
+.pr-first-line::before,.pr-pairs::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#cdd2d4;transform:translateX(-.5px)}
+.pr-step{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);align-items:center;min-height:91px}
+.pr-step-no{grid-column:2;grid-row:1;position:relative;justify-self:center;width:35px;height:35px;display:grid;place-items:center;background:#e41120;color:white;font:800 14px/1 Arial,sans-serif;z-index:1}
+.pr-step-copy{grid-row:1;max-width:320px;position:relative;z-index:1}
+.pr-step--left .pr-step-copy{grid-column:1;justify-self:end;text-align:right;padding-right:20px}
+.pr-step--right .pr-step-copy{grid-column:3;justify-self:start;text-align:left;padding-left:20px}
+.pr-step-copy h3,.pr-card-copy h3{font-size:18px;line-height:1.45;font-weight:850;color:#15191a;margin:0 0 5px}
+.pr-step-copy p,.pr-card-copy p{font-size:13.5px;line-height:1.65;color:#737b7f;margin:0}
+.pr-step::after{content:"";position:absolute;left:calc(50% - 53px);right:calc(50% - 53px);top:50%;height:1px;background:#d8dcdc}
+.pr-pairs{position:relative}
+.pr-pair{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 84px minmax(0,1fr);align-items:center;gap:0;min-height:180px;padding:10px 0;border-bottom:1px solid #e5e8e8}
+.pr-pair:last-child{border-bottom:0}
+.pr-card{display:grid;grid-template-columns:minmax(0,46%) minmax(0,54%);align-items:center;gap:18px;min-width:0;position:relative;z-index:1}
+.pr-card--left{padding-right:15px}
+.pr-card--right{padding-left:15px}
+.pr-card--right{grid-template-columns:minmax(0,47%) minmax(0,53%)}
+.pr-card img{width:100%;height:145px;object-fit:cover;filter:saturate(.72);background:#e3e7e8}
+.pr-card-copy{padding:6px 0;min-width:0}
+.pr-card-copy h3{font-size:18px}
+.pr-pair-nums{display:flex;justify-content:center;gap:5px;position:relative;z-index:2}
+.pr-pair-nums span{display:grid;place-items:center;width:33px;height:33px;flex:none;background:#e41120;color:#fff;font:800 13px Arial,sans-serif}
+@media(max-width:1100px){.pr-hero-layout{gap:3%}.pr-hero-benefits{padding-left:6%}.pr-phase-head p{display:none}.pr-card{gap:12px}.pr-card img{height:125px}.pr-card-copy p{font-size:12.5px}}
+@media(max-width:800px){.pr-hero{min-height:0}.pr-hero-layout{grid-template-columns:1fr;gap:28px;min-height:0;padding-top:62px;padding-bottom:50px}.pr-hero-photo{inset:0;opacity:.12}.pr-hero::before{background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.88))}.pr-hero-copy{padding-right:0}.pr-hero-benefits{border-left:0;border-top:1px solid #cdd2d4;padding:16px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.pr-benefit{display:block;padding:10px 0}.pr-benefit+.pr-benefit{border-top:0}.pr-benefit h2{font-size:14px}.pr-benefit p{font-size:12px}.pr-phase-head h2{font-size:18px;white-space:normal}.pr-phase-head h2 span{font-size:20px}.pr-pair{grid-template-columns:minmax(0,1fr) 74px minmax(0,1fr)}.pr-card{grid-template-columns:1fr;gap:8px}.pr-card--right{grid-template-columns:1fr}.pr-card--right img{order:-1}.pr-card img{height:105px}.pr-card-copy h3{font-size:16px}}
+@media(max-width:600px){.pr-hero-layout{padding-top:48px;padding-bottom:42px}.pr-hero h1{font-size:clamp(34px,8vw,42px)}.pr-hero .lead{font-size:14px}.pr-hero-benefits{grid-template-columns:1fr;gap:0;padding-top:10px}.pr-benefit{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:10px 0}.pr-benefit+.pr-benefit{border-top:1px solid rgba(55,68,76,.10)}.pr-benefit-icon,.pr-benefit-icon svg{width:30px;height:30px}.pr-phase{padding:35px 0 40px}.pr-phase-head{margin-bottom:18px}.pr-phase-head h2{font-size:18px}.pr-phase-head h2 span{display:block;margin:0 0 2px}.pr-first-line::before,.pr-pairs::before{left:19px}.pr-step{grid-template-columns:39px minmax(0,1fr);min-height:90px;gap:12px}.pr-step-no{grid-column:1;grid-row:1;width:36px;height:36px}.pr-step--left .pr-step-copy,.pr-step--right .pr-step-copy{grid-column:2;grid-row:1;justify-self:start;text-align:left;padding:0}.pr-step::after{display:none}.pr-step-copy h3{font-size:16px}.pr-step-copy p{font-size:13px}.pr-pair{display:block;min-height:0;padding:0;border:0}.pr-card,.pr-card--right{display:grid;grid-template-columns:95px minmax(0,1fr);gap:12px;padding:12px 0 12px 55px;min-height:112px;border-bottom:1px solid #e1e5e5}.pr-card img,.pr-card--right img{width:95px;height:76px;grid-column:1;grid-row:1;order:initial}.pr-card-copy{grid-column:2;grid-row:1}.pr-card-copy h3{font-size:15px;margin-bottom:3px}.pr-card-copy p{font-size:12px;line-height:1.45}.pr-pair-nums{position:absolute;inset:0 auto 0 0;width:39px;display:flex;flex-direction:column;justify-content:space-around;gap:0}.pr-pair-nums span{width:36px;height:36px}.pr-pairs::before{left:18px}.pr-phase--delivery{padding-bottom:48px}}
+@media(prefers-reduced-motion:reduce){.pr-hero *, .pr-phase *{scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -160,93 +217,61 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== Hero ===== -->
 <section class="pr-hero" id="top">
-  <div class="wrap">
-    <div class="eyebrow">PROCESS <span class="en">|</span> 服务流程</div>
-    <h1>从需求到交付<br><span class="gold">一条线，13 步贯通</span></h1>
-    <p class="lead">13 个节点串成一段可控、可追溯的旅程：前 5 步开启合作，后 8 步落地量产。</p>
-    <div class="acts">
-      <a class="btn btn-gold" href="#process">查看完整流程</a>
-      <a class="btn btn-line" href="/pxid/yellow-trad/contact.html">获取即时报价</a>
+  <div class="pr-hero-photo" aria-hidden="true"></div>
+  <div class="wrap pr-hero-layout">
+    <div class="pr-hero-copy">
+      <div class="eyebrow">PROCESS <span class="en">|</span> 服务流程</div>
+      <h1>从需求到交付<br><span class="gold">一条线，13 步贯通</span></h1>
+      <p class="lead">13 个环节环环相扣，从需求到交付，我们为您提供透明、可控、高效的全流程服务，助力梦想快速落地。</p>
+      <div class="acts">
+        <a class="btn btn-gold" href="/pxid/yellow-trad/contact.html">免费咨询方案 <span aria-hidden="true">→</span></a>
+        <a class="btn btn-line" href="#process">查看完整流程</a>
+      </div>
+    </div>
+    <div class="pr-hero-benefits" aria-label="服务特点">
+      <div class="pr-benefit"><span class="pr-benefit-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 3h14l4 4v22H7zM20 3v5h5M11 13h10M11 18h10M11 23h6"/></svg></span><div><h2>1 对 1 专业咨询</h2><p>从需求梳理到方案建议，全程专业支持</p></div></div>
+      <div class="pr-benefit"><span class="pr-benefit-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m16 2 12 7v14l-12 7L4 23V9zM4 9l12 7 12-7M16 16v14"/></svg></span><div><h2>7 天快速打样</h2><p>高效响应，快速验证产品可行性</p></div></div>
+      <div class="pr-benefit"><span class="pr-benefit-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 2 28 7v9c0 7-4.5 11-12 14C8.5 27 4 23 4 16V7zM10 16l4 4 8-9"/></svg></span><div><h2>专业工业级交付标准</h2><p>从设计到量产，品质全程可控</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 13 步流程 · 纵向一线 ===== -->
-<section class="p4-sec" id="process">
+<!-- ===== 13 步流程 ===== -->
+<section class="pr-phase pr-phase--collab" id="process">
   <div class="inner">
-    <div class="bar">
-      <div><span class="sq"></span><span class="t">1件起订</span><span class="s">MOQ 1</span></div>
-      <div><span class="sq"></span><span class="t">7天快速打样</span><span class="s">SAMPLE 7D</span></div>
-      <div><span class="sq"></span><span class="t">专属工程师全程陪跑</span><span class="s">DEDICATED</span></div>
+    <div class="pr-phase-head"><h2><span>01 - 05</span> 合作阶段 · 5 步开启项目</h2><span class="pr-phase-rule"></span><p>从想法到方案，与您共同定义产品</p></div>
+    <div class="pr-first-line">
+      <article class="pr-step pr-step--left"><span class="pr-step-no">01</span><div class="pr-step-copy"><h3>提交资料</h3><p>提供想法、草图、样品或 3D 图纸，与我们共同探讨需求。</p></div></article>
+      <article class="pr-step pr-step--right"><span class="pr-step-no">02</span><div class="pr-step-copy"><h3>需求评估</h3><p>专业团队分析需求可行性，输出初步建议。</p></div></article>
+      <article class="pr-step pr-step--left"><span class="pr-step-no">03</span><div class="pr-step-copy"><h3>方案报价</h3><p>基于需求制定方案并提供报价。</p></div></article>
+      <article class="pr-step pr-step--right"><span class="pr-step-no">04</span><div class="pr-step-copy"><h3>设计开发</h3><p>进行详细的工业设计、工程开发和样机制作。</p></div></article>
+      <article class="pr-step pr-step--left"><span class="pr-step-no">05</span><div class="pr-step-copy"><h3>量产交付</h3><p>通过测试、验收后进入量产阶段。</p></div></article>
     </div>
-
-    <div class="p4-wrap">
-      <div class="p4-axis"></div>
-
-      <div class="p4-sep"><span>01–05 · 合作阶段 · 5 步开启项目</span></div>
-
-      <div class="p4-it left p4-txtonly">
-        <span class="dot">01</span>
-        <div class="txt"><h3>提交资料</h3><p>提供想法、草图、样品或3D图纸，填写项目需求表单。</p></div>
+  </div>
+</section>
+<section class="pr-phase pr-phase--delivery" id="delivery">
+  <div class="inner">
+    <div class="pr-phase-head"><h2><span>06 - 13</span> 交付阶段 · 8 步从设计到量产</h2><span class="pr-phase-rule"></span><p>从设计到量产，专业制造每一个细节</p></div>
+    <div class="pr-pairs">
+      <div class="pr-pair">
+        <article class="pr-card pr-card--left"><img src="/pxid/yellow-trad/assets/images/process-02.webp" alt="需求沟通" loading="lazy"><div class="pr-card-copy"><h3>需求沟通</h3><p>明确场景、功能、成本、数量与周期，输出项目需求简报。</p></div></article>
+        <div class="pr-pair-nums"><span>06</span><span>07</span></div>
+        <article class="pr-card pr-card--right"><div class="pr-card-copy"><h3>产品设计</h3><p>概念设计、外观深化、结构开发，同步考虑材料与工艺。</p></div><img src="/pxid/yellow-trad/assets/images/process-01.webp" alt="产品设计" loading="lazy"></article>
       </div>
-      <div class="p4-it right p4-txtonly">
-        <span class="dot">02</span>
-        <div class="txt"><h3>需求评估</h3><p>工程师24小时内完成可行性评估，明确工艺路径与风险点。</p></div>
+      <div class="pr-pair">
+        <article class="pr-card pr-card--left"><img src="/pxid/yellow-trad/assets/images/process-04.webp" alt="工程样机" loading="lazy"><div class="pr-card-copy"><h3>工程样机</h3><p>CNC 或快速成型制作样件，验证尺寸、结构与装配。</p></div></article>
+        <div class="pr-pair-nums"><span>08</span><span>09</span></div>
+        <article class="pr-card pr-card--right"><div class="pr-card-copy"><h3>模具开发</h3><p>DFM 分析、模具设计、精密加工及试模验证。</p></div><img src="/pxid/yellow-trad/assets/images/process-05.webp" alt="模具开发" loading="lazy"></article>
       </div>
-      <div class="p4-it left p4-txtonly">
-        <span class="dot">03</span>
-        <div class="txt"><h3>方案报价</h3><p>提供详细报价单、开发周期和阶段交付计划。</p></div>
+      <div class="pr-pair">
+        <article class="pr-card pr-card--left"><img src="/pxid/yellow-trad/assets/images/process-06.webp" alt="试产验证" loading="lazy"><div class="pr-card-copy"><h3>试产验证</h3><p>小批量验证工艺、装配节拍与良率，问题闭环后再量产。</p></div></article>
+        <div class="pr-pair-nums"><span>10</span><span>11</span></div>
+        <article class="pr-card pr-card--right"><div class="pr-card-copy"><h3>批量生产</h3><p>按标准工艺组织生产，并进行过程跟检与测试。</p></div><img src="/pxid/yellow-trad/assets/images/process-09.webp" alt="批量生产" loading="lazy"></article>
       </div>
-      <div class="p4-it right p4-txtonly">
-        <span class="dot">04</span>
-        <div class="txt"><h3>设计开发</h3><p>按阶段推进设计、打样、模具和试产，每步确认后再继续。</p></div>
-      </div>
-      <div class="p4-it left p4-txtonly">
-        <span class="dot">05</span>
-        <div class="txt"><h3>量产交付</h3><p>批量生产、质量管控、组装测试、包装出货，全球物流直达。</p></div>
-      </div>
-
-      <div class="p4-sep" style="margin-top:40px"><span>06–13 · 交付阶段 · 8 步从设计到量产</span></div>
-
-      <div class="p4-it left">
-        <span class="dot">06</span>
-        <div class="txt"><h3>需求沟通</h3><p>明确场景、功能、成本、数量与周期，输出项目需求简报。</p></div>
-        <div class="ph"><img src="/pxid/yellow-trad/assets/images/process-02.webp" alt="需求沟通"></div>
-      </div>
-      <div class="p4-it right">
-        <span class="dot">07</span>
-        <div class="ph"><img class="p01" src="/pxid/yellow-trad/assets/images/process-01.webp" alt="产品设计"></div>
-        <div class="txt"><h3>产品设计</h3><p>概念设计、外观深化、结构开发，同步考虑材料与工艺。</p></div>
-      </div>
-      <div class="p4-it left">
-        <span class="dot">08</span>
-        <div class="txt"><h3>工程样机</h3><p>CNC或快速成型制作样件，验证尺寸、结构与装配。</p></div>
-        <div class="ph"><img src="/pxid/yellow-trad/assets/images/process-04.webp" alt="工程样机"></div>
-      </div>
-      <div class="p4-it right">
-        <span class="dot">09</span>
-        <div class="ph"><img src="/pxid/yellow-trad/assets/images/process-05.webp" alt="模具开发"></div>
-        <div class="txt"><h3>模具开发</h3><p>DFM分析、模具设计、精密加工到试模验证，全流程自主。</p></div>
-      </div>
-      <div class="p4-it left">
-        <span class="dot">10</span>
-        <div class="txt"><h3>试产验证</h3><p>小批量验证工艺、装配节拍与良率，问题闭环后再量产。</p></div>
-        <div class="ph"><img src="/pxid/yellow-trad/assets/images/process-06.webp" alt="试产验证"></div>
-      </div>
-      <div class="p4-it right">
-        <span class="dot">11</span>
-        <div class="ph"><img class="p09" src="/pxid/yellow-trad/assets/images/process-09.webp" alt="批量生产"></div>
-        <div class="txt"><h3>批量生产</h3><p>按标准工艺组织生产，IPQC跟检确保过程稳定。</p></div>
-      </div>
-      <div class="p4-it left">
-        <span class="dot">12</span>
-        <div class="txt"><h3>表面处理</h3><p>喷涂、电镀、阳极氧化、镭雕丝印，一站式后加工。</p></div>
-        <div class="ph"><img src="/pxid/yellow-trad/assets/images/process-07.webp" alt="表面处理"></div>
-      </div>
-      <div class="p4-it right">
-        <span class="dot">13</span>
-        <div class="ph"><img src="/pxid/yellow-trad/assets/images/process-08.webp" alt="组装交付"></div>
-        <div class="txt"><h3>组装交付</h3><p>功能测试、老化测试、外观全检、包装出货，全球物流直达。</p></div>
+      <div class="pr-pair">
+        <article class="pr-card pr-card--left"><img src="/pxid/yellow-trad/assets/images/process-07.webp" alt="表面处理" loading="lazy"><div class="pr-card-copy"><h3>表面处理</h3><p>清洗、电镀、喷涂等多种表面处理工艺，提升产品品质。</p></div></article>
+        <div class="pr-pair-nums"><span>12</span><span>13</span></div>
+        <article class="pr-card pr-card--right"><div class="pr-card-copy"><h3>组装交付</h3><p>功能测试、外观全检、包装出货，全流程快速送达。</p></div><img src="/pxid/yellow-trad/assets/images/process-08.webp" alt="组装交付" loading="lazy"></article>
       </div>
     </div>
   </div>
