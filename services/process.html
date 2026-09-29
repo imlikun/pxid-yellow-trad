@@ -213,6 +213,22 @@ a{text-decoration:none;color:inherit}
 @media(max-width:1100px){.a5 .wrap{grid-template-columns:34% 62%;gap:4%}.a5 .c{padding:22px 16px;gap:10px}.pr-pair{min-height:190px;padding:16px 0}.pr-card img{height:150px}.pr-card-copy p{font-size:12.5px}}
 @media(max-width:800px){.pr-hero-layout{grid-template-columns:1fr;gap:28px;max-width:1280px;min-height:0}.pr-hero-benefits{padding:16px 0 0}.pr-hero-photo{inset:0;opacity:.27;background-position:63% center}.pr-hero::before{background:rgba(255,255,255,.87)}.pr-hero-wall-copy{display:none}.pr-step--right .pr-step-copy{margin-left:0}.pr-pairs{row-gap:22px}.pr-pair{grid-template-columns:minmax(0,1fr) 74px minmax(0,1fr);padding:14px 0}.pr-card,.pr-card--right{grid-template-columns:1fr;gap:8px}.pr-card--right img{order:-1}.pr-card img{height:120px}.pr-card-copy h3{font-size:16px}.a5 .wrap{display:block}.a5 .head{margin-bottom:30px}.a5 .head .sec-h2{margin:16px 0}.a5 .c{min-height:135px}}
 @media(max-width:600px){.pr-hero-benefits{padding:10px 0 0}.pr-hero-photo{background-position:64% center;opacity:.20}.pr-pairs{row-gap:0}.pr-pairs::before{left:18px}.pr-pair{display:flex;flex-direction:column;min-height:0;padding:0;background:transparent!important;border:0}.pr-pair-nums{display:none}.pr-pair--right-first .pr-card--right{order:-1}.pr-card,.pr-card--right{display:grid;grid-template-columns:36px 95px minmax(0,1fr);gap:10px;min-height:112px;padding:12px 0;border-bottom:1px solid #e1e5e5}.pr-card-no{display:grid;grid-column:1;grid-row:1;align-self:center;place-items:center;width:36px;height:36px;background:#e41120;color:#fff;font:800 14px/1 Arial,sans-serif;z-index:1}.pr-card img,.pr-card--right img{grid-column:2;grid-row:1;width:95px;height:78px;order:initial}.pr-card-copy{grid-column:3;grid-row:1;align-self:center;padding:0}.pr-card-copy h3{font-size:15px;margin-bottom:3px}.pr-card-copy p{font-size:12px;line-height:1.45}.a5{padding:52px 0 60px}.a5 .head .sec-h2{font-size:31px}.a5 .grid{grid-template-columns:1fr}.a5 .c{min-height:0;padding:21px 20px}.a5 .adv-intro br{display:none}}
+.pr-pairs{row-gap:12px}
+.pr-pairs::before{z-index:1}
+.pr-delivery-row{display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);align-items:center;min-height:194px;padding:14px 0;background:rgba(255,255,255,.63)}
+.pr-delivery-row:nth-child(even){background:rgba(255,255,255,.36)}
+.pr-delivery-photo{display:block;width:calc(100% - 16px);height:166px;object-fit:cover;filter:saturate(.78)}
+.pr-delivery-photo--left{grid-column:1;grid-row:1}
+.pr-delivery-photo--right{grid-column:3;grid-row:1;justify-self:end}
+.pr-delivery-no{grid-column:2;grid-row:1;justify-self:center;display:grid;place-items:center;width:36px;height:36px;position:relative;z-index:2;background:#e41120;color:#fff;font:800 14px/1 Arial,sans-serif}
+.pr-delivery-copy{grid-row:1;max-width:380px;min-width:0}
+.pr-delivery-copy--left{grid-column:1;padding:0 28px;justify-self:start}
+.pr-delivery-copy--right{grid-column:3;padding:0 16px}
+.pr-delivery-copy h3{font-size:19px;line-height:1.45;font-weight:850;color:#15191a;margin:0 0 5px}
+.pr-delivery-copy p{font-size:14px;line-height:1.6;color:#737b7f;margin:0}
+@media(max-width:1100px){.pr-delivery-row{min-height:166px;padding:12px 0}.pr-delivery-photo{height:142px}.pr-delivery-copy p{font-size:12.5px}}
+@media(max-width:800px){.pr-pairs{row-gap:10px}.pr-delivery-row{grid-template-columns:minmax(0,1fr) 58px minmax(0,1fr);min-height:148px;padding:10px 0}.pr-delivery-photo{height:128px}.pr-delivery-copy--left{padding:0 14px}.pr-delivery-copy--right{padding:0 10px}.pr-delivery-copy h3{font-size:16px}}
+@media(max-width:600px){.pr-pairs{row-gap:0}.pr-delivery-row{grid-template-columns:36px 95px minmax(0,1fr);gap:10px;min-height:112px;padding:12px 0;background:transparent!important;border-bottom:1px solid #e1e5e5}.pr-delivery-no{grid-column:1;grid-row:1;align-self:center}.pr-delivery-photo,.pr-delivery-photo--left,.pr-delivery-photo--right{grid-column:2;grid-row:1;justify-self:start;width:95px;height:78px}.pr-delivery-copy,.pr-delivery-copy--left,.pr-delivery-copy--right{grid-column:3;grid-row:1;align-self:center;justify-self:start;max-width:none;padding:0}.pr-delivery-copy h3{font-size:15px;margin-bottom:3px}.pr-delivery-copy p{font-size:12px;line-height:1.45}}
 </style>
 </head>
 <body>
@@ -298,26 +314,46 @@ a{text-decoration:none;color:inherit}
   <div class="inner">
     <div class="pr-phase-head"><h2><span>06 - 13</span> 交付阶段 · 8 步从设计到量产</h2><span class="pr-phase-rule"></span><p>从设计到量产，专业制造每一个细节</p></div>
     <div class="pr-pairs">
-      <div class="pr-pair pr-pair--right-first">
-        <article class="pr-card pr-card--left" aria-label="07 产品设计"><span class="pr-card-no" aria-hidden="true">07</span><img src="/pxid/yellow-trad/assets/images/process-02.webp" alt="产品设计讨论" loading="lazy"><div class="pr-card-copy"><h3>产品设计</h3><p>概念设计、外观设计、结构开发，同步考虑材料与工艺。</p></div></article>
-        <div class="pr-pair-nums" aria-hidden="true"><span>06</span><span>07</span></div>
-        <article class="pr-card pr-card--right" aria-label="06 需求沟通"><span class="pr-card-no" aria-hidden="true">06</span><div class="pr-card-copy"><h3>需求沟通</h3><p>明确需求、功能、成本、数量与周期，输出项目需求规格。</p></div><img src="/pxid/yellow-trad/assets/images/process-01.webp" alt="需求沟通示意" loading="lazy"></article>
-      </div>
-      <div class="pr-pair">
-        <article class="pr-card pr-card--left" aria-label="08 工程样机"><span class="pr-card-no" aria-hidden="true">08</span><img src="/pxid/yellow-trad/assets/images/process-04.webp" alt="工程样机" loading="lazy"><div class="pr-card-copy"><h3>工程样机</h3><p>CNC 加工及快速样机制作，验证设计、迭代优化。</p></div></article>
-        <div class="pr-pair-nums" aria-hidden="true"><span>08</span><span>09</span></div>
-        <article class="pr-card pr-card--right" aria-label="09 模具开发"><span class="pr-card-no" aria-hidden="true">09</span><div class="pr-card-copy"><h3>模具开发</h3><p>DFM 分析、模具设计、精密加工及试模验证。</p></div><img src="/pxid/yellow-trad/assets/images/process-05.webp" alt="模具开发" loading="lazy"></article>
-      </div>
-      <div class="pr-pair">
-        <article class="pr-card pr-card--left" aria-label="10 试产验证"><span class="pr-card-no" aria-hidden="true">10</span><img src="/pxid/yellow-trad/assets/images/process-06.webp" alt="试产验证" loading="lazy"><div class="pr-card-copy"><h3>试产验证</h3><p>小批量试产验证，测试工艺与设备，评估量产稳定性。</p></div></article>
-        <div class="pr-pair-nums" aria-hidden="true"><span>10</span><span>11</span></div>
-        <article class="pr-card pr-card--right" aria-label="11 批量生产"><span class="pr-card-no" aria-hidden="true">11</span><div class="pr-card-copy"><h3>批量生产</h3><p>按确定的工艺组织生产，进行品质控制与测试。</p></div><img src="/pxid/yellow-trad/assets/images/process-09.webp" alt="批量生产" loading="lazy"></article>
-      </div>
-      <div class="pr-pair">
-        <article class="pr-card pr-card--left" aria-label="12 表面处理"><span class="pr-card-no" aria-hidden="true">12</span><img src="/pxid/yellow-trad/assets/images/process-07.webp" alt="表面处理" loading="lazy"><div class="pr-card-copy"><h3>表面处理</h3><p>清洗、电镀、喷涂等表面处理工艺，提升产品品质。</p></div></article>
-        <div class="pr-pair-nums" aria-hidden="true"><span>12</span><span>13</span></div>
-        <article class="pr-card pr-card--right" aria-label="13 组装交付"><span class="pr-card-no" aria-hidden="true">13</span><div class="pr-card-copy"><h3>组装交付</h3><p>功能测试、外观检查、包装出货，按项目要求交付。</p></div><img src="/pxid/yellow-trad/assets/images/process-08.webp" alt="组装交付" loading="lazy"></article>
-      </div>
+      <article class="pr-delivery-row">
+        <img class="pr-delivery-photo pr-delivery-photo--left" src="/pxid/yellow-trad/assets/images/process-02.webp" alt="团队讨论产品方案" loading="lazy">
+        <span class="pr-delivery-no">06</span>
+        <div class="pr-delivery-copy pr-delivery-copy--right"><h3>需求沟通</h3><p>明确需求、功能、成本、数量与周期，输出项目需求规格。</p></div>
+      </article>
+      <article class="pr-delivery-row">
+        <div class="pr-delivery-copy pr-delivery-copy--left"><h3>产品设计</h3><p>概念设计、外观设计、结构开发，同步考虑材料与工艺。</p></div>
+        <span class="pr-delivery-no">07</span>
+        <img class="pr-delivery-photo pr-delivery-photo--right" src="/pxid/yellow-trad/assets/images/process-01.webp" alt="产品设计草图" loading="lazy">
+      </article>
+      <article class="pr-delivery-row">
+        <img class="pr-delivery-photo pr-delivery-photo--left" src="/pxid/yellow-trad/assets/images/process-04.webp" alt="工程样机" loading="lazy">
+        <span class="pr-delivery-no">08</span>
+        <div class="pr-delivery-copy pr-delivery-copy--right"><h3>工程样机</h3><p>CNC 加工及快速样机制作，验证设计、迭代优化。</p></div>
+      </article>
+      <article class="pr-delivery-row">
+        <div class="pr-delivery-copy pr-delivery-copy--left"><h3>模具开发</h3><p>DFM 分析、模具设计、精密加工及试模验证。</p></div>
+        <span class="pr-delivery-no">09</span>
+        <img class="pr-delivery-photo pr-delivery-photo--right" src="/pxid/yellow-trad/assets/images/process-05.webp" alt="模具开发车间" loading="lazy">
+      </article>
+      <article class="pr-delivery-row">
+        <img class="pr-delivery-photo pr-delivery-photo--left" src="/pxid/yellow-trad/assets/images/process-06.webp" alt="试产验证" loading="lazy">
+        <span class="pr-delivery-no">10</span>
+        <div class="pr-delivery-copy pr-delivery-copy--right"><h3>试产验证</h3><p>小批量试产验证，测试工艺与设备，评估量产稳定性。</p></div>
+      </article>
+      <article class="pr-delivery-row">
+        <div class="pr-delivery-copy pr-delivery-copy--left"><h3>批量生产</h3><p>按确定的工艺组织生产，进行品质控制与测试。</p></div>
+        <span class="pr-delivery-no">11</span>
+        <img class="pr-delivery-photo pr-delivery-photo--right" src="/pxid/yellow-trad/assets/images/process-09.webp" alt="批量生产车间" loading="lazy">
+      </article>
+      <article class="pr-delivery-row">
+        <img class="pr-delivery-photo pr-delivery-photo--left" src="/pxid/yellow-trad/assets/images/process-07.webp" alt="表面处理产线" loading="lazy">
+        <span class="pr-delivery-no">12</span>
+        <div class="pr-delivery-copy pr-delivery-copy--right"><h3>表面处理</h3><p>清洗、电镀、喷涂等表面处理工艺，提升产品品质。</p></div>
+      </article>
+      <article class="pr-delivery-row">
+        <div class="pr-delivery-copy pr-delivery-copy--left"><h3>组装交付</h3><p>功能测试、外观检查、包装出货，按项目要求交付。</p></div>
+        <span class="pr-delivery-no">13</span>
+        <img class="pr-delivery-photo pr-delivery-photo--right" src="/pxid/yellow-trad/assets/images/process-08.webp" alt="组装交付现场" loading="lazy">
+      </article>
     </div>
   </div>
 </section>
