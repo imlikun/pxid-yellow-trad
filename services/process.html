@@ -171,24 +171,30 @@ a{text-decoration:none;color:inherit}
 @media(prefers-reduced-motion:reduce){.pr-hero *, .pr-phase *{scroll-behavior:auto!important}}
 
 /* Reference correction: supplied factory render is the Hero background. */
+.pr-hero{min-height:430px}
 .pr-hero-photo{inset:0 0 0 55%;background-image:url('/pxid/yellow-trad/assets/images/process-hero-reference.png');background-position:right 53%;background-size:cover;filter:none;opacity:.93}
 .pr-hero::before{background:linear-gradient(90deg,#fff 0%,#fff 31%,rgba(255,255,255,.97) 45%,rgba(255,255,255,.72) 62%,rgba(255,255,255,.10) 100%)}
-.pr-hero-layout{max-width:1120px;grid-template-columns:minmax(0,.89fr) minmax(0,1fr);gap:4%}
+.pr-hero-layout{max-width:1280px;min-height:430px;grid-template-columns:minmax(0,.84fr) minmax(0,1.05fr);gap:4%}
 .pr-hero-copy{padding-right:8px}
 .pr-hero-benefits{padding-left:6%;background:transparent}
-.pr-flow-rows{position:relative}
-.pr-flow-rows::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:#cdd2d4;z-index:1}
-.pr-flow-row{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr);min-height:165px;align-items:stretch;position:relative}
-.pr-flow-row:nth-child(odd){background:rgba(255,255,255,.68)}
-.pr-flow-row:nth-child(even){background:rgba(255,255,255,.36)}
-.pr-flow-photo{margin:0;min-width:0;height:165px;overflow:hidden}
-.pr-flow-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.78)}
-.pr-flow-copy{display:flex;flex-direction:column;justify-content:center;padding:22px 32px;min-width:0}
-.pr-flow-copy h3{font-size:19px;font-weight:850;line-height:1.4;color:#141819;margin:0 0 7px}
-.pr-flow-copy p{max-width:330px;font-size:14px;line-height:1.65;color:#687176;margin:0}
-.pr-flow-row--image-right .pr-flow-copy{align-items:flex-start}
-.pr-flow-no{grid-column:2;grid-row:1;z-index:2;align-self:center;justify-self:center;display:grid;place-items:center;width:36px;height:36px;background:#e41120;color:#fff;font:800 14px/1 Arial,sans-serif}
-.pr-flow-row::before{content:"";position:absolute;top:50%;left:calc(50% - 60px);right:calc(50% - 60px);height:1px;background:#d7dcdc}
+.pr-hero-wall-copy{position:absolute;right:6%;top:310px;z-index:1;width:130px;height:120px;padding:0 0 0 35px;background:#edf1f4;box-shadow:0 0 14px 8px rgba(237,241,244,.55);color:#90979b;font:500 12px/1.5 Arial,sans-serif;letter-spacing:.14em}
+.pr-hero-wall-copy::after{content:"";display:block;width:18px;height:3px;margin-top:10px;background:#e41120}
+.pr-step--right .pr-step-copy{margin-left:min(9vw,130px)}
+.pr-pairs::before{z-index:0}
+.pr-pair{grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);min-height:205px;padding:10px 0}
+.pr-pair:nth-child(odd){background:rgba(255,255,255,.63)}
+.pr-pair:nth-child(even){background:rgba(255,255,255,.36)}
+.pr-card{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px}
+.pr-card--left{padding-right:12px}
+.pr-card--right{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);padding-left:12px}
+.pr-card img{height:180px;filter:saturate(.78)}
+.pr-card-copy h3{font-size:19px}
+.pr-card-copy p{font-size:14px;line-height:1.6}
+.pr-pair-nums{flex-direction:column;gap:25px}
+.pr-pair-nums span{width:36px;height:36px;font-size:14px}
+.pr-card-no{display:none}
+.pr-pair--right-first .pr-card--right img{object-position:center 40%}
+@media(min-width:801px){.pr-pair--right-first{min-height:245px;align-items:start}.pr-pair--right-first .pr-card--right{display:flex;flex-direction:column;align-self:stretch;justify-content:space-between}.pr-pair--right-first .pr-card--right img{height:135px}}
 .a5{background:#f5f6f6;padding:66px 0 74px}
 .a5 .wrap{display:grid;grid-template-columns:minmax(0,38%) minmax(0,62%);gap:4%;align-items:center}
 .a5 .head{margin:0;min-width:0}
@@ -204,9 +210,9 @@ a{text-decoration:none;color:inherit}
 .a5 .adv-icon svg{display:block;width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
 .a5 .c h3{font-size:16px;font-weight:850;color:#171b1c;line-height:1.45;margin:0 0 6px}
 .a5 .c p{font-size:12.5px;line-height:1.65;color:#697276;margin:0}
-@media(max-width:1100px){.a5 .wrap{grid-template-columns:34% 62%;gap:4%}.a5 .c{padding:22px 16px;gap:10px}.pr-flow-row{min-height:145px}.pr-flow-photo{height:145px}.pr-flow-copy{padding:18px 22px}}
-@media(max-width:800px){.pr-hero-layout{grid-template-columns:1fr;gap:28px;max-width:1280px}.pr-hero-benefits{padding:16px 0 0}.pr-hero-photo{inset:0;opacity:.27;background-position:63% center}.pr-hero::before{background:rgba(255,255,255,.87)}.pr-flow-row{grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr);min-height:132px}.pr-flow-photo{height:132px}.pr-flow-copy{padding:12px 15px}.pr-flow-copy h3{font-size:16px}.pr-flow-copy p{font-size:12px}.a5 .wrap{display:block}.a5 .head{margin-bottom:30px}.a5 .head .sec-h2{margin:16px 0}.a5 .c{min-height:135px}}
-@media(max-width:600px){.pr-hero-benefits{padding:10px 0 0}.pr-hero-photo{background-position:64% center;opacity:.20}.pr-flow-rows::before{left:18px}.pr-flow-row{display:grid;grid-template-columns:38px 105px minmax(0,1fr);min-height:112px;gap:10px;padding:10px 0;background:transparent!important;border-bottom:1px solid #e1e5e5}.pr-flow-row::before{display:none}.pr-flow-row .pr-flow-no{grid-column:1;grid-row:1;align-self:center;justify-self:start;width:36px;height:36px}.pr-flow-row .pr-flow-photo{grid-column:2;grid-row:1;width:105px;height:88px}.pr-flow-row .pr-flow-copy{grid-column:3;grid-row:1;padding:0;align-items:flex-start;justify-content:center}.pr-flow-copy h3{font-size:15px;margin-bottom:3px}.pr-flow-copy p{font-size:12px;line-height:1.45}.a5{padding:52px 0 60px}.a5 .head .sec-h2{font-size:31px}.a5 .grid{grid-template-columns:1fr}.a5 .c{min-height:0;padding:21px 20px}.a5 .adv-intro br{display:none}}
+@media(max-width:1100px){.a5 .wrap{grid-template-columns:34% 62%;gap:4%}.a5 .c{padding:22px 16px;gap:10px}.pr-pair{min-height:180px}.pr-card img{height:150px}.pr-card-copy p{font-size:12.5px}}
+@media(max-width:800px){.pr-hero-layout{grid-template-columns:1fr;gap:28px;max-width:1280px;min-height:0}.pr-hero-benefits{padding:16px 0 0}.pr-hero-photo{inset:0;opacity:.27;background-position:63% center}.pr-hero::before{background:rgba(255,255,255,.87)}.pr-hero-wall-copy{display:none}.pr-step--right .pr-step-copy{margin-left:0}.pr-pair{grid-template-columns:minmax(0,1fr) 74px minmax(0,1fr)}.pr-card,.pr-card--right{grid-template-columns:1fr;gap:8px}.pr-card--right img{order:-1}.pr-card img{height:120px}.pr-card-copy h3{font-size:16px}.a5 .wrap{display:block}.a5 .head{margin-bottom:30px}.a5 .head .sec-h2{margin:16px 0}.a5 .c{min-height:135px}}
+@media(max-width:600px){.pr-hero-benefits{padding:10px 0 0}.pr-hero-photo{background-position:64% center;opacity:.20}.pr-pairs::before{left:18px}.pr-pair{display:flex;flex-direction:column;min-height:0;padding:0;background:transparent!important;border:0}.pr-pair-nums{display:none}.pr-pair--right-first .pr-card--right{order:-1}.pr-card,.pr-card--right{display:grid;grid-template-columns:36px 95px minmax(0,1fr);gap:10px;min-height:112px;padding:12px 0;border-bottom:1px solid #e1e5e5}.pr-card-no{display:grid;grid-column:1;grid-row:1;align-self:center;place-items:center;width:36px;height:36px;background:#e41120;color:#fff;font:800 14px/1 Arial,sans-serif;z-index:1}.pr-card img,.pr-card--right img{grid-column:2;grid-row:1;width:95px;height:78px;order:initial}.pr-card-copy{grid-column:3;grid-row:1;align-self:center;padding:0}.pr-card-copy h3{font-size:15px;margin-bottom:3px}.pr-card-copy p{font-size:12px;line-height:1.45}.a5{padding:52px 0 60px}.a5 .head .sec-h2{font-size:31px}.a5 .grid{grid-template-columns:1fr}.a5 .c{min-height:0;padding:21px 20px}.a5 .adv-intro br{display:none}}
 </style>
 </head>
 <body>
@@ -256,6 +262,7 @@ a{text-decoration:none;color:inherit}
 <!-- ===== Hero ===== -->
 <section class="pr-hero" id="top">
   <div class="pr-hero-photo" aria-hidden="true"></div>
+  <div class="pr-hero-wall-copy" aria-hidden="true">FROM<br>IDEA<br>TO<br>REALITY</div>
   <div class="wrap pr-hero-layout">
     <div class="pr-hero-copy">
       <div class="eyebrow">PROCESS <span class="en">|</span> 服务流程</div>
@@ -290,47 +297,27 @@ a{text-decoration:none;color:inherit}
 <section class="pr-phase pr-phase--delivery" id="delivery">
   <div class="inner">
     <div class="pr-phase-head"><h2><span>06 - 13</span> 交付阶段 · 8 步从设计到量产</h2><span class="pr-phase-rule"></span><p>从设计到量产，专业制造每一个细节</p></div>
-    <div class="pr-flow-rows">
-      <article class="pr-flow-row pr-flow-row--image-left">
-        <figure class="pr-flow-photo"><img src="/pxid/yellow-trad/assets/images/process-02.webp" alt="需求沟通" loading="lazy"></figure>
-        <span class="pr-flow-no">06</span>
-        <div class="pr-flow-copy"><h3>需求沟通</h3><p>明确需求、功能、成本、数量与周期，输出项目需求规格。</p></div>
-      </article>
-      <article class="pr-flow-row pr-flow-row--image-right">
-        <div class="pr-flow-copy"><h3>产品设计</h3><p>概念设计、外观设计、结构开发，同步考虑材料与工艺。</p></div>
-        <span class="pr-flow-no">07</span>
-        <figure class="pr-flow-photo"><img src="/pxid/yellow-trad/assets/images/process-01.webp" alt="产品设计" loading="lazy"></figure>
-      </article>
-      <article class="pr-flow-row pr-flow-row--image-left">
-        <figure class="pr-flow-photo"><img src="/pxid/yellow-trad/assets/images/process-04.webp" alt="工程样机" loading="lazy"></figure>
-        <span class="pr-flow-no">08</span>
-        <div class="pr-flow-copy"><h3>工程样机</h3><p>CNC 加工及快速样机制作，验证设计、迭代优化。</p></div>
-      </article>
-      <article class="pr-flow-row pr-flow-row--image-right">
-        <div class="pr-flow-copy"><h3>模具开发</h3><p>DFM 分析、模具设计、精密加工及试模验证，提升制造能力。</p></div>
-        <span class="pr-flow-no">09</span>
-        <figure class="pr-flow-photo"><img src="/pxid/yellow-trad/assets/images/process-05.webp" alt="模具开发" loading="lazy"></figure>
-      </article>
-      <article class="pr-flow-row pr-flow-row--image-left">
-        <figure class="pr-flow-photo"><img src="/pxid/yellow-trad/assets/images/process-06.webp" alt="试产验证" loading="lazy"></figure>
-        <span class="pr-flow-no">10</span>
-        <div class="pr-flow-copy"><h3>试产验证</h3><p>小批量试产验证，测试工艺与设备，确保量产的稳定性。</p></div>
-      </article>
-      <article class="pr-flow-row pr-flow-row--image-right">
-        <div class="pr-flow-copy"><h3>批量生产</h3><p>按稳定的生产体系组织生产，进行品质控制与测试。</p></div>
-        <span class="pr-flow-no">11</span>
-        <figure class="pr-flow-photo"><img src="/pxid/yellow-trad/assets/images/process-09.webp" alt="批量生产" loading="lazy"></figure>
-      </article>
-      <article class="pr-flow-row pr-flow-row--image-left">
-        <figure class="pr-flow-photo"><img src="/pxid/yellow-trad/assets/images/process-07.webp" alt="表面处理" loading="lazy"></figure>
-        <span class="pr-flow-no">12</span>
-        <div class="pr-flow-copy"><h3>表面处理</h3><p>清洗、电镀、喷涂等多种表面处理工艺，提升产品品质。</p></div>
-      </article>
-      <article class="pr-flow-row pr-flow-row--image-right">
-        <div class="pr-flow-copy"><h3>组装交付</h3><p>功能测试、外观全检、包装出货，全流程快速送达。</p></div>
-        <span class="pr-flow-no">13</span>
-        <figure class="pr-flow-photo"><img src="/pxid/yellow-trad/assets/images/process-08.webp" alt="组装交付" loading="lazy"></figure>
-      </article>
+    <div class="pr-pairs">
+      <div class="pr-pair pr-pair--right-first">
+        <article class="pr-card pr-card--left" aria-label="07 产品设计"><span class="pr-card-no" aria-hidden="true">07</span><img src="/pxid/yellow-trad/assets/images/process-02.webp" alt="产品设计讨论" loading="lazy"><div class="pr-card-copy"><h3>产品设计</h3><p>概念设计、外观设计、结构开发，同步考虑材料与工艺。</p></div></article>
+        <div class="pr-pair-nums" aria-hidden="true"><span>06</span><span>07</span></div>
+        <article class="pr-card pr-card--right" aria-label="06 需求沟通"><span class="pr-card-no" aria-hidden="true">06</span><div class="pr-card-copy"><h3>需求沟通</h3><p>明确需求、功能、成本、数量与周期，输出项目需求规格。</p></div><img src="/pxid/yellow-trad/assets/images/process-01.webp" alt="需求沟通示意" loading="lazy"></article>
+      </div>
+      <div class="pr-pair">
+        <article class="pr-card pr-card--left" aria-label="08 工程样机"><span class="pr-card-no" aria-hidden="true">08</span><img src="/pxid/yellow-trad/assets/images/process-04.webp" alt="工程样机" loading="lazy"><div class="pr-card-copy"><h3>工程样机</h3><p>CNC 加工及快速样机制作，验证设计、迭代优化。</p></div></article>
+        <div class="pr-pair-nums" aria-hidden="true"><span>08</span><span>09</span></div>
+        <article class="pr-card pr-card--right" aria-label="09 模具开发"><span class="pr-card-no" aria-hidden="true">09</span><div class="pr-card-copy"><h3>模具开发</h3><p>DFM 分析、模具设计、精密加工及试模验证。</p></div><img src="/pxid/yellow-trad/assets/images/process-05.webp" alt="模具开发" loading="lazy"></article>
+      </div>
+      <div class="pr-pair">
+        <article class="pr-card pr-card--left" aria-label="10 试产验证"><span class="pr-card-no" aria-hidden="true">10</span><img src="/pxid/yellow-trad/assets/images/process-06.webp" alt="试产验证" loading="lazy"><div class="pr-card-copy"><h3>试产验证</h3><p>小批量试产验证，测试工艺与设备，评估量产稳定性。</p></div></article>
+        <div class="pr-pair-nums" aria-hidden="true"><span>10</span><span>11</span></div>
+        <article class="pr-card pr-card--right" aria-label="11 批量生产"><span class="pr-card-no" aria-hidden="true">11</span><div class="pr-card-copy"><h3>批量生产</h3><p>按确定的工艺组织生产，进行品质控制与测试。</p></div><img src="/pxid/yellow-trad/assets/images/process-09.webp" alt="批量生产" loading="lazy"></article>
+      </div>
+      <div class="pr-pair">
+        <article class="pr-card pr-card--left" aria-label="12 表面处理"><span class="pr-card-no" aria-hidden="true">12</span><img src="/pxid/yellow-trad/assets/images/process-07.webp" alt="表面处理" loading="lazy"><div class="pr-card-copy"><h3>表面处理</h3><p>清洗、电镀、喷涂等表面处理工艺，提升产品品质。</p></div></article>
+        <div class="pr-pair-nums" aria-hidden="true"><span>12</span><span>13</span></div>
+        <article class="pr-card pr-card--right" aria-label="13 组装交付"><span class="pr-card-no" aria-hidden="true">13</span><div class="pr-card-copy"><h3>组装交付</h3><p>功能测试、外观检查、包装出货，按项目要求交付。</p></div><img src="/pxid/yellow-trad/assets/images/process-08.webp" alt="组装交付" loading="lazy"></article>
+      </div>
     </div>
   </div>
 </section>
