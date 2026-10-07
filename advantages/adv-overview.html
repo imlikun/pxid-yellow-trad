@@ -372,7 +372,7 @@
   .phero-aside small{display:block;margin-top:14px;font:700 9px/1.45 "SF Mono",Consolas,monospace;letter-spacing:.16em;color:rgba(255,255,255,.50)}
 
   /* ===== 概览条 ===== */
-  .ovbar{border-top:1px solid rgba(255,255,255,.17);border-bottom:1px solid rgba(255,255,255,.17);background:rgba(17,20,21,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);position:sticky;top:68px;z-index:40;margin-top:-113px;box-shadow:0 12px 28px rgba(0,0,0,.24);transition:top .3s ease}
+  .ovbar{border-top:1px solid rgba(255,255,255,.17);border-bottom:1px solid rgba(255,255,255,.17);background:rgba(17,20,21,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);position:sticky;top:var(--overview-header-height,68px);z-index:40;margin-top:-113px;box-shadow:0 12px 28px rgba(0,0,0,.24);transition:top .3s ease}
   body.nav-hide .ovbar{top:0}
   .ovbar .wrap{width:calc(100% - 56px);max-width:1260px;padding:0}
   .ovbar .grid{display:grid;grid-template-columns:repeat(7,1fr)}
@@ -389,13 +389,13 @@
   .ovbar a .e{display:block;min-height:12px;margin-top:5px;font:700 9px/1.3 "SF Mono",Consolas,monospace;letter-spacing:.12em;color:rgba(255,255,255,.47);text-transform:uppercase}
   .ovbar a.on .t{color:#fff}
   .ovbar a.on .e{color:rgba(255,255,255,.82)}
-  .stage{scroll-margin-top:192px}
+  .stage{scroll-margin-top:var(--stage-scroll-offset,196px)}
 
   /* ========== 核心：全屏背景 section + 半透明卡片浮层 ========== */
   .stage{
-    position:relative; min-height:100vh; overflow:hidden;
+    position:relative; overflow:hidden;
     display:flex; align-items:center; justify-content:center;
-    padding:50px 0;
+    padding:24px 0;
     border-bottom:1px solid rgba(255,255,255,.03)
   }
   /* ---- 全屏清晰背景图（每道工序不同）---- */
@@ -421,7 +421,7 @@
     box-shadow:0 8px 40px rgba(0,0,0,.45), 0 1px 0 rgba(255,255,255,.04) inset;
     width:calc(100% - 80px);
     overflow:hidden;
-    height:calc(100vh - 100px); display:flex; flex-direction:column
+    height:calc(100svh - var(--stage-nav-height,180px) - 32px); display:flex; flex-direction:column
   }
 
   /* 卡片顶栏 */
@@ -446,8 +446,8 @@
 
   /* 图区：左大图 + 右3张辅图（flex 填满卡片剩余空间） */
   .card .cgallery{display:grid;grid-template-columns:1fr 180px;border-top:1px solid var(--card-border);background:rgba(255,255,255,.03);flex:1;min-height:0}
-  .card .main-img{position:relative;min-height:360px;overflow:hidden;background:#f5f5f4;display:flex;align-items:center;justify-content:center}
-  .card .main-img img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.02);transition:transform .5s ease}
+  .card .main-img{position:relative;min-height:0;overflow:hidden;background:#f5f5f4;display:flex;align-items:center;justify-content:center}
+  .card .main-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.02);transition:transform .5s ease}
   .card .main-img:hover img{transform:scale(1.02)}
   .card .main-img::after{content:"";position:absolute;inset:0;pointer-events:none;
     background:linear-gradient(90deg,rgba(7,9,10,.78),rgba(7,9,10,.42) 44%,transparent 82%),
@@ -462,10 +462,10 @@
   .card .main-img .badge{display:flex;align-items:center;gap:12px;width:fit-content;
     font:700 10px/1.4 "SF Mono",Consolas,monospace;letter-spacing:.12em;color:#fff}
   .card .main-img .badge::before{content:"";width:30px;height:2px;flex:none;background:var(--gold)}
-  .card .sub-imgs{display:flex;flex-direction:column;border-left:1px solid var(--card-border);background:#eee}
-  .card .sub-imgs a{flex:1;overflow:hidden;position:relative;display:block;border-bottom:1px solid rgba(0,0,0,.08);min-height:120px;background:#fff}
+  .card .sub-imgs{display:flex;flex-direction:column;min-height:0;border-left:1px solid var(--card-border);background:#eee}
+  .card .sub-imgs a{flex:1;overflow:hidden;position:relative;display:block;border-bottom:1px solid rgba(0,0,0,.08);min-height:0;background:#fff}
   .card .sub-imgs a:last-child{border-bottom:0}
-  .card .sub-imgs a img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);transition:transform .3s}
+  .card .sub-imgs a img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);transition:transform .3s}
   .card .sub-imgs a:hover img{transform:scale(1.03)}
 
   /* ===== 承接服务关联链接 ===== */
@@ -510,13 +510,13 @@
     .ovbar .grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
     .ovbar .grid::-webkit-scrollbar{display:none}
     .ovbar a{flex:0 0 142px;scroll-snap-align:center}
-    .stage{min-height:auto; padding:36px 0}
+    .stage{padding:20px 0}
     .stage .card{width:96%;height:auto}
     .card .cgallery{grid-template-columns:1fr}
-    .card .sub-imgs{flex-direction:row;border-left:none;border-top:1px solid var(--card-border)}
+    .card .sub-imgs{flex-direction:row;height:120px;border-left:none;border-top:1px solid var(--card-border)}
     .card .sub-imgs a{min-width:33.33%;border-bottom:0;border-right:1px solid var(--card-border)}
     .card .sub-imgs a:last-child{border-right:0}
-    .card .main-img{min-height:280px}
+    .card .main-img{height:clamp(220px,42svh,380px)}
     .card .chead{gap:12px;padding:16px 20px 11px}
     .card .cmeta{text-align:right;padding-left:0}
     .card .ctags{padding:0 20px 14px}
@@ -531,21 +531,24 @@
     .phero-kicker{display:none}
     .phero h1{font-size:clamp(34px,9.2vw,44px);margin-bottom:18px}
     .phero p{font-size:13px;line-height:1.65;letter-spacing:.02em}
-    .ovbar{top:64px;margin-top:-103px}
+    .ovbar{top:var(--overview-header-height,64px);margin-top:-103px}
     .ovbar a{flex-basis:118px;min-height:99px}
     .ovbar a .t{font-size:13px}
-    .stage{scroll-margin-top:174px}
     .card .cicon{width:44px;height:44px}
     .card .cicon b{font-size:18px}
     .card .ctitle h2{font-size:17px}
-    .card .main-img{min-height:220px}
+    .card .main-img{height:clamp(220px,36svh,280px)}
     .card .photo-copy{left:19px;right:16px;bottom:20px;width:auto;padding-left:16px}
     .card .photo-copy::before{height:26px;top:2px}
     .card .photo-copy h2{font-size:20px}
     .card .photo-copy p{font-size:12px;margin:5px 0 10px}
     .card .main-img .badge{font-size:9px;letter-spacing:.04em;gap:8px}
     .card .main-img .badge::before{width:20px}
-    .card .sub-imgs a{min-height:90px}
+    .card .sub-imgs{height:90px}
+  }
+  @media(min-width:981px) and (max-height:520px){
+    .stage .card{min-height:320px}
+    .card .photo-copy{bottom:20px}
   }
 
 </style>
@@ -678,51 +681,109 @@
     });
   });
 })();
-/* ovbar <-> section 双向绑定：点腰带滚到 section；滚到 section 腰带对应格变品牌红底 */
+/* 工艺导航与卡片顶边共用定位基准；跳转期间保持主导航状态稳定。 */
 (function(){
+  var bar=document.querySelector('.ovbar');
+  var header=document.querySelector('body>header');
+  var hero=document.querySelector('.phero');
   var links=[].slice.call(document.querySelectorAll('.ovbar .grid a'));
   var grid=document.querySelector('.ovbar .grid');
-  if(!links.length) return;
-  links.forEach(function(a){
-    a.addEventListener('click',function(e){
-      var t=document.querySelector(a.getAttribute('href'));
-      if(!t) return;
-      e.preventDefault();
-      t.scrollIntoView({behavior:'smooth'});
-      history.replaceState(null,'',a.getAttribute('href'));
-    });
-  });
+  if(!bar||!links.length) return;
   var stages=links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
-  var cur=null;
+  var cur=null, jump=null, settleTimer=0, frame=0, last=window.scrollY||0;
+  var gap=16;
+  function offset(){
+    return bar.offsetHeight+(document.body.classList.contains('nav-hide')?0:header.offsetHeight)+gap;
+  }
+  function measure(){
+    document.documentElement.style.setProperty('--overview-header-height',header.offsetHeight+'px');
+    document.documentElement.style.setProperty('--stage-nav-height',(header.offsetHeight+bar.offsetHeight)+'px');
+    document.documentElement.style.setProperty('--stage-scroll-offset',offset()+'px');
+  }
   function paint(id){
     if(cur===id) return; cur=id;
     links.forEach(function(a){
       var active=a.getAttribute('href')==='#'+id;
       a.classList.toggle('on',active);
+      if(active) a.setAttribute('aria-current','step');
+      else a.removeAttribute('aria-current');
       if(active&&grid.scrollWidth>grid.clientWidth){
         var item=a.getBoundingClientRect(), rail=grid.getBoundingClientRect();
         grid.scrollTo({left:grid.scrollLeft+item.left+item.width/2-rail.left-rail.width/2,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
       }
     });
   }
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(en){
-      if(en.isIntersecting) paint(en.target.id);
-    });
-  },{rootMargin:'-35% 0px -55% 0px',threshold:0});
-  stages.forEach(function(s){ io.observe(s); });
-  if(stages.length){ paint(stages[0].id); }
-})();
-(function(){
-  var last=window.scrollY||0;
-  var hero=document.querySelector('.phero');
-  var gate=hero?(hero.offsetTop+hero.offsetHeight-80):400;
-  window.addEventListener('scroll',function(){
+  function sync(){
+    frame=0;
     var y=window.scrollY||0;
-    if(y<=gate||y<last-4){ document.body.classList.remove('nav-hide'); }
-    else if(y>last+4){ document.body.classList.add('nav-hide'); }
+    if(!jump){
+      var gate=hero?(hero.offsetTop+hero.offsetHeight-80):400;
+      if(y<=gate||y<last-4) document.body.classList.remove('nav-hide');
+      else if(y>last+4) document.body.classList.add('nav-hide');
+      var chosen=stages[0], line=offset()+8;
+      stages.forEach(function(stage){
+        if(stage.querySelector('.card').getBoundingClientRect().top<=line) chosen=stage;
+      });
+      if(chosen) paint(chosen.id);
+    }
     last=y;
+    document.documentElement.style.setProperty('--stage-scroll-offset',offset()+'px');
+  }
+  function queue(){ if(!frame) frame=requestAnimationFrame(sync); }
+  function targetY(stage){
+    return Math.max(0,stage.querySelector('.card').getBoundingClientRect().top+window.scrollY-offset());
+  }
+  function finishJump(){
+    if(!jump) return;
+    var target=jump;
+    window.scrollTo({top:targetY(target),behavior:'instant'});
+    requestAnimationFrame(function(){
+      if(jump!==target) return;
+      jump=null; last=window.scrollY; queue();
+    });
+  }
+  function go(stage,smooth){
+    clearTimeout(settleTimer);
+    jump=stage; paint(stage.id);
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top:targetY(stage),behavior:smooth&&!reduce?'smooth':'instant'});
+    settleTimer=setTimeout(finishJump,220);
+  }
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      var target=stages.find(function(stage){return '#'+stage.id===a.getAttribute('href');});
+      if(!target) return;
+      e.preventDefault(); go(target,true);
+      history.replaceState(null,'',a.getAttribute('href'));
+    });
+  });
+  window.addEventListener('scroll',function(){
+    if(jump){clearTimeout(settleTimer);settleTimer=setTimeout(finishJump,220);}
+    queue();
   },{passive:true});
+  function cancelJump(){
+    clearTimeout(settleTimer);
+    if(jump) window.scrollTo({top:window.scrollY,behavior:'instant'});
+    jump=null;last=window.scrollY;queue();
+  }
+  window.addEventListener('wheel',cancelJump,{passive:true});
+  window.addEventListener('touchstart',cancelJump,{passive:true});
+  window.addEventListener('keydown',function(e){
+    if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].indexOf(e.key)!==-1) cancelJump();
+  });
+  function followHash(){
+    var target=stages.find(function(stage){return '#'+stage.id===location.hash;});
+    if(target) go(target,false);
+  }
+  window.addEventListener('hashchange',followHash);
+  window.addEventListener('load',function(){measure();followHash();});
+  window.addEventListener('resize',function(){measure();if(jump) go(jump,false);else queue();});
+  bar.addEventListener('transitionend',queue);
+  if(window.ResizeObserver){
+    var sizeObserver=new ResizeObserver(measure);
+    sizeObserver.observe(header);sizeObserver.observe(bar);
+  }
+  measure(); queue();
 })();
 </script>
 <script src="/pxid/yellow-trad/assets/js/nav.js" defer></script>
