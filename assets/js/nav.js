@@ -61,22 +61,28 @@
         if (!isMobile()) return; // 桌面端按 CSS hover 正常行为
         var hd = this.closest('.has-dropdown');
         if (!hd.classList.contains('adv-open')) {
-          e.preventDefault(); // 首次点击仅展开，不跳转
+          hd.classList.add('adv-open');
+          var dropdown = hd.querySelector('.adv-dropdown');
+          // The site can disable submenus in CSS; in that mode the top link is a direct link.
+          if (!dropdown || window.getComputedStyle(dropdown).display === 'none') {
+            hd.classList.remove('adv-open');
+            return;
+          }
+          e.preventDefault(); // 可见的子菜单：首次点击仅展开，不跳转
           var others = menu.querySelectorAll('.has-dropdown.adv-open');
           for (var k = 0; k < others.length; k++) {
             if (others[k] !== hd) others[k].classList.remove('adv-open');
           }
-          hd.classList.add('adv-open');
         }
         // 已展开时放行默认跳转
       });
     }
 
     // 4) 点击真实链接（顶级直链 / 下拉子项）后关闭菜单
-    var navLinks = menu.querySelectorAll('.menu > a, .adv-dropdown a');
+    var navLinks = menu.querySelectorAll('.menu > a, .has-dropdown > .adv-trigger, .adv-dropdown a');
     for (var n = 0; n < navLinks.length; n++) {
-      navLinks[n].addEventListener('click', function () {
-        if (isMobile()) setTimeout(closeMenu, 0);
+      navLinks[n].addEventListener('click', function (e) {
+        if (isMobile() && !e.defaultPrevented) setTimeout(closeMenu, 0);
       });
     }
 
