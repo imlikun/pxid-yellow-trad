@@ -8,11 +8,9 @@
 <link rel="stylesheet" href="/pxid/yellow-trad/assets/css/base.css?v=20261007-nav2">
 <style>
 .about-page{--ab-dark:#0b1215;--ab-light:#f4f5f5;--ab-muted:#6c7377;--ab-section-space:clamp(64px,6vw,88px);background:var(--ab-dark)}
-.about-page>header{background:rgba(9,17,21,.48);border-bottom:1px solid rgba(255,255,255,.12);transition:background .25s}
-.about-page>header.scrolled{background:rgba(9,17,21,.97)}
-.about-page>header .nav .menu>a,.about-page>header .nav .menu .has-dropdown>a{color:#e9edef}
-.about-page>header .nav .menu a.active{color:#fff}
-.about-page .hamburger span{background:#fff}
+.about-page>header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);transition:background .25s}
+.about-page>header.scrolled{background:rgba(255,255,255,.98)}
+.about-page>header .nav .menu a.active{color:var(--gold)}
 .about-page .ab-wrap{width:100%;max-width:1280px;padding:0 28px;margin:0 auto}
 .about-page main{background:var(--ab-light)}
 .about-page main section{scroll-margin-top:74px}
@@ -26,12 +24,12 @@
 .about-page .ab-link:hover{gap:20px}
 .about-page .ab-link--light{color:#fff;border-color:rgba(255,255,255,.45)}
 .about-page a:focus-visible,.about-page button:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
-.about-page .ab-hero{position:relative;margin-top:-74px;min-height:clamp(660px,80svh,800px);display:flex;align-items:center;padding:154px 0 80px;background:var(--ab-dark);color:#fff;overflow:hidden}
+.about-page .ab-hero{position:relative;min-height:clamp(640px,72svh,760px);display:flex;align-items:center;padding:88px 0;background:var(--ab-dark);color:#fff;overflow:hidden}
 .about-page .ab-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
 .about-page .ab-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,12,16,.94) 0%,rgba(4,12,16,.78) 27%,rgba(4,12,16,.25) 58%,rgba(4,12,16,.12) 100%),linear-gradient(0deg,rgba(4,12,16,.4),transparent 35%)}
 .about-page .ab-hero .ab-wrap{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:30px}
 .about-page .ab-hero-copy{max-width:570px}
-.about-page .ab-hero h1{font-size:clamp(36px,4.3vw,58px);line-height:1.26;font-weight:750;letter-spacing:.025em}
+.about-page .ab-hero h2{font-size:clamp(36px,4.3vw,58px);line-height:1.26;font-weight:750;letter-spacing:.025em}
 .about-page .ab-hero .ab-copy{color:#c8cdd0;margin-top:17px;font-size:16px}
 .about-page .ab-play{appearance:none;display:inline-flex;align-items:center;gap:15px;border:0;padding:0;background:none;color:#fff;font:600 14px/1.4 var(--sans);cursor:pointer;margin-top:23px}
 .about-page .ab-play-circle{display:grid;place-items:center;width:51px;height:51px;border:1px solid rgba(255,255,255,.75);border-radius:50%;transition:background .25s,border-color .25s}
@@ -44,15 +42,17 @@
 .about-page .ab-hero-index{position:absolute;right:max(28px,calc((100vw - 1224px)/2));bottom:30px;z-index:1;color:#c6cdd0;font-size:11px;letter-spacing:.08em}
 .about-page .ab-hero-index strong{font-size:19px;color:#fff;margin-right:9px;font-weight:600}
 .about-page .ab-intro{background:var(--ab-light);padding:0}
-.about-page .ab-intro-main{min-height:480px;position:relative;overflow:hidden;display:flex;align-items:center}
+.about-page .ab-intro-main{min-height:clamp(580px,68svh,700px);position:relative;overflow:hidden;display:flex;align-items:center}
 .about-page .ab-building{position:absolute;top:0;right:0;width:74%;height:100%;object-fit:cover;object-position:58% 60%}
 .about-page .ab-intro-main::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f4f5f5 0%,#f4f5f5 25%,rgba(244,245,245,.94) 33%,rgba(244,245,245,.6) 43%,rgba(244,245,245,0) 65%)}
 .about-page .ab-intro-main .ab-wrap{position:relative;z-index:1;padding-top:72px;padding-bottom:72px}
-.about-page .ab-intro-copy{max-width:415px}
-.about-page .ab-intro-copy .ab-title{font-size:40px;line-height:1.35}
+.about-page .ab-intro-copy{max-width:470px}
+.about-page .ab-intro-copy .ab-title{font-size:clamp(40px,4.3vw,58px);line-height:1.28}
 .about-page .ab-intro-copy .ab-label{margin-bottom:13px}
-.about-page .ab-intro-copy .ab-copy{font-size:14px;margin-top:13px}
-.about-page .ab-intro-copy .ab-link{margin-top:14px}
+.about-page .ab-intro-copy .ab-copy{font-size:15px;margin-top:20px}
+.about-page .ab-intro-copy .ab-link{margin-top:24px}
+.about-page .ab-intro-copy .ab-scroll{color:var(--ab-muted);margin-top:30px}
+.about-page .ab-intro-copy .ab-scroll::after{background:#909a9f}
 .about-page .ab-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-top:34px;padding-bottom:34px}
 .about-page .ab-stat{display:flex;align-items:center;gap:18px;position:relative}
 .about-page .ab-stat:not(:first-child){padding-left:50px}
@@ -198,17 +198,19 @@
  .about-page .ab-stat:not(:first-child){padding-left:30px}
 }
 @media(max-width:980px){
- .about-page>header{background:rgba(9,17,21,.94)}
+ .about-page>header{background:#fff}
  .about-page>header .nav .menu{gap:0}
+ .about-page>header .nav .menu a.active{color:#fff}
  .about-page{--ab-section-space:64px}
  .about-page .ab-hero{min-height:660px}
- .about-page .ab-intro-main{min-height:440px}
+ .about-page .ab-intro-main{min-height:560px}
  .about-page .ab-factory-panel{min-height:460px}
  .about-page .ab-factory-arrow--prev{left:12px}
  .about-page .ab-factory-arrow--next{right:12px}
  .about-page .ab-factory-panel .ab-wrap{padding-left:62px;padding-right:62px}
  .about-page .ab-hero-aside{display:none}
  .about-page .ab-intro-copy{max-width:390px}
+ .about-page .ab-intro-copy .ab-title{font-size:40px}
  .about-page .ab-intro-main::after{background:linear-gradient(90deg,#f4f5f5 0%,rgba(244,245,245,.96) 34%,rgba(244,245,245,.2) 74%)}
  .about-page .ab-stat:not(:first-child){padding-left:22px}
  .about-page .ab-stat{gap:10px}
@@ -232,10 +234,10 @@
  .about-page{--ab-section-space:48px}
  .about-page .ab-wrap{padding:0 22px}
  .about-page .ab-label{font-size:11px;margin-bottom:16px}
- .about-page .ab-hero{min-height:640px;padding:154px 0 72px;align-items:center}
+ .about-page .ab-hero{min-height:580px;padding:72px 0;align-items:center}
  .about-page .ab-hero-photo{object-position:57% center}
  .about-page .ab-hero::after{background:linear-gradient(90deg,rgba(4,12,16,.89),rgba(4,12,16,.5)),linear-gradient(0deg,rgba(4,12,16,.55),transparent 60%)}
- .about-page .ab-hero h1{font-size:36px;letter-spacing:.01em;line-height:1.34}
+ .about-page .ab-hero h2{font-size:36px;letter-spacing:.01em;line-height:1.34}
  .about-page .ab-hero .ab-copy{font-size:14px;max-width:300px;line-height:1.8}
  .about-page .ab-play{margin-top:26px}
  .about-page .ab-scroll{margin-top:43px}
@@ -243,9 +245,9 @@
  .about-page .ab-intro-main{display:block;min-height:0;padding-bottom:220px}
  .about-page .ab-building{width:100%;height:270px;top:auto;bottom:0;object-position:60% 55%}
  .about-page .ab-intro-main::after{background:linear-gradient(180deg,#f4f5f5 0%,#f4f5f5 48%,rgba(244,245,245,.84) 58%,rgba(244,245,245,0) 76%)}
- .about-page .ab-intro-main .ab-wrap{padding-top:48px;padding-bottom:28px}
+ .about-page .ab-intro-main .ab-wrap{padding-top:56px;padding-bottom:32px}
  .about-page .ab-intro-copy{max-width:none}
- .about-page .ab-intro-copy .ab-title{font-size:29px}
+ .about-page .ab-intro-copy .ab-title{font-size:34px}
  .about-page .ab-intro-copy .ab-copy{font-size:13px;max-width:335px}
  .about-page .ab-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 0;padding-top:32px;padding-bottom:34px}
  .about-page .ab-stat{gap:12px}
@@ -319,7 +321,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="/pxid/yellow-trad/">
-      <img src="/pxid/yellow-trad/assets/images/pxid-logo-white.png?v=20260924b" alt="PXID 品向智造" style="height:38px;width:auto;">
+      <img src="/pxid/yellow-trad/assets/images/pxid-logo.png?v=20260924b" alt="PXID 品向智造" style="height:38px;width:auto;">
     </a>
     <nav class="menu">
       <a href="/pxid/yellow-trad/" data-nav="home">首页</a>
@@ -354,26 +356,27 @@
   </div>
 </header>
 <main>
-<section class="ab-hero ab-dark" aria-labelledby="ab-hero-title">
-<img class="ab-hero-photo" src="/pxid/yellow-trad/assets/images/adv-核心优势-精加工-hero.jpg" alt="CNC 主轴加工金属工件" width="1920" height="600" fetchpriority="high">
-<div class="ab-wrap"><div class="ab-hero-copy">
-<p class="ab-label">ABOUT PXID</p><h1 id="ab-hero-title">精密制造<br>让想法成为可能</h1>
-<p class="ab-copy">从概念到量产，我们专注把每一个细节做到更好</p>
-<button class="ab-play" type="button" id="ab-play" aria-haspopup="dialog"><span class="ab-play-circle" aria-hidden="true"></span>观看制造短片</button><br>
-<a class="ab-scroll" href="#who-we-are" aria-label="向下了解 PXID">SCROLL</a>
-</div><p class="ab-hero-aside" aria-hidden="true">PRECISION<br>MANUFACTURING<br>A BETTER TOMORROW</p></div>
-<span class="ab-hero-index" aria-hidden="true"><strong>01</strong> / 06</span>
-</section>
-
 <section class="ab-intro" id="who-we-are" aria-labelledby="ab-intro-title">
-<div class="ab-intro-main"><img class="ab-building" src="/pxid/yellow-trad/assets/images/about-pxid-building-20261007.webp" alt="PXID 公司大楼外观" width="1800" height="777" loading="lazy">
-<div class="ab-wrap"><div class="ab-intro-copy ab-reveal"><p class="ab-label">WHO WE ARE</p><h2 class="ab-title" id="ab-intro-title">来自 PXID<br>专注精密制造</h2>
+<div class="ab-intro-main"><img class="ab-building" src="/pxid/yellow-trad/assets/images/about-pxid-building-20261007.webp" alt="PXID 公司大楼外观" width="1800" height="777" fetchpriority="high">
+<div class="ab-wrap"><div class="ab-intro-copy"><p class="ab-label">WHO WE ARE</p><h1 class="ab-title" id="ab-intro-title">来自 PXID<br>专注精密制造</h1>
 <p class="ab-copy">我们以设计与制造的紧密协作，帮助客户打造更好的产品。<br>从模具开发到加工、试模与检测，让想法一步步落到实处。</p>
-<a class="ab-link" href="/pxid/yellow-trad/advantages/adv-why.html">了解更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div></div>
+<a class="ab-link" href="/pxid/yellow-trad/advantages/adv-why.html">了解更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><br>
+<a class="ab-scroll" href="#manufacturing-story" aria-label="向下了解 PXID 精密制造">SCROLL</a></div></div></div>
 <div class="ab-wrap"><div class="ab-stat-grid"><div class="ab-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="6" height="6"/><rect x="15" y="3" width="6" height="6"/><rect x="3" y="15" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/></svg><div><strong>7<small>大</small></strong><span>核心工艺</span></div></div>
 <div class="ab-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V9h16v12H4Zm4-12V3h8v6M9 15h6M8 21v-4h8v4"/></svg><div><strong>9<small>台</small></strong><span>三轴 CNC</span></div></div>
 <div class="ab-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18v3H3Zm2 0V9h7v9m0-5h7V7m-3-4h6l-3 4V3M7 9V5h3v4"/></svg><div><strong>7<small>台</small></strong><span>海天注塑设备</span></div></div>
 <div class="ab-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v18h16M8 7h8v10H8M8 12H4m12 0h4M12 7V3m0 14v4"/></svg><div><strong>1<small>台</small></strong><span>三坐标测量机</span></div></div></div></div>
+</section>
+
+<section class="ab-hero ab-dark" id="manufacturing-story" aria-labelledby="ab-hero-title">
+<img class="ab-hero-photo" src="/pxid/yellow-trad/assets/images/adv-核心优势-精加工-hero.jpg" alt="CNC 主轴加工金属工件" width="1920" height="600" loading="lazy">
+<div class="ab-wrap"><div class="ab-hero-copy">
+<p class="ab-label">PRECISION MANUFACTURING</p><h2 id="ab-hero-title">精密制造<br>让想法成为可能</h2>
+<p class="ab-copy">从概念到量产，我们专注把每一个细节做到更好</p>
+<button class="ab-play" type="button" id="ab-play" aria-haspopup="dialog"><span class="ab-play-circle" aria-hidden="true"></span>观看制造短片</button><br>
+<a class="ab-scroll" href="#core-process" aria-label="向下了解七大核心工艺">SCROLL</a>
+</div><p class="ab-hero-aside" aria-hidden="true">PRECISION<br>MANUFACTURING<br>A BETTER TOMORROW</p></div>
+<span class="ab-hero-index" aria-hidden="true"><strong>02</strong> / 07</span>
 </section>
 
 <section class="ab-process ab-dark" id="core-process" aria-labelledby="ab-process-title"><div class="ab-wrap">

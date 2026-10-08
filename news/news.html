@@ -6,6 +6,15 @@
 <title>新闻动态 | PXID 品向智造 · 智能设计制造</title>
 <meta name="description" content="PXID 品向智造新闻动态：持续追踪产品设计、快速打样与精密制造的新方法、新实践。">
 <link rel="stylesheet" href="../assets/css/base.css?v=20261007-nav2">
+<style>
+  .news-hero{position:relative;isolation:isolate;overflow:hidden}
+  .news-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 65%;z-index:-2;pointer-events:none}
+  .news-hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(246,247,245,.96) 0%,rgba(246,247,245,.84) 34%,rgba(246,247,245,.24) 62%,rgba(246,247,245,0) 82%)}
+  @media(max-width:720px){
+    .news-hero-bg{object-position:72% center}
+    .news-hero::before{background:linear-gradient(180deg,rgba(246,247,245,.96),rgba(246,247,245,.9) 65%,rgba(246,247,245,.65))}
+  }
+</style>
 </head>
 <body>
 <header>
@@ -48,6 +57,7 @@
 
 <main id="top">
 <section class="news-hero">
+    <img class="news-hero-bg" src="/pxid/yellow-trad/assets/images/news-precision-hero-20261008.webp" alt="" aria-hidden="true" width="2172" height="724" fetchpriority="high">
     <div class="wrap">
       <div class="eyebrow reveal">NEWS · 新闻动态 <span class="en">| PXID</span></div>
       <h2 class="sec reveal">洞察智能设计制造前沿</h2>
