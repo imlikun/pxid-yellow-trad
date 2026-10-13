@@ -19,11 +19,11 @@
    作用域全部收在 .zy12 下，不与 base.css 的任何类冲突
    基准值来自 _scratch/zy/modules.json（Playwright 实测计算样式）：
      标题 Montserrat 700 · h2 52px/58px · 正文 Inter
-     主色 #ea5501 · 深字 #1f1f1f · 浅底 #f7f7f7 · ghost 大字 160px #ececec
+     主色 #BC1E21 · 深字 #1f1f1f · 浅底 #f7f7f7 · ghost 大字 160px #ececec（2026-10-13 红色统一）
      圆角 2px · 段内边距 100px 85px
    ========================================================================== */
 .zy12{
-  --o:#ea5501; --o2:#c94701; --ink:#1f1f1f; --ink2:#5a5f63; --ink3:#8a8f93;
+  --o:#BC1E21; --o2:#A81A1D; --ink:#1f1f1f; --ink2:#5a5f63; --ink3:#8a8f93;
   --line:#e6e6e6; --bg2:#f7f7f7; --ghost:#ececec; --dark:#112337; --r:2px;
   --sans:Inter,"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
   --head:Montserrat,"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
@@ -430,7 +430,7 @@
 </style>
 <style id="zy12-palette">
 /* ============================================================================
-   首页2 配色覆盖层 · 复刻橙 #ea5501 → 主站品牌黄 #BC1E21 + 近黑 #232626
+   首页2 配色覆盖层 · 已统一品牌红 #BC1E21 + 近黑 #232626（2026-10-13）
    ⚠️ 不动 zy-css.css —— 那是 1:1 实测记录（含原站橙色基准），要能一键退回橙色
    ⚠️ 规则一律带 .zy12 前缀且写在 zy-css 之后，同特异性下后者生效
    主站语言：黄只做「色块 / 短线 / 高亮」，字一律近黑或白 —— 所以
@@ -448,7 +448,7 @@
 /* ---- 2. 白底上的"橙字"：黄字对比不够，改近黑 + 黄做标记 ---- */
 .zy12 .eb{color:var(--ink2)}
 .zy12 .eb::before{border-left-color:var(--o)}
-.zy12 .m00 .eb,.zy12 .m00 .eb::before{color:#E8555F;border-left-color:#BC1E21}   /* 深底上直接黄 */
+.zy12 .m00 .eb,.zy12 .m00 .eb::before{color:#BC1E21;border-left-color:#BC1E21}   /* 深底上直接黄 */
 .zy12 .m02 .h2 span{color:var(--ink);padding:0 3px;
   background:linear-gradient(transparent 62%,rgba(188,30,33,.92) 62%,rgba(188,30,33,.92) 92%,transparent 92%)}
 .zy12 .m01 .c .ic svg,.zy12 .m05 .c .ic svg{stroke:#232626}

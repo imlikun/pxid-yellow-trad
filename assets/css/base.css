@@ -1,7 +1,7 @@
 
   :root{
     --gold:#BC1E21; --gold-d:#A81A1D; /* plan2 2026-09-24: gold -> PXID brand red #BC1E21 */
-    --red-ink:#E8555F; /* 2026-09-24 可读性：深色组件(CTA卡/footer)上的红字专色，WCAG AA */
+    --red-ink:#BC1E21; /* 2026-10-13 坤哥定稿：全站红色统一以 nav 获取报价按钮的品牌红为准 */
     --ink:#232626; --ink-2:#3c4141; --ink-3:#6b7171;
     --line:rgba(35,38,38,.10); --bg:#fff; --bg-2:#f6f7f5; --bg-3:#f0f1ee;
     --maxw:1280px;
@@ -969,10 +969,10 @@
 /* ===== 联系报价页 ===== */
 .ct-hero{position:relative;isolation:isolate;min-height:420px;display:flex;align-items:center;padding:90px 0 80px;overflow:hidden;background:#101213 url('/pxid/yellow-trad/assets/images/hero-slide-01.jpg') center 42%/cover no-repeat}
 .ct-hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(16,18,19,.58)}
-.ct-hero .eyebrow{margin-bottom:12px;color:#E8555F}
-.ct-hero .eyebrow .en{color:#E8555F}
+.ct-hero .eyebrow{margin-bottom:12px;color:#BC1E21}
+.ct-hero .eyebrow .en{color:#BC1E21}
 .ct-hero h1{font-size:clamp(32px,4.2vw,52px);line-height:1.15;font-weight:800;letter-spacing:-.015em;margin-bottom:16px;color:#fff}
-.ct-hero h1 .gold{color:#E8555F}
+.ct-hero h1 .gold{color:#BC1E21}
 .ct-hero .lead{max-width:640px;font-size:16px;color:rgba(255,255,255,.78);line-height:1.7}
 
 .ct-main{padding:60px 0 80px}
