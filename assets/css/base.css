@@ -967,10 +967,13 @@
 }
 
 /* ===== 联系报价页 ===== */
-.ct-hero{position:relative;padding:90px 0 80px;background:var(--bg-2);overflow:hidden}
-.ct-hero .eyebrow{margin-bottom:12px}
-.ct-hero h1{font-size:clamp(32px,4.2vw,52px);line-height:1.15;font-weight:800;letter-spacing:-.015em;margin-bottom:16px}
-.ct-hero .lead{max-width:640px;font-size:16px;color:var(--ink-2);line-height:1.7}
+.ct-hero{position:relative;isolation:isolate;min-height:420px;display:flex;align-items:center;padding:90px 0 80px;overflow:hidden;background:#101213 url('/pxid/yellow-trad/assets/images/hero-slide-01.jpg') center 42%/cover no-repeat}
+.ct-hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(16,18,19,.58)}
+.ct-hero .eyebrow{margin-bottom:12px;color:#E8555F}
+.ct-hero .eyebrow .en{color:#E8555F}
+.ct-hero h1{font-size:clamp(32px,4.2vw,52px);line-height:1.15;font-weight:800;letter-spacing:-.015em;margin-bottom:16px;color:#fff}
+.ct-hero h1 .gold{color:#E8555F}
+.ct-hero .lead{max-width:640px;font-size:16px;color:rgba(255,255,255,.78);line-height:1.7}
 
 .ct-main{padding:60px 0 80px}
 .ct-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:start}
@@ -1021,7 +1024,7 @@
   .ct-row{grid-template-columns:1fr}
 }
 @media(max-width:560px){
-  .ct-hero{padding:60px 0 50px}
+  .ct-hero{padding:60px 0 50px;min-height:340px}
   .ct-form-wrap{padding:22px}
   .ct-opts{gap:8px}
   .ct-opt{padding:6px 10px;font-size:12.5px}
