@@ -40,7 +40,7 @@
   .menu{display:flex;align-items:center;gap:30px}
 .menu>a,.menu .has-dropdown>a{font-size:17px;font-weight:700;color:var(--ink);position:relative;padding:6px 0;letter-spacing:.5px;display:inline-flex;align-items:center;line-height:1;white-space:nowrap;vertical-align:middle}
 .nav .menu .has-dropdown{display:flex;align-items:center;position:relative}
-  .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:.25s}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--gold);transition:.25s}
   .menu a:hover::after{width:100%}
   .nav-right{display:flex;align-items:center;gap:18px}
   /* hamburger: hidden on desktop */
