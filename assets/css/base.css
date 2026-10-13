@@ -38,9 +38,9 @@
   /* 旧版内页仍用白色 logo 图（原为深色 header 设计），浅色 header 下需转深色才可见 */
   .brand-img{display:inline-block;height:33px;width:auto;vertical-align:middle;filter:brightness(0)}
   .menu{display:flex;align-items:center;gap:30px}
-.menu>a,.menu .has-dropdown>a{font-size:17px;font-weight:700;color:var(--ink);position:relative;padding:6px 0;letter-spacing:.5px;display:inline-flex;align-items:center;line-height:1;white-space:nowrap;vertical-align:middle}
+.menu>a,.menu .has-dropdown>a{font-size:17px;font-weight:700;color:var(--ink);position:relative;padding:0;letter-spacing:.5px;display:inline-flex;align-items:center;height:74px;line-height:1;white-space:nowrap;vertical-align:middle}
 .nav .menu .has-dropdown{display:flex;align-items:center;position:relative}
-  .menu a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--gold);transition:.25s}
+  .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:.25s}
   .menu a:hover::after{width:100%}
   .nav-right{display:flex;align-items:center;gap:18px}
   /* hamburger: hidden on desktop */
@@ -67,7 +67,7 @@
   @media(max-width:980px){
     body>header .wrap.nav{padding:0 22px;gap:12px}
     body>header .nav .menu{gap:0}
-    body>header .nav .menu>a,body>header .nav .menu .has-dropdown>a{font-size:18px;color:#F2F3F4}
+    body>header .nav .menu>a,body>header .nav .menu .has-dropdown>a{font-size:18px;height:auto;color:#F2F3F4}
     body>header .nav .menu a.active{background:rgba(188,30,33,.16)}
     body>header .nav .menu>a.active::before{height:60%}
     body>header .nav .menu .has-dropdown>a.active{border-left:3px solid var(--gold);padding-left:25px}
@@ -340,7 +340,7 @@
     .menu.open{display:flex;opacity:1;transform:translateX(0);pointer-events:auto}
 
     /* menu items — white text on dark */
-    .menu>a,.menu .has-dropdown>a{font-size:18px;font-weight:700;color:var(--gold);letter-spacing:.08em;padding:16px 28px;border-bottom:1px solid rgba(255,255,255,.07);width:100%;justify-content:space-between;line-height:1.3;transition:background .2s,color .2s;position:relative}
+    .menu>a,.menu .has-dropdown>a{font-size:18px;font-weight:700;color:var(--gold);letter-spacing:.08em;padding:16px 28px;height:auto;border-bottom:1px solid rgba(255,255,255,.07);width:100%;justify-content:space-between;line-height:1.3;transition:background .2s,color .2s;position:relative}
     .menu>a::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:0;background:var(--gold);border-radius:0 2px 2px 0;transition:height .25s ease}
     .menu>a:hover,.menu .has-dropdown>a:hover{background:rgba(188,30,33,.12);color:#fff}
     .menu>a:hover::before,.menu .has-dropdown>a:hover::before{height:60%}
@@ -1321,3 +1321,23 @@
    桌面端是 .has-dropdown:hover .adv-dropdown{display:flex} 在管，所以必须另加这一条全局规则。 */
 .adv-dropdown{display:none!important}
 .has-dropdown .caret{display:none!important}
+
+/* ===== 全站统一页脚（首页 m11 版式，2026-10-13 坤哥定：其他页 footer 换成首页版）===== */
+.m11{background:#15191A;color:#fff;padding:78px 0 0;position:relative}
+.m11 .in{max-width:1280px;margin:0 auto;padding:0 28px}
+.m11 .g{display:grid;grid-template-columns:1.5fr 1fr 1.2fr 1fr;gap:40px;position:relative;z-index:2}
+.m11 h4{font:700 24px/1.2 Montserrat,"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;margin:0 0 20px}
+.m11 p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.9;margin:0}
+.m11 ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;margin:0;padding:0}
+.m11 li a{font-size:14px;color:rgba(255,255,255,.72);transition:.2s}
+.m11 li a:hover{color:#BC1E21}
+.m11 .sm{font:700 12px/1 Montserrat,"Noto Sans SC",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:26px 0 12px}
+.m11 .soc{display:flex;gap:9px}
+.m11 .soc a{width:34px;height:34px;border:1px solid rgba(255,255,255,.28);border-radius:2px;display:grid;place-items:center;font-size:12px;color:rgba(255,255,255,.75);transition:.22s}
+.m11 .soc a:hover{border-color:#BC1E21;color:#fff}
+.m11 .flogo{height:44px;width:auto;display:block;margin:0 0 18px}
+.m11 .zybtn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:2px;font:600 15px/1 Montserrat,"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;transition:.25s;white-space:nowrap;background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff}
+.m11 .zybtn:hover{background:#BC1E21;border-color:#BC1E21;color:#fff}
+.m11 .bar{border-top:1px solid rgba(255,255,255,.14);margin-top:56px;padding:22px 0;text-align:center;font-size:13px;color:rgba(255,255,255,.55);position:relative;z-index:2}
+@media(max-width:980px){.m11 .g{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.m11 .g{grid-template-columns:1fr;gap:30px}.m11 .flogo{height:38px}}

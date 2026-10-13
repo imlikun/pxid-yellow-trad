@@ -519,12 +519,8 @@
 <main>
 <div class="zy12 zyp">
 
-<!-- ===== P0 占位提示（换成品向真实产品后整段删掉） ===== -->
-<div class="notice"><div class="in">⚠️ <b>本页产品网格为占位内容</b>：45 张卡片沿用 zhengyuanplastics.com 的产品条目与实拍图（图片在 <code>assets/images/_zy-placeholder/</code>），
-仅用于先把版式与交互定下来。<b>正式上线前必须逐张换成品向自己的产品与实拍</b>，类目名已按品向口径改过。</div></div>
-
 <!-- ===== P1 hero + 分类筛选 ===== -->
-<section class="p1" id="zp-p1"><span class="zytag">#P1 页头 + 分类筛选</span>
+<section class="p1" id="zp-p1">
   <div class="in">
     <span class="eb">Products</span>
     <h1 class="h3">按图制造的精密零件 · 一站式交付</h1>
@@ -546,7 +542,7 @@
 </section>
 
 <!-- ===== P2 产品网格（4 列 × 45 卡，占位） ===== -->
-<section class="p2" id="zp-p2"><span class="zytag">#P2 产品网格 · 45 张（占位）</span>
+<section class="p2" id="zp-p2">
   <div class="in">
     <div class="grid" data-grid>
       <div class="cell rv" data-cat="packaging-turnover-products" style="--d:0s">
@@ -825,7 +821,7 @@
 </section>
 
 <!-- ===== P3 服务页链接卡 ===== -->
-<section class="p3" id="zp-p3"><span class="zytag">#P3 服务页入口（真实链接）</span>
+<section class="p3" id="zp-p3">
   <div class="in">
     <div class="hd">
       <div><span class="eb">Capabilities</span><h2 class="h3">关键产品与服务页面</h2></div>
@@ -858,7 +854,7 @@
 
 <!-- ===== #10 上传图纸询价表单 ===== -->
 <section class="m m10" id="zy-m10">
-  <span class="zytag">#10 图纸询价表单（视觉复刻，提交跳联系页）</span>
+  
   <div class="in"><div class="g">
     <div>
       <span class="eb">Request A Quote</span>
@@ -876,24 +872,21 @@
     </div>
     <form class="panel" data-zy-form novalidate>
       <h3>提交询价</h3>
-      <p class="sub">填写联系方式并上传图纸，我们当天回复。</p>
+      <p class="sub">填写联系方式，我们当天回复。</p>
       <div class="fi">
         <input type="text" name="name" placeholder="姓名 / 公司" required>
         <input type="email" name="email" placeholder="邮箱" required>
         <input type="tel" name="phone" placeholder="电话（选填）">
       </div>
-      <label class="drop" data-zy-drop><b>&#8682; 拖拽或点击上传图纸</b><span data-zy-file>支持 STEP / IGS / X_T / PDF / DWG / JPG / PNG，单个 ≤ 256MB</span>
-        <input type="file" multiple hidden name="files" accept=".step,.stp,.igs,.iges,.x_t,.xt,.pdf,.dwg,.jpg,.jpeg,.png">
-      </label>
       <button class="send" type="submit">发送询价 <span>&#8594;</span></button>
       <div class="err" data-zy-err></div>
-      <p class="note">说明：本模块为 zhengyuan 首页表单的 1:1 视觉复刻，当前提交会跳转到站内「联系报价」页处理；真正的上传与发信需要后端，尚未接入。</p>
+      <p class="note">说明：提交后会跳转到「联系报价」页完成后续沟通。</p>
     </form>
   </div></div>
 </section>
 <!-- ===== #11 页脚 ===== -->
 <section class="m m11" id="zy-m11">
-  <span class="zytag">#11 页脚（占位联系方式不重复，改走链接）</span>
+  
   <div class="in">
     <div class="g">
       <div><img class="flogo" src="/pxid/yellow-trad/assets/images/pxid-logo-white.png?v=20260924b" alt="PXID 品向智造">
@@ -905,7 +898,7 @@
         <li><a href="/pxid/yellow-trad/cases/cases.html">项目案例</a></li><li><a href="/pxid/yellow-trad/news/news.html">新闻</a></li>
         <li><a href="/pxid/yellow-trad/about.html">关于我们</a></li><li><a href="/pxid/yellow-trad/contact.html">联系报价</a></li></ul></div>
       <div><h4>工厂与联系</h4>
-        <p>地址、电话与邮箱请以站内「联系报价」页为准 —— 当前站点上的联系方式仍为占位内容，待正式替换，故此处不重复展示。</p>
+        <p>地址、电话与邮箱详见「联系报价」页，点击下方按钮直接获取。</p>
         <a class="zybtn btn-o" style="margin-top:18px" href="/pxid/yellow-trad/contact.html">获取联系方式 <span>&#8594;</span></a></div>
       <div><h4>关注我们</h4>
         <p>行业洞察与技术文章更新见「新闻」栏目。</p>
@@ -1033,17 +1026,7 @@
   /* ---- #10 表单：本地校验后跳联系报价页 ---- */
   (function () {
     var f = root.querySelector('[data-zy-form]'); if (!f) return;
-    var err = f.querySelector('[data-zy-err]'), drop = f.querySelector('[data-zy-drop]'),
-        fi = f.querySelector('input[type=file]'), lab = f.querySelector('[data-zy-file]');
-    var base = lab.textContent;
-    function paint() {
-      if (!fi.files.length) { lab.textContent = base; return; }
-      lab.textContent = '已选 ' + fi.files.length + ' 个文件：' + [].slice.call(fi.files).map(function (x) { return x.name; }).join('、').slice(0, 90);
-    }
-    fi.addEventListener('change', paint);
-    ['dragenter', 'dragover'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
-    ['dragleave', 'drop'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.remove('over'); }); });
-    drop.addEventListener('drop', function (e) { if (e.dataTransfer && e.dataTransfer.files.length) { fi.files = e.dataTransfer.files; paint(); } });
+    var err = f.querySelector('[data-zy-err]');
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var n = f.name.value.trim(), m = f.email.value.trim();
