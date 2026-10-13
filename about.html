@@ -25,7 +25,8 @@
 .about-page .ab-link--light{color:#fff;border-color:rgba(255,255,255,.45)}
 .about-page a:focus-visible,.about-page button:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
 .about-page .ab-hero{position:relative;min-height:clamp(560px,64svh,600px);display:flex;align-items:center;padding:88px 0;background:var(--ab-dark);color:#fff;overflow:hidden}
-.about-page .ab-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.about-page .ab-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:74% 50%}
+.about-page .ab-hero-wall{position:absolute;left:max(20px,calc((100vw - 1280px)/2 - 84px));bottom:34px;z-index:1;writing-mode:vertical-rl;text-orientation:mixed;font:800 clamp(40px,3.6vw,58px)/1 Montserrat,"Noto Sans SC",sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.09);pointer-events:none;user-select:none}
 .about-page .ab-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,12,16,.94) 0%,rgba(4,12,16,.78) 27%,rgba(4,12,16,.25) 58%,rgba(4,12,16,.12) 100%),linear-gradient(0deg,rgba(4,12,16,.4),transparent 35%)}
 .about-page .ab-hero .ab-wrap{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:30px}
 .about-page .ab-hero-copy{max-width:570px}
@@ -43,6 +44,8 @@
 .about-page .ab-hero-index strong{font-size:19px;color:#fff;margin-right:9px;font-weight:600}
 .about-page .ab-intro{background:var(--ab-light);padding:0}
 .about-page .ab-intro-main{min-height:clamp(580px,68svh,700px);position:relative;overflow:hidden;display:flex;align-items:center}
+.about-page .ab-intro-wall{position:absolute;left:max(-30px,calc((100vw - 1280px)/2 - 170px));top:44%;transform:translateY(-50%);z-index:1;font:800 clamp(110px,10vw,185px)/0.92 Montserrat,"Noto Sans SC",sans-serif;letter-spacing:-.02em;color:#edf0f2;pointer-events:none;user-select:none}
+@media(max-width:800px){.about-page .ab-intro-wall{display:none}}
 .about-page .ab-building{position:absolute;top:0;right:0;width:74%;height:100%;object-fit:cover;object-position:58% 60%}
 .about-page .ab-intro-main::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f4f5f5 0%,#f4f5f5 25%,rgba(244,245,245,.94) 33%,rgba(244,245,245,.6) 43%,rgba(244,245,245,0) 65%)}
 .about-page .ab-intro-main .ab-wrap{position:relative;z-index:1;padding-top:72px;padding-bottom:72px}
@@ -235,7 +238,8 @@
  .about-page .ab-wrap{padding:0 22px}
  .about-page .ab-label{font-size:11px;margin-bottom:16px}
  .about-page .ab-hero{min-height:460px;padding:72px 0;align-items:center}
- .about-page .ab-hero-photo{object-position:57% center}
+ .about-page .ab-hero-photo{object-position:70% center}
+ .about-page .ab-hero-wall{left:14px;font-size:44px}
  .about-page .ab-hero::after{background:linear-gradient(90deg,rgba(4,12,16,.89),rgba(4,12,16,.5)),linear-gradient(0deg,rgba(4,12,16,.55),transparent 60%)}
  .about-page .ab-hero h2{font-size:36px;letter-spacing:.01em;line-height:1.34}
  .about-page .ab-hero .ab-copy{font-size:14px;max-width:300px;line-height:1.8}
@@ -358,6 +362,7 @@
 <main>
 <section class="ab-intro" id="who-we-are" aria-labelledby="ab-intro-title">
 <div class="ab-intro-main"><img class="ab-building" src="/pxid/yellow-trad/assets/images/about-pxid-building-20261007.webp" alt="PXID 公司大楼外观" width="1800" height="777" fetchpriority="high">
+<div class="ab-intro-wall" aria-hidden="true">PXID</div>
 <div class="ab-wrap"><div class="ab-intro-copy"><p class="ab-label">WHO WE ARE</p><h1 class="ab-title" id="ab-intro-title">来自 PXID<br>专注精密制造</h1>
 <p class="ab-copy">我们以设计与制造的紧密协作，帮助客户打造更好的产品。<br>从模具开发到加工、试模与检测，让想法一步步落到实处。</p>
 <a class="ab-link" href="/pxid/yellow-trad/advantages/adv-why.html">了解更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><br>
@@ -370,6 +375,7 @@
 
 <section class="ab-hero ab-dark" id="manufacturing-story" aria-labelledby="ab-hero-title">
 <img class="ab-hero-photo" src="/pxid/yellow-trad/assets/images/adv-核心优势-精加工-hero.jpg" alt="CNC 主轴加工金属工件" width="1920" height="600" loading="lazy">
+<div class="ab-hero-wall" aria-hidden="true">PRECISION</div>
 <div class="ab-wrap"><div class="ab-hero-copy">
 <p class="ab-label">PRECISION MANUFACTURING</p><h2 id="ab-hero-title">精密制造<br>让想法成为可能</h2>
 <p class="ab-copy">从概念到量产，我们专注把每一个细节做到更好</p>
