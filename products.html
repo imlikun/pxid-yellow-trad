@@ -477,6 +477,37 @@
 .zy12 .zyp .eb{color:var(--ink2)}
 .zy12 .zyp .zytag{color:#fff}
 </style>
+<style id="products-visual-pilot">
+/* Products pilot: scoped visual alignment with the current homepage. */
+.zy12.zyp .eb{font-weight:700;color:var(--ink2)}
+.zy12.zyp .h3{letter-spacing:-.5px;text-wrap:pretty}
+.zy12.zyp .p1{padding-top:88px}
+.zy12.zyp .p1 .lead{font-size:15.5px;line-height:1.8}
+.zy12.zyp .fbar{gap:8px 6px;margin:36px 0 42px;padding-bottom:8px}
+.zy12.zyp .fbar button{padding:8px 16px;border-radius:2px;font:600 15px/1.5 var(--head)}
+.zy12.zyp .fbar button:hover{background:rgba(188,30,33,.06);color:var(--o)}
+.zy12.zyp .fbar button.on{background:var(--o);color:#fff}
+.zy12.zyp .fbar button.on::after{left:16px;right:16px;bottom:-9px}
+.zy12.zyp .cell{height:288px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:2px;overflow:hidden;transition:transform .25s ease,border-color .25s ease}
+.zy12.zyp .card{height:100%;border-radius:1px}
+.zy12.zyp .det{left:28px;right:28px;bottom:8px}
+.zy12.zyp .det b{font-weight:700}
+.zy12.zyp .cell:hover{transform:translateY(-4px);border-color:#cfcfcf}
+.zy12.zyp .cell:hover .card img{transform:scale(1.035)}
+.zy12.zyp .p3 .lk{border:1px solid var(--line);border-radius:2px;clip-path:none}
+.zy12.zyp .p3 .lk b{font-weight:700}
+.zy12.zyp .p3 .lk span{font-size:14px;line-height:1.65}
+.zy12.zyp .p3 .lk:hover{transform:translateY(-4px);border-color:#cfcfcf;background:#fff}
+@media(max-width:900px){.zy12.zyp .cell{height:230px}}
+@media(max-width:700px){
+  .zy12.zyp .p1{padding-top:56px}
+  .zy12.zyp .fbar button{padding:7px 12px;font-size:14px}
+  .zy12.zyp .fbar button.on::after{left:12px;right:12px}
+  .zy12.zyp .cell{height:170px;padding:6px}
+  .zy12.zyp .det{left:18px;right:18px;bottom:6px}
+}
+@media(hover:none){.zy12.zyp .cell:hover,.zy12.zyp .p3 .lk:hover{transform:none}}
+</style>
 </head>
 <body data-page-node-id="Bpd6jD4dLqWYYfTKZcBWrE">
 <header data-page-node-id="eTsyBIvRksuapGoWT9dHMr">
