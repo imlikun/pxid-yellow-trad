@@ -320,6 +320,94 @@
  .about-page{scroll-behavior:auto}
  .about-page *, .about-page *::before,.about-page *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* Manufacturing milestones: scoped addition to the existing About page. */
+.about-page .ab-history{background:var(--ab-dark);color:#f4f6f7;padding:72px 0 54px;overflow:hidden;border-bottom:1px solid #ffffff1c}
+.about-page .ab-history-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:32px}
+.about-page .ab-history-head .ab-label{margin-bottom:12px}
+.about-page .ab-history-head .ab-title{font-size:40px}
+.about-page .ab-history-intro{color:#aeb9bf;font-size:14px;line-height:1.9;max-width:320px;padding-bottom:3px}
+.about-page .ab-history-stage{position:relative}
+.about-page .ab-history-orbit,.about-page .ab-history-controls{display:none}
+.about-page .ab-history-panels{display:grid;gap:40px}
+.about-page .ab-history-panel{min-width:0;text-align:center}
+.about-page .ab-history-phase{display:block;color:#aeb9bf;font-size:10px;letter-spacing:.15em;line-height:1.5;margin-bottom:9px}
+.about-page .ab-history-panel h3{font-size:25px;line-height:1.4;font-weight:650;letter-spacing:.02em}
+.about-page .ab-history-figure{position:relative;background:#182127;max-width:780px;margin:20px auto 0;text-align:left;overflow:hidden}
+.about-page .ab-history-figure img{width:100%;height:auto;aspect-ratio:1.95;object-fit:cover;object-position:center}
+.about-page .ab-history-caption{position:absolute;bottom:0;left:0;right:0;padding:65px 28px 24px;background:linear-gradient(0deg,#050c10ef,#050c1094 58%,transparent)}
+.about-page .ab-history-caption p{font-size:15px;line-height:1.85;max-width:650px;color:#f1f4f5}
+.about-page .ab-history-caption small{display:block;color:#b9c4ca;font-size:10px;line-height:1.5;margin-top:10px;letter-spacing:.04em}
+.about-page .ab-history-ready .ab-history-stage{min-height:650px}
+.about-page .ab-history-ready .ab-history-panels{position:relative;padding-top:136px;gap:0}
+.about-page .ab-history-ready .ab-history-panel{grid-area:1/1;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .45s ease,transform .55s cubic-bezier(.22,.68,.25,1),visibility .45s}
+.about-page .ab-history-ready .ab-history-panel.is-active{opacity:1;visibility:visible;pointer-events:auto;transform:none;z-index:1}
+.about-page .ab-history-ready .ab-history-orbit{display:block;position:absolute;inset:0;pointer-events:none}
+.about-page .ab-history-orbit svg{width:100%;height:100%;position:absolute;inset:0;overflow:visible}
+.about-page .ab-history-orbit path{fill:none;stroke:#89969d55;stroke-width:1.3;stroke-dasharray:1 8;stroke-linecap:round}
+.about-page .ab-history-node{position:absolute;left:50%;top:8%;width:88px;height:64px;transform:translate(-50%,-100%);border:0;background:none;color:#8d9ba3;cursor:pointer;font:400 24px/1 var(--sans);pointer-events:auto;opacity:0;visibility:hidden;transition:left .6s cubic-bezier(.22,.68,.25,1),top .6s cubic-bezier(.22,.68,.25,1),color .3s,opacity .3s,visibility .3s}
+.about-page .ab-history-node[data-visible]{opacity:1;visibility:visible}
+.about-page .ab-history-node::after{content:"";position:absolute;bottom:-4px;left:calc(50% - 3px);width:6px;height:6px;background:#8d9ba3;transform:rotate(45deg)}
+.about-page .ab-history-node.is-current{color:#fff;font-size:30px}
+.about-page .ab-history-node.is-current::before{content:"";position:absolute;width:76px;height:76px;left:5px;bottom:9px;border:1px solid #ffffff35;border-radius:50%}
+.about-page .ab-history-node.is-current::after{background:var(--gold);width:9px;height:9px;left:calc(50% - 4.5px)}
+.about-page .ab-history-stem{position:absolute;left:50%;top:10%;width:1px;height:44px;background:linear-gradient(var(--gold),transparent)}
+.about-page .ab-history-ready .ab-history-controls{display:flex;justify-content:center;align-items:center;margin:32px auto 0;max-width:780px}
+.about-page .ab-history-years{display:flex;justify-content:space-between;width:100%;border-bottom:1px solid #ffffff20}
+.about-page .ab-history-years button{position:relative;min-height:52px;min-width:64px;padding:12px 4px 20px;color:#a7b4bc;border:0;background:none;cursor:pointer;font:400 16px/1.2 var(--sans);transition:color .25s}
+.about-page .ab-history-years button[aria-selected="true"]{color:#fff}
+.about-page .ab-history-years button::after{content:"";position:absolute;bottom:-1px;left:4px;right:4px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .4s}
+.about-page .ab-history-years button[aria-selected="true"]::after{transform:scaleX(1)}
+.about-page .ab-history-years button:hover{color:#fff}
+.about-page .ab-history-arrow{position:absolute;z-index:3;top:52%;width:46px;height:46px;display:grid;place-items:center;border:1px solid #ffffff55;border-radius:50%;background:var(--ab-dark);color:#fff;cursor:pointer;transition:background .25s,border-color .25s}
+.about-page .ab-history-node{z-index:2}
+.about-page .ab-history-arrow svg{width:20px;height:20px}
+.about-page .ab-history-prev{left:0}
+.about-page .ab-history-prev svg{transform:rotate(180deg)}
+.about-page .ab-history-next{right:0}
+.about-page .ab-history-arrow:hover:not(:disabled){background:var(--gold);border-color:var(--gold)}
+.about-page .ab-history-arrow:disabled{opacity:.25;cursor:default}
+.about-page .ab-history-source{display:block;width:max-content;max-width:100%;margin:23px auto 0;color:#9aa8b1;font-size:10px;line-height:1.8;border-bottom:1px solid #ffffff20}
+.about-page .ab-history-source:hover{color:#fff}
+@media(max-width:1100px) and (min-width:721px){
+ .about-page .ab-history-figure{max-width:calc(100% - 140px)}
+ .about-page .ab-history-phase{font-size:9px}
+ .about-page .ab-history-panel h3{font-size:23px}
+ .about-page .ab-history-ready .ab-history-stage{min-height:0}
+ .about-page .ab-history-ready .ab-history-controls{max-width:calc(100% - 140px)}
+ .about-page .ab-history-orbit svg{height:650px}
+ .about-page .ab-history-node{top:calc(var(--node-y)*650px)!important}
+}
+@media(max-width:720px){
+ .about-page .ab-history{padding:48px 0 42px}
+ .about-page .ab-history-head{display:block;margin-bottom:25px}
+ .about-page .ab-history-head .ab-title{font-size:29px}
+ .about-page .ab-history-intro{font-size:13px;margin-top:14px;max-width:335px}
+ .about-page .ab-history-intro br{display:none}
+ .about-page .ab-history-ready .ab-history-stage{min-height:0}
+ .about-page .ab-history-ready .ab-history-panels{padding-top:120px}
+ .about-page .ab-history-orbit svg{width:calc(100% + 140px);height:600px;left:-70px}
+ .about-page .ab-history-node{top:48px!important}
+ .about-page .ab-history-node:not(.is-current){display:none}
+ .about-page .ab-history-stem{top:62px;height:36px}
+ .about-page .ab-history-panel h3{font-size:22px;line-height:1.5}
+ .about-page .ab-history-phase{font-size:9px;letter-spacing:.11em;margin-bottom:7px}
+ .about-page .ab-history-figure{margin-top:18px}
+ .about-page .ab-history-figure img{aspect-ratio:1.6}
+ .about-page .ab-history-caption{position:static;padding:20px 18px 18px;min-height:128px;background:#141e24}
+ .about-page .ab-history-caption p{font-size:13px;line-height:1.85}
+ .about-page .ab-history-caption small{font-size:10px;margin-top:12px}
+ .about-page .ab-history-ready .ab-history-controls{gap:10px;margin-top:24px;display:grid;grid-template-columns:44px minmax(0,1fr) 44px}
+ .about-page .ab-history-arrow{position:static;width:44px;height:44px}
+ .about-page .ab-history-years{min-width:0;gap:0}
+ .about-page .ab-history-years button{min-width:0;flex:1 1 0;font-size:13px;min-height:48px;padding:12px 2px 17px}
+ .about-page .ab-history-years button::after{left:8px;right:8px}
+ .about-page .ab-history-source{margin-top:19px}
+}
+@media(prefers-reduced-motion:reduce){
+ .about-page .ab-history *,.about-page .ab-history *::before,.about-page .ab-history *::after{animation:none!important;transition:none!important}
+}
+
 </style>
 </head>
 <body class="about-page" id="top">
@@ -383,7 +471,7 @@
 <button class="ab-play" type="button" id="ab-play" aria-haspopup="dialog"><span class="ab-play-circle" aria-hidden="true"></span>观看制造短片</button><br>
 <a class="ab-scroll" href="#core-process" aria-label="向下了解七大核心工艺">SCROLL</a>
 </div><p class="ab-hero-aside" aria-hidden="true">PRECISION<br>MANUFACTURING<br>A BETTER TOMORROW</p></div>
-<span class="ab-hero-index" aria-hidden="true"><strong>02</strong> / 07</span>
+<span class="ab-hero-index" aria-hidden="true"><strong>02</strong> / 08</span>
 </section>
 
 <section class="ab-process ab-dark" id="core-process" aria-labelledby="ab-process-title"><div class="ab-wrap">
@@ -429,6 +517,33 @@
 <div class="ab-factory-controls"><div class="ab-wrap"><span class="ab-factory-count" aria-hidden="true"><strong>01</strong> / 04</span><div class="ab-factory-tabs" role="tablist" aria-label="查看制造场景"><button class="ab-factory-tab" id="ab-factory-tab-0" type="button" role="tab" aria-controls="ab-factory-panel-0" aria-selected="true" tabindex="0"><span>CNC 车间</span><small>CNC WORKSHOP</small></button><button class="ab-factory-tab" id="ab-factory-tab-1" type="button" role="tab" aria-controls="ab-factory-panel-1" aria-selected="false" tabindex="-1"><span>注塑成型</span><small>INJECTION</small></button><button class="ab-factory-tab" id="ab-factory-tab-2" type="button" role="tab" aria-controls="ab-factory-panel-2" aria-selected="false" tabindex="-1"><span>产品装配</span><small>ASSEMBLY</small></button><button class="ab-factory-tab" id="ab-factory-tab-3" type="button" role="tab" aria-controls="ab-factory-panel-3" aria-selected="false" tabindex="-1"><span>质量检测</span><small>INSPECTION</small></button><span class="ab-factory-indicator" aria-hidden="true"></span></div></div></div>
 <p class="ab-sr-only" id="ab-factory-status" aria-live="polite" aria-atomic="true">CNC 车间，1 / 4</p>
 </section>
+
+<!-- Manufacturing history: verified against PXID official development history, 2026-10-16. -->
+<section class="ab-history ab-dark" id="manufacturing-journey" aria-labelledby="ab-history-title"><div class="ab-wrap">
+<div class="ab-history-head"><div><p class="ab-label">OUR MANUFACTURING JOURNEY</p><h2 class="ab-title" id="ab-history-title">制造能力，步步积累</h2></div><p class="ab-history-intro">从自建工厂筹备，到自主设计、<br>精密加工与试制的衔接。</p></div>
+<div class="ab-history-stage">
+<div class="ab-history-orbit" aria-hidden="true"><svg viewBox="0 0 1224 650" preserveAspectRatio="none"><path d="M12 559 A600 507 0 0 1 1212 559"/></svg><button class="ab-history-node" type="button" data-index="0" tabindex="-1">2018</button><button class="ab-history-node" type="button" data-index="1" tabindex="-1">2020</button><button class="ab-history-node" type="button" data-index="2" tabindex="-1">2024</button><button class="ab-history-node" type="button" data-index="3" tabindex="-1">2025</button><span class="ab-history-stem"></span></div>
+<div class="ab-history-panels"><article class="ab-history-panel" id="ab-history-panel-0" role="tabpanel" aria-labelledby="ab-history-tab-0">
+<span class="ab-history-phase">2018 / TOWARDS MANUFACTURING</span><h3>筹备自有工厂</h3>
+<figure class="ab-history-figure"><img src="/pxid/yellow-trad/assets/images/about-manufacturing-2018-20261016.webp" width="596" height="397" alt="PXID 官方 2018 年建厂筹备资料中的厂房与生产线" loading="lazy" decoding="async"><figcaption class="ab-history-caption"><p>启动“PXID 智能制造”计划，筹备自有工厂，从产品开发走向制造。</p><small>建厂筹备 · 厂房资料</small></figcaption></figure>
+</article>
+<article class="ab-history-panel" id="ab-history-panel-1" role="tabpanel" aria-labelledby="ab-history-tab-1">
+<span class="ab-history-phase">2020 / MANUFACTURING FOUNDATION</span><h3>制造公司成立</h3>
+<figure class="ab-history-figure"><img src="/pxid/yellow-trad/assets/images/about-manufacturing-2020-20261016.webp" width="1560" height="1007" alt="PXID 制造车间的海天注塑设备与模具吊装区，场景资料图" loading="lazy" decoding="async"><figcaption class="ab-history-caption"><p>淮安品向智能制造有限公司成立，制造业务有了独立的组织基础。</p><small>PXID 制造现场资料图 · 拍摄年份未标注</small></figcaption></figure>
+</article>
+<article class="ab-history-panel" id="ab-history-panel-2" role="tabpanel" aria-labelledby="ab-history-tab-2">
+<span class="ab-history-phase">2024 / NEW PRODUCTION BASE</span><h3>新制造基地投用</h3>
+<figure class="ab-history-figure"><img src="/pxid/yellow-trad/assets/images/about-manufacturing-2024-20261016.webp" width="596" height="397" alt="PXID 官方 2024 年新生产基地记录中的厂区建筑" loading="lazy" decoding="async"><figcaption class="ab-history-caption"><p>约 25,000㎡ 新生产基地建成并投入生产，拓展制造空间。</p><small>新生产基地 · 厂区实景</small></figcaption></figure>
+</article>
+<article class="ab-history-panel" id="ab-history-panel-3" role="tabpanel" aria-labelledby="ab-history-tab-3">
+<span class="ab-history-phase">2025 / MOLD ENGINEERING CENTER</span><h3>模具中心升级</h3>
+<figure class="ab-history-figure"><img src="/pxid/yellow-trad/assets/images/about-manufacturing-2025-20261016.webp" width="596" height="397" alt="PXID 官方 2025 年模具中心升级记录中的注塑与模具车间" loading="lazy" decoding="async"><figcaption class="ab-history-caption"><p>升级模具中心，衔接自主设计、精密加工与试制，让产品开发更贴近制造现场。</p><small>模具中心 · 车间实景</small></figcaption></figure>
+</article></div>
+<div class="ab-history-controls"><button type="button" class="ab-history-arrow ab-history-prev" aria-label="上一个制造里程碑"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button><div class="ab-history-years" role="tablist" aria-label="制造发展历程年份"><button type="button" role="tab" id="ab-history-tab-0" aria-controls="ab-history-panel-0" aria-selected="true" tabindex="0" aria-label="2018年：筹备自有工厂">2018</button><button type="button" role="tab" id="ab-history-tab-1" aria-controls="ab-history-panel-1" aria-selected="false" tabindex="-1" aria-label="2020年：制造公司成立">2020</button><button type="button" role="tab" id="ab-history-tab-2" aria-controls="ab-history-panel-2" aria-selected="false" tabindex="-1" aria-label="2024年：新制造基地投用">2024</button><button type="button" role="tab" id="ab-history-tab-3" aria-controls="ab-history-panel-3" aria-selected="false" tabindex="-1" aria-label="2025年：模具中心升级">2025</button></div><button type="button" class="ab-history-arrow ab-history-next" aria-label="下一个制造里程碑"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
+</div>
+<a class="ab-history-source" href="https://www.pxid.com/about-us/" target="_blank" rel="noopener noreferrer">资料来源：PXID 官方发展历程 ↗</a>
+<p class="ab-sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+</div></section>
 
 <section class="ab-values ab-dark" id="our-values" aria-labelledby="ab-values-title"><div class="ab-wrap ab-values-layout">
 <div class="ab-values-title"><p class="ab-label">OUR VALUES</p><h2 class="ab-title" id="ab-values-title">四个坚持<br>定义我们的制造理念</h2></div><article class="ab-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 4-5h10l4 5-9 13L3 8Zm0 0h18M7 3l5 18 5-18M7 8l5-5 5 5"/></svg><h3>品质为先</h3><span>QUALITY</span><p>认真对待每个细节<br>以检验验证制造结果</p></article>
@@ -542,5 +657,75 @@ document.querySelectorAll('.ab-dialog').forEach(function(dialog){
 })();
 </script>
 <script src="/pxid/yellow-trad/assets/js/nav.js?v=20261007-nav2" defer></script>
+<script>
+(function(){
+ 'use strict';
+ var section=document.getElementById('manufacturing-journey');
+ if(!section)return;
+ var panels=Array.from(section.querySelectorAll('.ab-history-panel'));
+ var tabs=Array.from(section.querySelectorAll('[role="tab"]'));
+ var nodes=Array.from(section.querySelectorAll('.ab-history-node'));
+ var previous=section.querySelector('.ab-history-prev');
+ var next=section.querySelector('.ab-history-next');
+ var status=section.querySelector('[role="status"]');
+ var active=0,request=0;
+ function paint(index,announce){
+  active=index;
+  panels.forEach(function(panel,i){
+   var selected=i===index;
+   panel.classList.toggle('is-active',selected);
+   panel.setAttribute('aria-hidden',String(!selected));
+   panel.inert=!selected;
+   panel.tabIndex=selected?0:-1;
+   tabs[i].setAttribute('aria-selected',String(selected));
+   tabs[i].tabIndex=selected?0:-1;
+   var angle=(-90+(i-index)*42)*Math.PI/180;
+   var x=50+49*Math.cos(angle),y=.86+.78*Math.sin(angle);
+   nodes[i].style.left=x+'%';
+   nodes[i].style.top=(y*100)+'%';
+   nodes[i].style.setProperty('--node-y',y);
+   nodes[i].classList.toggle('is-current',selected);
+   nodes[i].toggleAttribute('data-visible',Math.abs(i-index)<=2);
+  });
+  previous.disabled=index===0;
+  next.disabled=index===panels.length-1;
+  if(announce)status.textContent=tabs[index].textContent+'年，'+panels[index].querySelector('h3').textContent;
+ }
+ function select(index,focus){
+  index=Math.max(0,Math.min(panels.length-1,index));
+  var version=++request;
+  var image=panels[index].querySelector('img');
+  image.loading='eager';
+  function finish(){if(version===request){paint(index,true);if(focus)tabs[index].focus({preventScroll:true});}}
+  if(image.complete&&image.naturalWidth){finish();return;}
+  if(image.decode)image.decode().catch(function(){}).then(finish);
+  else finish();
+ }
+ tabs.forEach(function(tab,index){
+  tab.addEventListener('click',function(){select(index,false);});
+  tab.addEventListener('keydown',function(event){
+   var target=index;
+   if(event.key==='ArrowRight')target=index+1;
+   else if(event.key==='ArrowLeft')target=index-1;
+   else if(event.key==='Home')target=0;
+   else if(event.key==='End')target=panels.length-1;
+   else return;
+   event.preventDefault();select(target,true);
+  });
+  nodes[index].addEventListener('click',function(){select(index,false);});
+ });
+ previous.addEventListener('click',function(){select(active-1,false);});
+ next.addEventListener('click',function(){select(active+1,false);});
+ panels.forEach(function(panel){panel.addEventListener('keydown',function(event){
+  if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
+   event.preventDefault();select(active+(event.key==='ArrowRight'?1:-1),true);
+  }
+ });});
+ section.classList.add('ab-history-ready');
+ paint(0,false);
+ // Keep wheel and touch scrolling native; changes happen only on explicit controls.
+})();
+
+</script>
 </body>
 </html>
