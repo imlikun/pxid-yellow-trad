@@ -100,19 +100,16 @@
     linear-gradient(90deg,rgba(8,14,22,.92) 0%,rgba(8,14,22,.62) 38%,rgba(8,14,22,.12) 70%,rgba(8,14,22,.42) 100%),
     linear-gradient(0deg,rgba(8,14,22,.6) 0%,rgba(8,14,22,0) 32%)}
 .zy12 .m00 .in{position:absolute;z-index:3;inset:0;display:flex;flex-direction:column;justify-content:center;max-width:1280px}
-.zy12 .m00 .eb{color:#ffb27a}
-.zy12 .m00 .eb::before{border-left-color:#ffb27a}
-.zy12 .m00 h1{font:700 clamp(38px,4.6vw,66px)/1.12 var(--head);color:#fff;max-width:12em;letter-spacing:-.5px}
-.zy12 .m00 p{color:rgba(255,255,255,.82);font-size:16px;max-width:33em;margin:22px 0 34px}
+/* hero 文字层重排（2026-10-16 学工业站）：红横线 eyebrow + 大重标题 + 短描述 */
+.zy12 .m00 .eb{color:rgba(255,255,255,.62);letter-spacing:.22em;text-transform:uppercase;font-weight:600;font-size:12px}
+.zy12 .m00 .eb::before{border:0;width:26px;height:2px;background:#BC1E21;border-radius:2px}
+.zy12 .m00 h1{font:800 clamp(44px,5.6vw,82px)/1.08 var(--head);color:#fff;max-width:10em;letter-spacing:-1px}
+.zy12 .m00 p{color:rgba(255,255,255,.78);font-size:16px;line-height:1.85;max-width:29em;margin:26px 0 42px}
 .zy12 .m00 .row{display:flex;align-items:center;gap:18px}
-.zy12 .m00 .play{width:52px;height:52px;border-radius:50%;background:var(--o);color:#fff;display:grid;place-items:center;
-  font-size:15px;transition:.25s}
 .zy12 .arrows{position:absolute;z-index:5;right:34px;top:50%;transform:translateY(-50%);display:grid;gap:10px}
 .zy12 .arrows button{width:44px;height:44px;background:var(--o);color:#fff;font-size:16px;border-radius:var(--r);transition:.22s}
 .zy12 .m00 .pg{position:absolute;z-index:5;left:85px;top:120px;width:26px;height:26px;border:2px solid rgba(255,255,255,.55);
   border-radius:50%;display:grid;place-items:center;font:700 10px/1 var(--mono);color:#fff}
-/* 高端 kicker：字距 + 大写，强化“提炼标签”质感 */
-.zy12 .m00 .eb{letter-spacing:.16em;text-transform:uppercase;font-weight:600;font-size:13px}
 /* 向下滚动指示：底部居中，细线 + 下落光点 */
 .zy12 .m00 .scroll-cue{position:absolute;z-index:4;left:50%;bottom:30px;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:12px;text-decoration:none;
@@ -469,7 +466,7 @@
 /* ---- 2. 白底上的"橙字"：黄字对比不够，改近黑 + 黄做标记 ---- */
 .zy12 .eb{color:var(--ink2)}
 .zy12 .eb::before{border-left-color:var(--o)}
-.zy12 .m00 .eb,.zy12 .m00 .eb::before{color:#BC1E21;border-left-color:#BC1E21}   /* 深底上直接黄 */
+.zy12 .m00 .eb{color:rgba(255,255,255,.62)}   /* 深底上 eyebrow 弱化白，红横线见 hero 文字层 */
 .zy12 .m02 .h2 span{color:var(--ink);padding:0 3px;
   background:linear-gradient(transparent 62%,rgba(188,30,33,.92) 62%,rgba(188,30,33,.92) 92%,transparent 92%)}
 .zy12 .m01 .c .ic svg,.zy12 .m05 .c .ic svg{stroke:#232626}
@@ -504,17 +501,16 @@
 <section class="m m00" id="zy-m00">
   <div class="stage">
     <video class="hero-video" autoplay muted loop playsinline preload="auto"
-      poster="/pxid/yellow-trad/assets/images/hero-factory-poster.jpg?v=2">
-      <source src="/pxid/yellow-trad/assets/videos/hero-factory.mp4?v=2" type="video/mp4">
-      您的浏览器不支持视频背景，<a href="/pxid/yellow-trad/assets/videos/hero-factory.mp4?v=2">点此观看车间实景</a>。
+      poster="/pxid/yellow-trad/assets/images/hero-factory-poster.jpg?v=3">
+      <source src="/pxid/yellow-trad/assets/videos/hero-factory.mp4?v=3" type="video/mp4">
+      您的浏览器不支持视频背景，<a href="/pxid/yellow-trad/assets/videos/hero-factory.mp4?v=3">点此观看车间实景</a>。
     </video>
     <div class="in">
-      <span class="eb">Precision Molding · 智造车间实景</span>
+      <span class="eb">Precision Molding</span>
       <h1>从设计图纸<br>到批量交付</h1>
-      <p>精密模具设计与制造，到注塑成型、CNC 加工、装配与测试 —— 一个供应商交付全套。上传图纸，当天拿到报价与 DFM 反馈。</p>
+      <p>精密模具 · 注塑 · CNC · 装配测试 —— 上传图纸，当天拿到报价与 DFM 反馈。</p>
       <div class="row">
         <a class="zybtn btn-o" href="/pxid/yellow-trad/contact.html">获取报价 <span>&#8594;</span></a>
-        <a class="play" href="/pxid/yellow-trad/advantages/adv-overview.html" aria-label="看车间设备">&#9654;</a>
       </div>
     </div>
     <a class="scroll-cue" href="#zy-m01" aria-label="向下滚动">
