@@ -796,7 +796,16 @@
   (function () {
     var stage = root.querySelector('.m00 .stage'); if (!stage) return;
     var sl = [].slice.call(stage.querySelectorAll('.sl'));
-    if (sl.length === 0) return;            // 视频背景模式：不启用轮播
+    var video = stage.querySelector('video.hero-video');
+    if (sl.length === 0 && video) {          // 视频背景模式：兜底自动播放
+      video.muted = true; video.defaultMuted = true;   // 部分浏览器只认 JS 属性
+      var tryPlay = function () { var p = video.play(); if (p && p.catch) p.catch(function () {}); };
+      tryPlay();
+      video.addEventListener('canplay', tryPlay, { once: true });
+      video.addEventListener('loadeddata', tryPlay, { once: true });
+      return;
+    }
+    if (sl.length === 0) return;            // 无轮播也无视频：退出
     var pg = stage.querySelector('[data-zy-pg]');
     var i = 0, timer = null;
     function show(n) {
