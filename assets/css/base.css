@@ -276,7 +276,7 @@
   .about-hero .btn-line:hover{border-color:var(--ink);background:var(--ink);color:#fff}
 
   /* 首页新版 CTA：深色面板 —— 全部作用域限定在 .cta-panel 内，避免影响内页 */
-  .cta:has(.cta-panel){padding:84px 0 88px;text-align:left}
+  .cta:has(.cta-panel){padding:84px 0 88px;text-align:left;background:#15191a}
   .cta-panel{position:relative;overflow:hidden;border-radius:22px;background:#15191a;display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);align-items:stretch;box-shadow:0 30px 70px rgba(21,25,26,.16)}
   .cta-panel::before{content:"";position:absolute;left:-170px;top:-340px;width:780px;height:780px;z-index:1;background:radial-gradient(circle,rgba(188,30,33,.17) 0%,rgba(188,30,33,.05) 42%,rgba(188,30,33,0) 68%);pointer-events:none}
   .cta-panel::after{content:"";position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:62px 62px;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.5) 36%,transparent 58%);mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.5) 36%,transparent 58%)}
