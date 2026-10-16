@@ -15,6 +15,29 @@
     .news-hero::before{background:linear-gradient(180deg,rgba(246,247,245,.96),rgba(246,247,245,.9) 65%,rgba(246,247,245,.65))}
   }
 </style>
+<style id="news-visual-pilot">
+/* News pilot: typography and component styles measured from the current homepage. */
+.news-hero,.news-list{
+  --news-head:Montserrat,"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --news-body:Inter,"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  font-family:var(--news-body);
+}
+.news-hero .sec{font-family:var(--news-head);font-weight:700;letter-spacing:-.5px}
+.news-hero .eyebrow,.news-list .eyebrow{font:700 13px/1 var(--news-head);letter-spacing:.16em;color:var(--ink-2)}
+.news-hero .chip{border-radius:2px;font-family:var(--news-head);background:#fff}
+.news-hero .chip.active{background:var(--gold);border-color:var(--gold);color:#fff}
+.news-list .feature,.news-list .ncard,.news-list .pager a{border-radius:2px}
+.news-list .feature h3{font:700 26px/1.35 var(--news-head)}
+.news-list .ncard h3{font:700 21px/1.4 var(--news-head);text-wrap:balance}
+.news-list .tag{font:600 11.5px/1 var(--news-head);letter-spacing:normal;padding:6px 12px;border-radius:2px}
+.news-list .feature .meta,.news-list .ncard .meta{font-size:12.5px;color:var(--ink-3)}
+.news-list .ncard p{font-size:14px;line-height:1.75}
+.news-list .feature .more,.news-list .ncard .more{font-family:var(--news-head);font-weight:600}
+.news-list .feature:hover .more,.news-list .ncard:hover .more{color:var(--gold)}
+.news-list .ncard:hover{transform:translateY(-4px);box-shadow:none;border-color:#cfcfcf}
+.news-list .pager a.cur{background:var(--gold);border-color:var(--gold);color:#fff}
+@media(hover:none){.news-list .ncard:hover{transform:none}}
+</style>
 </head>
 <body>
 <header>
