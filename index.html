@@ -94,8 +94,11 @@
 .zy12 .m00 .sl img{width:100%;height:100%;object-fit:cover}
 .zy12 .m00 .sl.on img{animation:zy-kb 9s ease-out forwards}
 @keyframes zy-kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}
-.zy12 .m00 .stage::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(8,14,22,.86) 0%,rgba(8,14,22,.6) 40%,rgba(8,14,22,.12) 72%,rgba(8,14,22,.3) 100%)}
+.zy12 .m00 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.zy12 .m00 .stage::after{content:"";position:absolute;inset:0;z-index:2;
+  background:
+    linear-gradient(90deg,rgba(8,14,22,.92) 0%,rgba(8,14,22,.62) 38%,rgba(8,14,22,.12) 70%,rgba(8,14,22,.42) 100%),
+    linear-gradient(0deg,rgba(8,14,22,.6) 0%,rgba(8,14,22,0) 32%)}
 .zy12 .m00 .in{position:absolute;z-index:3;inset:0;display:flex;flex-direction:column;justify-content:center;max-width:1280px}
 .zy12 .m00 .eb{color:#ffb27a}
 .zy12 .m00 .eb::before{border-left-color:#ffb27a}
@@ -108,6 +111,18 @@
 .zy12 .arrows button{width:44px;height:44px;background:var(--o);color:#fff;font-size:16px;border-radius:var(--r);transition:.22s}
 .zy12 .m00 .pg{position:absolute;z-index:5;left:85px;top:120px;width:26px;height:26px;border:2px solid rgba(255,255,255,.55);
   border-radius:50%;display:grid;place-items:center;font:700 10px/1 var(--mono);color:#fff}
+/* 高端 kicker：字距 + 大写，强化“提炼标签”质感 */
+.zy12 .m00 .eb{letter-spacing:.16em;text-transform:uppercase;font-weight:600;font-size:13px}
+/* 向下滚动指示：底部居中，细线 + 下落光点 */
+.zy12 .m00 .scroll-cue{position:absolute;z-index:4;left:50%;bottom:30px;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:12px;text-decoration:none;
+  color:rgba(255,255,255,.72);font:600 11px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase}
+.zy12 .m00 .scroll-cue .sc-line{position:relative;width:1px;height:46px;overflow:hidden;
+  background:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,0))}
+.zy12 .m00 .scroll-cue .sc-line::after{content:"";position:absolute;left:0;top:-50%;width:100%;height:55%;
+  background:#fff;animation:sc-drop 1.9s cubic-bezier(.7,0,.3,1) infinite}
+.zy12 .m00 .scroll-cue:hover{color:#fff}
+@keyframes sc-drop{0%{top:-55%}55%,100%{top:100%}}
 
 /* ---------- #01 四张卖点卡（浅灰斜角卡 + 橙色线性图标 + 背后 ghost 序号） ---------- */
 .zy12 .m01{background:#fff;padding:100px 0 83px}
@@ -417,14 +432,15 @@
   .zy12 .m11 .flogo{height:38px}
   .zy12 .m00 .stage{height:640px}
   .zy12 .m00 .pg{left:22px;top:88px}
-  /* 正文让出右侧箭头那一列，否则箭头压在段落文字上 */
-  .zy12 .m00 .in{padding-right:96px}
+  /* 正文让出右侧箭头那一列，否则箭头压在段落文字上（视频背景模式已无箭头，按常规留白） */
+  .zy12 .m00 .in{padding-right:22px}
   .zy12 .m00 h1{max-width:none}
   .zy12 .arrows{right:16px}
 }
 @media (prefers-reduced-motion:reduce){
   .zy12 .rv{opacity:1;transform:none;transition:none}
   .zy12 .m00 .sl.on img{animation:none}
+  .zy12 .m00 .scroll-cue .sc-line::after{animation:none}
 }
 @media (max-width:600px){
   .zy12 .m03 .in{flex-direction:column;align-items:stretch;gap:16px}
@@ -487,14 +503,13 @@
 <!-- ===== #00 HERO ===== -->
 <section class="m m00" id="zy-m00">
   <div class="stage">
-    <div class="sl on"><img src="/pxid/yellow-trad/assets/images/hero-slide-01.jpg" alt="海天 MA 系列注塑机车间实拍" fetchpriority="high"></div>
-    <div class="sl"><img src="/pxid/yellow-trad/assets/images/hero-slide-02.jpg" alt="乔峰 HSD1615 数控加工中心"></div>
-    <div class="sl"><img src="/pxid/yellow-trad/assets/images/hero-slide-03.jpg" alt="工程师在机床前装夹"></div>
-    <div class="sl"><img src="/pxid/yellow-trad/assets/images/hero-slide-04.jpg" alt="装配与测试工位"></div>
-    <div class="sl"><img src="/pxid/yellow-trad/assets/images/hero-slide-05.jpg" alt="带 PXID 标识的工装夹具"></div>
-    <span class="pg" data-zy-pg>1/5</span>
+    <video class="hero-video" autoplay muted loop playsinline preload="auto"
+      poster="/pxid/yellow-trad/assets/images/hero-factory-poster.jpg">
+      <source src="/pxid/yellow-trad/assets/videos/hero-factory.mp4" type="video/mp4">
+      您的浏览器不支持视频背景，<a href="/pxid/yellow-trad/assets/videos/hero-factory.mp4">点此观看车间实景</a>。
+    </video>
     <div class="in">
-      <span class="eb">Precision Molding</span>
+      <span class="eb">Precision Molding · 智造车间实景</span>
       <h1>从设计图纸<br>到批量交付</h1>
       <p>精密模具设计与制造，到注塑成型、CNC 加工、装配与测试 —— 一个供应商交付全套。上传图纸，当天拿到报价与 DFM 反馈。</p>
       <div class="row">
@@ -502,10 +517,10 @@
         <a class="play" href="/pxid/yellow-trad/advantages/adv-overview.html" aria-label="看车间设备">&#9654;</a>
       </div>
     </div>
-    <div class="arrows">
-      <button type="button" data-zy-prev aria-label="上一张">&#8592;</button>
-      <button type="button" data-zy-next aria-label="下一张">&#8594;</button>
-    </div>
+    <a class="scroll-cue" href="#zy-m01" aria-label="向下滚动">
+      <span class="sc-txt">SCROLL</span>
+      <span class="sc-line"></span>
+    </a>
   </div>
 </section>
 
@@ -777,10 +792,12 @@
   }, { passive: true });
   scanCnt();
 
-  /* ---- #00 首屏轮播 ---- */
+  /* ---- #00 首屏：视频背景 or 图轮播 ---- */
   (function () {
     var stage = root.querySelector('.m00 .stage'); if (!stage) return;
-    var sl = [].slice.call(stage.querySelectorAll('.sl')), pg = stage.querySelector('[data-zy-pg]');
+    var sl = [].slice.call(stage.querySelectorAll('.sl'));
+    if (sl.length === 0) return;            // 视频背景模式：不启用轮播
+    var pg = stage.querySelector('[data-zy-pg]');
     var i = 0, timer = null;
     function show(n) {
       i = (n + sl.length) % sl.length;
@@ -789,8 +806,9 @@
     }
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
     function play() { stop(); if (!RM && sl.length > 1) timer = setInterval(function () { show(i + 1); }, 6000); }
-    stage.querySelector('[data-zy-prev]').addEventListener('click', function () { show(i - 1); play(); });
-    stage.querySelector('[data-zy-next]').addEventListener('click', function () { show(i + 1); play(); });
+    var prev = stage.querySelector('[data-zy-prev]'), next = stage.querySelector('[data-zy-next]');
+    if (prev) prev.addEventListener('click', function () { show(i - 1); play(); });
+    if (next) next.addEventListener('click', function () { show(i + 1); play(); });
     stage.addEventListener('mouseenter', stop); stage.addEventListener('mouseleave', play);
     show(0); play();
   })();
