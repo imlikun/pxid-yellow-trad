@@ -116,6 +116,62 @@
   .t1-cases{grid-template-columns:1fr}
 }
 </style>
+<style id="why-visual-pilot">
+/* Core-advantages pilot: align hierarchy and controls with the current homepage. */
+.ap-hero h1 .gold{color:var(--red-ink)}
+.sec-mat,.sec-svc,.sec-take{border-bottom:1px solid var(--line)}
+.sec-mat{padding:108px 0 112px}
+.sec-svc{padding:108px 0 112px;background:#f7f7f7}
+.sec-take{padding:108px 0 96px}
+.sec-mat .inner,.sec-svc .inner,.sec-take .inner{max-width:1360px;padding:0 40px}
+.sec-hb,.sec-take .sec-hb{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,420px);align-items:end;gap:60px;margin-bottom:48px}
+.sec-hb .head,.sec-take .sec-hb .head{min-width:0}
+.sec-hb h2{margin-top:18px;font-size:52px;font-weight:700;line-height:58px;letter-spacing:-.5px}
+.sec-hb .note,.sec-take .sec-hb .note{max-width:420px;padding:0;font-size:15.5px;line-height:1.8;color:var(--ink-2)}
+.m5-bands{border:1px solid var(--line);background:#fff}
+.m5-band:last-child{border-bottom:0}
+.m5-i{gap:24px;padding:22px 26px;font-size:18px;font-weight:700}
+.m5-i::after{width:6px;height:6px;background:var(--red-ink)}
+.m5-en{font-size:22px;font-weight:700;letter-spacing:-.01em;color:var(--red-ink)}
+.g5{gap:12px}
+.g5-main,.g5-th{border:1px solid var(--line);border-radius:2px}
+.g5-main{background:#fff}
+.g5-main .cap b{font-weight:700}
+.g5-th{background:#fff;transition:border-color .25s ease,transform .25s ease}
+.g5-th:hover{transform:translateY(-2px);border-color:#cfcfcf}
+.g5-th.on{outline:0;border-color:var(--red-ink);box-shadow:inset 0 -3px 0 var(--red-ink)}
+.g5-th.on .no{background:var(--red-ink)}
+.svc-flow{border-radius:2px;background:var(--red-ink);padding:13px 24px;font-size:14.5px;font-weight:700}
+.svc-flow:hover{background:var(--gold-d)}
+.t1-rail{margin-top:58px;border-top:1px solid var(--line);gap:42px}
+.t1-stop{padding-top:42px}
+.t1-stop .dot,.t1-stop:nth-child(2) .dot,.t1-stop:nth-child(3) .dot{top:-6px;width:11px;height:11px;background:var(--red-ink)}
+.t1-stop h3{font-size:24px;font-weight:700;line-height:1.3}
+.t1-stop p{font-size:15px;line-height:1.8}
+.t1-cases{margin-top:52px;column-gap:48px}
+.t1-cases span{padding:18px 0;font-size:14.5px}
+@media(max-width:980px){
+  .sec-hb,.sec-take .sec-hb{grid-template-columns:1fr;align-items:start;gap:20px;margin-bottom:40px}
+  .sec-hb .note,.sec-take .sec-hb .note{max-width:620px;width:auto}
+  .t1-stop .dot,.t1-stop:nth-child(2) .dot,.t1-stop:nth-child(3) .dot{top:34px;left:-7px;width:12px;height:12px}
+}
+@media(max-width:760px){
+  .sec-mat,.sec-svc,.sec-take{padding:72px 0}
+  .sec-mat .inner,.sec-svc .inner,.sec-take .inner{max-width:100%;padding:0 20px}
+  .sec-hb,.sec-take .sec-hb{display:block;margin-bottom:34px}
+  .sec-hb h2{margin-top:14px;font-size:34px;line-height:42px}
+  .sec-hb .note,.sec-take .sec-hb .note{max-width:100%;width:auto;margin-top:18px;font-size:14.5px;line-height:1.75}
+  .m5-i{gap:18px;padding:18px 20px;font-size:16px}
+  .m5-en{font-size:18px}
+  .svc-flow{max-width:100%;margin-top:24px;padding:12px 16px;font-size:13px;line-height:1.45;white-space:normal}
+  .g5-main .cap b{font-size:22px}
+  .g5-th:hover{transform:none}
+  .t1-rail{margin-top:42px}
+  .t1-stop h3{font-size:21px}
+  .t1-cases{margin-top:38px}
+  .t1-cases span{min-width:0;font-size:14px}
+}
+</style>
 </head>
 <body>
 <header>
