@@ -222,7 +222,15 @@
 
   function fixToTop() {
     var top = document.querySelector('.to-top');
-    if (!top) return;
+    if (!top) {                       /* 页面没有内联结构时注入(如首页)，样式复用 base.css .to-top */
+      top = document.createElement('a');
+      top.className = 'to-top';
+      top.href = '#top';
+      top.setAttribute('aria-label', '回到顶部');
+      top.setAttribute('title', '回到顶部');
+      top.textContent = '\u2191';
+      document.body.appendChild(top);
+    }
     top.addEventListener('click', function (e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
