@@ -86,10 +86,11 @@
       <h2 class="sec reveal">洞察智能设计制造前沿</h2>
       <p class="sec-sub reveal">持续追踪产品设计、快速打样与精密制造的新方法、新实践，记录 PXID 在智能设计制造上的每一步。</p>
       <div class="chips reveal">
-        <span class="chip active">公司新闻</span>
-        <span class="chip">行业洞察</span>
-        <span class="chip">产品与技术</span>
-        <span class="chip">活动展会</span>
+        <span class="chip active" data-cat="all" style="cursor:pointer">全部</span>
+          <span class="chip" data-cat="company" style="cursor:pointer">公司新闻</span>
+        <span class="chip" data-cat="insight" style="cursor:pointer">行业洞察</span>
+        <span class="chip" data-cat="tech" style="cursor:pointer">产品与技术</span>
+        <span class="chip" data-cat="expo" style="cursor:pointer">活动展会</span>
       </div>
     </div>
   </section>
@@ -97,7 +98,7 @@
   <section class="news-list">
     <div class="wrap">
       <div class="sec-head reveal"><div class="eyebrow">头条精选 <span class="en">/ FEATURED</span></div></div>
-      <article class="feature reveal">
+      <article class="feature reveal" data-cat="行业洞察">
         <div class="nip"><img src="/pxid/yellow-trad/assets/img/news/mopeds-sea-1.jpg" alt="电动摩托在东南亚出行市场崛起"></div>
         <div class="bd">
           <span class="tag">行业洞察</span>
@@ -110,7 +111,7 @@
 
       <div class="sec-head reveal"><div class="eyebrow">最新动态 <span class="en">/ LATEST</span></div></div>
       <div class="nnews-grid">
-        <article class="ncard reveal">
+        <article class="ncard reveal" data-cat="行业洞察">
           <div class="nip"><img src="/pxid/yellow-trad/assets/img/news/india-supply-1.webp" alt=""></div>
           <div class="bd">
             <div class="meta"><span class="tag">行业洞察</span><span>2026-05-27</span></div>
@@ -120,7 +121,7 @@
           </div>
         </article>
         
-        <article class="ncard reveal">
+        <article class="ncard reveal" data-cat="行业洞察">
           <div class="nip"><img src="/pxid/yellow-trad/assets/img/news/freight-volatility-1.webp" alt=""></div>
           <div class="bd">
             <div class="meta"><span class="tag">行业洞察</span><span>2026-05-25</span></div>
@@ -129,7 +130,7 @@
             <a class="more" href="/pxid/yellow-trad/news/news-freight-volatility.html">阅读全文 →</a>
           </div>
         </article>
-        <article class="ncard reveal">
+        <article class="ncard reveal" data-cat="活动展会">
           <div class="nip"><img src="/pxid/yellow-trad/assets/img/news/eurobike-frankfurt-1.webp" alt=""></div>
           <div class="bd">
             <div class="meta"><span class="tag">活动展会</span><span>2026-06-17</span></div>
@@ -139,7 +140,7 @@
           </div>
         </article>
         
-        <article class="ncard reveal">
+        <article class="ncard reveal" data-cat="行业洞察">
           <div class="nip"><img src="/pxid/yellow-trad/assets/img/news/cargo-urban-1.webp" alt=""></div>
           <div class="bd">
             <div class="meta"><span class="tag">行业洞察</span><span>2026-05-29</span></div>
@@ -150,11 +151,86 @@
         </article>
       </div>
 
-      <nav class="pager reveal">
-        <a class="cur" href="#">1</a>
-        <a href="#">2</a>
-        <a class="arrow" href="#">下一页 →</a>
-      </nav>
+        <article class="ncard reveal" data-cat="公司新闻">
+          <div class="nip"><img src="/pxid/yellow-trad/news/assets/img/news/eurobike-frankfurt-2.webp" alt=""></div>
+          <div class="bd">
+            <div class="meta"><span class="tag">公司新闻</span><span>2026-09-12</span></div>
+            <h3>模具车间产能扩充：新增夜班班次与调度优化</h3>
+            <p>按工序锁定关键机时、粗精加工并行推进，模具与注塑项目的交付周期进一步压缩。</p>
+            <a class="more" href="/pxid/yellow-trad/news/news-workshop-expansion.html">阅读全文 →</a>
+          </div>
+        </article>
+
+        <article class="ncard reveal" data-cat="公司新闻">
+          <div class="nip"><img src="/pxid/yellow-trad/news/assets/img/news/eurobike-trends-4.webp" alt=""></div>
+          <div class="bd">
+            <div class="meta"><span class="tag">公司新闻</span><span>2026-08-20</span></div>
+            <h3>三坐标检测流程升级：全尺寸报告标准化交付</h3>
+            <p>基准统一、首件与终检双重确认，让每一套模具的"合格"可追溯、可复核。</p>
+            <a class="more" href="/pxid/yellow-trad/news/news-cmm-upgrade.html">阅读全文 →</a>
+          </div>
+        </article>
+
+        <article class="ncard reveal" data-cat="公司新闻">
+          <div class="nip"><img src="/pxid/yellow-trad/news/assets/img/news/india-choice-2.webp" alt=""></div>
+          <div class="bd">
+            <div class="meta"><span class="tag">公司新闻</span><span>2026-10-12</span></div>
+            <h3>报价与 DFM 反馈流程线上化：更快拿到评估结论</h3>
+            <p>图纸上传后进入标准化评估清单，DFM 反馈按风险分级呈现，关键节点定期同步。</p>
+            <a class="more" href="/pxid/yellow-trad/news/news-digital-delivery.html">阅读全文 →</a>
+          </div>
+        </article>
+
+        <article class="ncard reveal" data-cat="行业洞察">
+          <div class="nip"><img src="/pxid/yellow-trad/news/assets/img/news/india-choice-1.webp" alt=""></div>
+          <div class="bd">
+            <div class="meta"><span class="tag">行业洞察</span><span>2026-07-15</span></div>
+            <h3>常用模具钢怎么选：P20、718H 与 2344 的适用场景</h3>
+            <p>模具钢决定寿命、成本与抛光表现——选型要回到产量、塑料特性与外观要求本身。</p>
+            <a class="more" href="/pxid/yellow-trad/news/news-tool-steel-guide.html">阅读全文 →</a>
+          </div>
+        </article>
+
+        <article class="ncard reveal" data-cat="行业洞察">
+          <div class="nip"><img src="/pxid/yellow-trad/news/assets/img/news/mopeds-sea-2.webp" alt=""></div>
+          <div class="bd">
+            <div class="meta"><span class="tag">行业洞察</span><span>2026-06-18</span></div>
+            <h3>快速模具与小批量注塑：新品导入期的性价比解法</h3>
+            <p>铝模软模加工快、成本低，验证数据反哺量产模设计，小步快跑降低试错成本。</p>
+            <a class="more" href="/pxid/yellow-trad/news/news-rapid-tooling.html">阅读全文 →</a>
+          </div>
+        </article>
+
+        <article class="ncard reveal" data-cat="产品与技术">
+          <div class="nip"><img src="/pxid/yellow-trad/news/assets/img/news/freight-volatility-3.webp" alt=""></div>
+          <div class="bd">
+            <div class="meta"><span class="tag">产品与技术</span><span>2026-08-05</span></div>
+            <h3>注塑常见表面缺陷与对策：缩水、银纹、飞边与熔接痕</h3>
+            <p>多数缺陷都能从"材料—模具—工艺"三角里找到原因，系统化排查让试模效率更高。</p>
+            <a class="more" href="/pxid/yellow-trad/news/news-injection-defects.html">阅读全文 →</a>
+          </div>
+        </article>
+
+        <article class="ncard reveal" data-cat="产品与技术">
+          <div class="nip"><img src="/pxid/yellow-trad/news/assets/img/news/cargo-urban-2.jpg" alt=""></div>
+          <div class="bd">
+            <div class="meta"><span class="tag">产品与技术</span><span>2026-07-02</span></div>
+            <h3>CNC 加工如何稳定公差：装夹、刀具路径与检测闭环</h3>
+            <p>稳定公差靠的是工艺链的系统管理，而不是单点机床精度。</p>
+            <a class="more" href="/pxid/yellow-trad/news/news-cnc-tolerance.html">阅读全文 →</a>
+          </div>
+        </article>
+
+        <article class="ncard reveal" data-cat="活动展会">
+          <div class="nip"><img src="/pxid/yellow-trad/news/assets/img/news/eurobike-trends-1.webp" alt=""></div>
+          <div class="bd">
+            <div class="meta"><span class="tag">活动展会</span><span>2026-06-08</span></div>
+            <h3>工厂开放日：预约参观模具设计与智造车间</h3>
+            <p>设计区、深孔钻与 EDM 加工区、三坐标检测室——预约制开放，眼见为实。</p>
+            <a class="more" href="/pxid/yellow-trad/news/news-open-day.html">阅读全文 →</a>
+          </div>
+        </article>
+      <div class="news-empty" style="display:none;padding:56px 0;text-align:center;color:#8a8f91">该分类暂无更新，敬请期待。</div>
     </div>
   </section>
 </main>
@@ -335,6 +411,31 @@
 })();
 </script>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
-<script src="/pxid/yellow-trad/assets/js/nav.js?v=20261007-nav2" defer></script>
+<script src="/pxid/yellow-trad/assets/js/nav.js?v=20261007-nav2" defer>
+  /* 分类筛选:点击 chip 过滤 feature + ncard(2026-10-17) */
+  (function(){
+    var chips = document.querySelectorAll('.chips .chip');
+    var items = document.querySelectorAll('.news-list .feature, .news-list .ncard');
+    if (!chips.length || !items.length) return;
+    var empty = document.querySelector('.news-empty');
+    function apply(cat){
+      chips.forEach(function(c){ c.classList.toggle('active', c.getAttribute('data-cat') === cat); });
+      var shown = 0;
+      items.forEach(function(it){
+        var show = (cat === 'all') || it.getAttribute('data-cat') === cat;
+        it.style.display = show ? '' : 'none';
+        if (show) shown++;
+      });
+      if (empty) empty.style.display = shown ? 'none' : '';
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(es){
+          es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold:.12 });
+        items.forEach(function(it){ if (it.style.display !== 'none') io.observe(it); });
+      }
+    }
+    chips.forEach(function(c){ c.addEventListener('click', function(){ apply(c.getAttribute('data-cat')); }); });
+  })();
+</script>
 </body>
-</html>
+</html>
