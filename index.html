@@ -497,6 +497,30 @@
 .zy12 .m10 .drop:hover,.zy12 .m10 .drop.over{background:#fff;border-color:#232626}
 .zy12 .m10 .f .ic svg{stroke:#fff}
 .zy12 .m10 .send{background:#232626;color:#fff}
+
+/* ===== 行业解决方案 INDUSTRY SOLUTION（2026-10-17 参考 meetsocial 分屏版式） ===== */
+.sec-industry{background:#fff}
+.sec-industry .ind-wrap{display:grid;grid-template-columns:1.15fr .85fr;min-height:620px}
+.sec-industry .ind-media{position:relative;overflow:hidden;background:#0d1012}
+.sec-industry .ind-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.84);transition:transform 1.2s cubic-bezier(.2,.6,.3,1)}
+.sec-industry .ind-media::after{content://;position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,10,12,.16),rgba(8,10,12,.58))}
+.sec-industry .ind-glass{position:absolute;left:56px;right:56px;bottom:118px;max-width:470px;z-index:2;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:30px 32px;color:#fff}
+.sec-industry .ind-tag{font:600 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.sec-industry .ind-glass h3{font:700 clamp(24px,2.2vw,32px)/1.3 var(--head);margin:16px 0 12px;letter-spacing:-.02em}
+.sec-industry .ind-glass p{font-size:14.5px;line-height:1.9;color:rgba(255,255,255,.78);max-width:34em}
+.sec-industry .ind-link{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:#fff;font:600 13px/1 var(--sans);letter-spacing:.06em;border-bottom:1px solid rgba(188,30,33,.9);padding-bottom:8px;text-decoration:none}
+.sec-industry .ind-link:hover{border-color:#fff}
+.sec-industry .ind-logos{position:absolute;left:56px;right:56px;bottom:36px;z-index:2;display:flex;gap:22px;flex-wrap:wrap;color:rgba(255,255,255,.55);font:500 11px/1 var(--mono);letter-spacing:.14em}
+.sec-industry .ind-panel{background:#BC1E21;color:#fff;padding:76px 64px;display:flex;flex-direction:column}
+.sec-industry .ind-eyebrow{font:700 11px/1 var(--mono);letter-spacing:.24em;opacity:.75}
+.sec-industry .ind-panel h2{font:800 clamp(30px,3.2vw,46px)/1.22 var(--head);letter-spacing:-.02em;margin:22px 0 0}
+.sec-industry .ind-tabs{margin-top:auto;padding-top:48px;display:grid;border-top:1px solid rgba(255,255,255,.28)}
+.sec-industry .ind-tabs button{appearance:none;border:0;background:none;color:rgba(255,255,255,.62);text-align:left;font:700 17px/1 var(--head);letter-spacing:.02em;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.22);transition:color .25s,padding-left .25s}
+.sec-industry .ind-tabs button::after{content:/→/;opacity:0;transform:translateX(-6px);transition:.25s}
+.sec-industry .ind-tabs button:hover,.sec-industry .ind-tabs button.on{color:#fff}
+.sec-industry .ind-tabs button.on{padding-left:10px}
+.sec-industry .ind-tabs button.on::after{opacity:1;transform:none}
+@media (max-width:900px){.sec-industry .ind-wrap{grid-template-columns:1fr}.sec-industry .ind-media{min-height:480px}.sec-industry .ind-glass{left:22px;right:22px;bottom:100px;padding:24px 22px}.sec-industry .ind-logos{left:22px;right:22px}.sec-industry .ind-panel{padding:52px 24px}}
 </style>
 <!-- ============================================================================
      ZY 1:1 复刻模块（zhengyuanplastics.com 首页 12 块，PXID 内容）
@@ -628,16 +652,16 @@
   </div>
   <div class="track" data-eq-track>
     <div class="eqrow">
-      <a class="zycard" href="/pxid/yellow-trad/services/cnc.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/hero-slide-02.jpg" alt="乔峰 HSD1615" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>乔峰 HSD1615 加工中心</b></span></a>
-      <a class="zycard" href="/pxid/yellow-trad/services/cnc.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-03.jpg" alt="永利达 VH11" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>永利达 VH11 ×4</b></span></a>
-      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-electrode.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-04.jpg" alt="北京精雕 JDLVT500" loading="lazy"></span><span class="cap"><span class="pill">电极加工设备</span><b>北京精雕 JDLVT500</b></span></a>
-      <a class="zycard" href="/pxid/yellow-trad/services/injection.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/hero-slide-01.jpg" alt="海天 MA 系列注塑机" loading="lazy"></span><span class="cap"><span class="pill">注塑成型设备</span><b>海天 MA 系列 90–530T</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/services/cnc.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/device/cnc-hsd1615.jpg?v=1" alt="HSD-1615 加工中心" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>HSD-1615 加工中心</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/services/cnc.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/device/cnc-vmc-yongli.jpg?v=1" alt="永利达 CNC-01" loading="lazy"></span><span class="cap"><span class="pill">数控加工设备</span><b>永利达 CNC-01 加工中心</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-electrode.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/device/electrode-jdlt500.jpg?v=1" alt="北京精雕 JDVLT500" loading="lazy"></span><span class="cap"><span class="pill">电极加工设备</span><b>北京精雕 JDVLT500</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/services/injection.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/device/injection-ma4700.jpg?v=1" alt="海天 MA 4700III" loading="lazy"></span><span class="cap"><span class="pill">注塑成型设备</span><b>海天 MA 4700III SE+</b></span></a>
     </div>
     <div class="eqrow">
-      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-edm.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-06.jpg" alt="汉霸 G45L 火花机" loading="lazy"></span><span class="cap"><span class="pill">放电加工设备</span><b>汉霸 G45L / 迪蒙 ADI600</b></span></a>
-      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-wire-cut.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-07.jpg" alt="霸器 BQ800 中走丝" loading="lazy"></span><span class="cap"><span class="pill">线切割设备</span><b>霸器 BQ800 中走丝</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-edm.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/device/edm-dmnc.jpg?v=1" alt="迪蒙 EDM-01" loading="lazy"></span><span class="cap"><span class="pill">放电加工设备</span><b>迪蒙 EDM-01 放电加工</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-wire-cut.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/device/wirecut-wedm.jpg?v=1" alt="MS-WEDM 中走丝" loading="lazy"></span><span class="cap"><span class="pill">线切割设备</span><b>PXID MS-WEDM 中走丝</b></span></a>
       <a class="zycard" href="/pxid/yellow-trad/advantages/adv-inspection.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-08.jpg" alt="海克斯康三坐标" loading="lazy"></span><span class="cap"><span class="pill">检测设备</span><b>海克斯康 INSPEC70RS</b></span></a>
-      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-mold-base.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/cap-05.jpg" alt="乔峰 LM2013" loading="lazy"></span><span class="cap"><span class="pill">模架加工设备</span><b>乔峰 LM2013 / SV105</b></span></a>
+      <a class="zycard" href="/pxid/yellow-trad/advantages/adv-mold-base.html"><span class="zyph"><img src="/pxid/yellow-trad/assets/images/device/grinder-kent.jpg?v=1" alt="KENT 平面磨床" loading="lazy"></span><span class="cap"><span class="pill">模架加工设备</span><b>KENT 平面磨床</b></span></a>
     </div>
   </div>
 </section>
@@ -650,6 +674,31 @@
     <a class="zybtn" href="/pxid/yellow-trad/advantages/adv-overview.html">查看全部设备 <span>&#8594;</span></a>
   </div></div>
 </section>
+<!-- ===== 行业解决方案（2026-10-17 新增：制造能力与行业洞察之间） ===== -->
+<section class="sec-industry" id="zy-industry" aria-labelledby="ind-title">
+  <div class="ind-wrap">
+    <div class="ind-media">
+      <img src="/pxid/yellow-trad/assets/images/device/injection-ma4700.jpg?v=1" alt="PXID 注塑生产车间" loading="lazy">
+      <div class="ind-glass">
+        <span class="ind-tag">汽车与出行 / AUTOMOTIVE</span>
+        <h3>模具 + 注塑 + CNC<br>全套交付</h3>
+        <p>从 DFM 评审、快速打样到批量注塑与装配测试，一个供应商交付整套零件体系，缩短从图纸到量产的时间。</p>
+        <a class="ind-link" href="/pxid/yellow-trad/cases/cases.html">查看行业案例 →</a>
+      </div>
+      <div class="ind-logos"><span>IATF 16949 体系</span><span>ISO 9001</span><span>三坐标全检</span></div>
+    </div>
+    <aside class="ind-panel">
+      <span class="ind-eyebrow">INDUSTRY SOLUTION</span>
+      <h2 id="ind-title">一站式<br>行业解决方案</h2>
+      <div class="ind-tabs">
+        <button type="button" class="on" data-ind="0">汽车与出行</button>
+        <button type="button" data-ind="1">工业设备</button>
+        <button type="button" data-ind="2">消费电子</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
 
 
 
@@ -916,6 +965,28 @@
   })();
 })();
 
+
+  /* 行业解决方案切换（2026-10-17） */
+  (function(){
+    var sec = document.getElementById('zy-industry'); if(!sec) return;
+    var data = [
+      {tag:'汽车与出行 / AUTOMOTIVE', h:'模具 + 注塑 + CNC<br>全套交付', p:'从 DFM 评审、快速打样到批量注塑与装配测试，一个供应商交付整套零件体系，缩短从图纸到量产的时间。', img:'/pxid/yellow-trad/assets/images/device/injection-ma4700.jpg?v=1', link:'/pxid/yellow-trad/cases/cases.html'},
+      {tag:'工业设备 / INDUSTRIAL', h:'精密结构件<br>与装配测试', p:'精密模具、CNC 加工与三坐标全尺寸检测，配套装配与测试，覆盖工业设备的复杂结构件需求。', img:'/pxid/yellow-trad/assets/images/device/cnc-vmc-yongli.jpg?v=1', link:'/pxid/yellow-trad/advantages/adv-overview.html'},
+      {tag:'消费电子 / CONSUMER', h:'高光外观件<br>快速模具验证', p:'快速模具先验证市场，再以量产模具交付高光外观件，兼顾上市节奏与模具成本。', img:'/pxid/yellow-trad/assets/images/device/electrode-jdlt500.jpg?v=1', link:'/pxid/yellow-trad/services/process.html'}
+    ];
+    var btns = sec.querySelectorAll('.ind-tabs button');
+    var tag = sec.querySelector('.ind-tag'), h = sec.querySelector('.ind-glass h3'),
+        p = sec.querySelector('.ind-glass p'), img = sec.querySelector('.ind-media > img'),
+        link = sec.querySelector('.ind-link');
+    btns.forEach(function(b, i){
+      b.addEventListener('click', function(){
+        btns.forEach(function(x){ x.classList.toggle('on', x===b); });
+        var it = data[i];
+        tag.textContent = it.tag; h.innerHTML = it.h; p.textContent = it.p;
+        img.src = it.img; if(link) link.href = it.link;
+      });
+    });
+  })();
 </script>
 </main>
 <script src="/pxid/yellow-trad/assets/js/nav.js?v=20261007-nav2" defer></script>
