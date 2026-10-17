@@ -508,6 +508,46 @@
 }
 @media(hover:none){.zy12.zyp .cell:hover,.zy12.zyp .p3 .lk:hover{transform:none}}
 </style>
+<style>
+/* ===== 行业解决方案 INDUSTRY SOLUTION（v4：槽位滑动，图片4位置移动+标题自动避让，对齐 meetsocial 真实行为） ===== */
+.ind-acc{--head:"Noto Sans SC",Inter,system-ui,sans-serif;--mono:ui-monospace,"JetBrains Mono",monospace;position:relative;height:min(860px,88vh);min-height:620px;overflow:hidden;background:#0b0d0f;color:#fff}
+.ind-acc-track{position:relative;height:100%;width:100%}
+.ind-acc-item{position:absolute;top:0;height:100%;width:17.7%;overflow:hidden;cursor:pointer;background:none;border:0;padding:0;color:inherit;text-align:left;
+  transition:left .8s cubic-bezier(.22,.68,.25,1),width .8s cubic-bezier(.22,.68,.25,1);will-change:left,width}
+.ind-acc-item.on{width:46.9%}
+.ind-acc-item>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.2) saturate(.65);transition:filter .7s}
+.ind-acc-item.on>img{filter:brightness(.86)}
+.ind-acc-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,8,10,.6),rgba(6,8,10,.4) 40%,rgba(6,8,10,.8));pointer-events:none;transition:background .7s}
+.ind-acc-item.on::after{background:linear-gradient(180deg,rgba(0,0,0,.26),rgba(0,0,0,.02) 36%,rgba(0,0,0,.6))}
+/* 标题盒：随当前图片左右让位 */
+.ind-acc-title{position:absolute;top:74px;z-index:6;width:min(600px,46%);transition:left .8s cubic-bezier(.22,.68,.25,1),right .8s cubic-bezier(.22,.68,.25,1);pointer-events:none}
+.ind-acc-title.pos-right{right:38px;left:auto}
+.ind-acc-title.pos-left{left:38px;right:auto}
+.ind-kicker{font:600 11px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.66);display:block;margin-bottom:16px}
+.ind-acc-title h2{font:800 clamp(30px,3.55vw,52px)/1.06 var(--head);letter-spacing:-.01em;margin:0;color:#fff}
+.ind-acc-title h2 span{display:block;font-weight:700;font-size:.84em;margin-top:12px;opacity:.96;letter-spacing:0}
+/* 当前块内容 */
+.ind-acc-body{position:absolute;left:38px;right:38px;bottom:130px;z-index:3;opacity:0;transform:translateY(12px);transition:opacity .45s .18s,transform .55s .18s;pointer-events:none}
+.ind-acc-item.on .ind-acc-body{opacity:1;transform:none;pointer-events:auto}
+.ind-acc-name{font:800 clamp(24px,2.3vw,34px)/1.2 var(--head);margin:0 0 18px;letter-spacing:-.01em}
+.ind-acc-card{display:flex;align-items:center;gap:14px;max-width:430px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:10px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:15px 18px;color:#fff;text-decoration:none;transition:background .25s}
+.ind-acc-card:hover{background:rgba(255,255,255,.26)}
+.ind-acc-card b{display:block;font:700 15px/1.3 var(--head)}
+.ind-acc-card small{display:block;font-size:11.5px;color:rgba(255,255,255,.72);margin-top:4px}
+.ind-acc-arrow{margin-left:auto;flex:none;width:38px;height:38px;border-radius:50%;background:#fff;color:#141719;display:grid;place-items:center;font-size:15px}
+.ind-acc-desc{margin:16px 0 0;font-size:13.5px;line-height:1.85;max-width:460px;color:rgba(255,255,255,.88)}
+.ind-acc-tags{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0 0;padding:0;list-style:none;font:500 11px/1 var(--mono);letter-spacing:.12em;color:rgba(255,255,255,.62);text-transform:uppercase}
+.ind-acc-label{position:absolute;left:34px;right:14px;bottom:30px;z-index:4;margin:0;font:700 clamp(19px,1.9vw,27px)/1.2 var(--head);color:rgba(255,255,255,.5);white-space:nowrap;transition:color .3s}
+.ind-acc-item.on .ind-acc-label,.ind-acc-item:hover .ind-acc-label{color:#fff}
+@media (max-width:900px){
+  .ind-acc{height:auto;min-height:0}
+  .ind-acc-title{position:static;width:auto;padding:42px 22px 20px}
+  .ind-acc-track{display:flex;flex-direction:column;height:auto}
+  .ind-acc-item{position:relative;left:auto!important;width:100%!important;height:200px;transition:height .5s ease}
+  .ind-acc-item.on{height:520px}
+  .ind-acc-body{left:22px;right:22px;bottom:72px}
+  .ind-acc-label{left:22px;bottom:18px}
+</style>
 </head>
 <body data-page-node-id="Bpd6jD4dLqWYYfTKZcBWrE">
 <header data-page-node-id="eTsyBIvRksuapGoWT9dHMr">
@@ -851,6 +891,58 @@
   </div>
 </section>
 
+<!-- ===== 一站式行业解决方案（产品展示结束后的转化入口，2026-10-17） ===== -->
+<!-- ===== 行业解决方案 v4（槽位滑动：图片在4个位置间移动，标题自动让位） ===== -->
+<section class="ind-acc" id="zy-industry" aria-labelledby="ind-title">
+  <div class="ind-acc-title pos-right" id="indTitleBox">
+    <span class="ind-kicker">◆ 解决方案 / SOLUTION</span>
+    <h2 id="ind-title">INDUSTRY SOLUTION<span>一站式的行业解决方案</span></h2>
+  </div>
+  <div class="ind-acc-track">
+    <article class="ind-acc-item on" data-i="0" style="left:0%">
+      <img src="/pxid/yellow-trad/assets/images/device/injection-ma4700.jpg?v=1" alt="PXID 注塑车间" loading="lazy">
+      <div class="ind-acc-body">
+        <p class="ind-acc-name">汽车零部件</p>
+        <a class="ind-acc-card" href="/pxid/yellow-trad/cases/cases.html"><span><b>汽车零部件方案</b><small>模具 + 注塑 + CNC 全套交付</small></span><span class="ind-acc-arrow">→</span></a>
+        <p class="ind-acc-desc">从 DFM 评审、快速打样到批量注塑与装配测试，一个供应商交付整套零件体系，缩短从图纸到量产的时间。</p>
+        <ul class="ind-acc-tags"><li>IATF 16949 体系</li><li>ISO 9001</li><li>三坐标检测与装配测试</li></ul>
+      </div>
+      <h3 class="ind-acc-label">汽车零部件</h3>
+    </article>
+    <article class="ind-acc-item" data-i="1" style="left:53.1%">
+      <img src="/pxid/yellow-trad/assets/images/device/wirecut-wedm.jpg?v=1" alt="PXID 中走丝车间" loading="lazy">
+      <div class="ind-acc-body">
+        <p class="ind-acc-name">电动出行</p>
+        <a class="ind-acc-card" href="/pxid/yellow-trad/services/injection.html"><span><b>电动出行方案</b><small>外观覆盖件与结构件量产</small></span><span class="ind-acc-arrow">→</span></a>
+        <p class="ind-acc-desc">电动摩托与滑板车的外观覆盖件、结构件，从外观设计、快速模具验证到注塑量产与装配，一站交付。</p>
+        <ul class="ind-acc-tags"><li>快速模具验证</li><li>高光外观件</li><li>装配测试</li></ul>
+      </div>
+      <h3 class="ind-acc-label">电动出行</h3>
+    </article>
+    <article class="ind-acc-item" data-i="2" style="left:70.8%">
+      <img src="/pxid/yellow-trad/assets/images/device/edm-dmnc.jpg?v=1" alt="PXID 放电加工设备" loading="lazy">
+      <div class="ind-acc-body">
+        <p class="ind-acc-name">工业设备</p>
+        <a class="ind-acc-card" href="/pxid/yellow-trad/advantages/adv-overview.html"><span><b>工业设备方案</b><small>精密结构件与装配测试</small></span><span class="ind-acc-arrow">→</span></a>
+        <p class="ind-acc-desc">精密模具、CNC 加工与三坐标检测，配套装配与测试，覆盖工业设备的复杂结构件需求。</p>
+        <ul class="ind-acc-tags"><li>CNC 精密加工</li><li>深孔钻</li><li>三坐标检测</li></ul>
+      </div>
+      <h3 class="ind-acc-label">工业设备</h3>
+    </article>
+    <article class="ind-acc-item" data-i="3" style="left:88.5%">
+      <img src="/pxid/yellow-trad/assets/images/device/electrode-jdlt500.jpg?v=1" alt="PXID 精雕设备" loading="lazy">
+      <div class="ind-acc-body">
+        <p class="ind-acc-name">精密模具</p>
+        <a class="ind-acc-card" href="/pxid/yellow-trad/advantages/adv-mold-design.html"><span><b>精密模具能力</b><small>设计 · 加工 · 试模验证</small></span><span class="ind-acc-arrow">→</span></a>
+        <p class="ind-acc-desc">模具设计、电极加工、EDM 放电、中走丝切割到试模验证，全流程在自有车间完成。</p>
+        <ul class="ind-acc-tags"><li>模具设计</li><li>EDM 放电</li><li>中走丝</li></ul>
+      </div>
+      <h3 class="ind-acc-label">精密模具</h3>
+    </article>
+  </div>
+</section>
+
+
 <!-- ===== P3 服务页链接卡 ===== -->
 <section class="p3" id="zp-p3">
   <div class="in">
@@ -1086,5 +1178,37 @@
 })();
 </script>
 <script src="/pxid/yellow-trad/assets/js/nav.js?v=20261007-nav2" defer></script>
+<script>
+/* 行业解决方案 v4：槽位滑动（当前图片移动到对应位置，标题自动避让到反侧） */
+  (function(){
+    var sec = document.getElementById('zy-industry'); if(!sec) return;
+    var items = Array.prototype.slice.call(sec.querySelectorAll('.ind-acc-item'));
+    var titleBox = document.getElementById('indTitleBox');
+    if(!items.length) return;
+    var W_ACTIVE = 46.9, W_OTHER = (100 - W_ACTIVE) / 3;   /* 17.7 */
+    function layout(active){
+      items.forEach(function(el, i){
+        var left;
+        if (i < active) left = i * W_OTHER;
+        else if (i === active) left = active * W_OTHER;
+        else left = active * W_OTHER + W_ACTIVE + (i - active - 1) * W_OTHER;
+        el.style.left = left.toFixed(2) + '%';
+        el.classList.toggle('on', i === active);
+      });
+      if (titleBox){
+        titleBox.classList.toggle('pos-right', active < 2);
+        titleBox.classList.toggle('pos-left', active >= 2);
+      }
+      sec.setAttribute('data-active', active);
+    }
+    items.forEach(function(el, i){
+      el.addEventListener('click', function(e){
+        if (e.target.closest('a')) return;
+        layout(i);
+      });
+    });
+    layout(0);
+  })();
+</script>
 </body>
 </html>
