@@ -171,6 +171,15 @@
   .t1-cases{margin-top:38px}
   .t1-cases span{min-width:0;font-size:14px}
 }
+@media(max-width:1200px){
+  .g5-side{display:flex;min-width:0;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--red-ink) transparent;padding-bottom:8px}
+  .g5-th{flex:0 0 clamp(124px,25vw,224px);aspect-ratio:16/9;scroll-snap-align:start}
+  .g5-th:hover{transform:none}
+  .g5-side:focus-visible{outline:2px solid var(--red-ink);outline-offset:4px}
+  .sec-svc{padding-bottom:32px}
+  .sec-take{padding-top:48px}
+  .sec-take .sec-hb h2{text-wrap:balance}
+}
 </style>
 </head>
 <body>
@@ -294,7 +303,7 @@
           <p id="g5d">自主模具车间，CNC、EDM、中走丝设备自有，模具寿命可达 100 万模次以上，支撑长期量产。</p>
         </figcaption>
       </figure>
-      <div class="g5-side">
+      <div class="g5-side" tabindex="0" role="group" aria-label="加工服务缩略图，可左右滚动查看">
         <figure class="g5-th on" data-i="1"><img src="/pxid/yellow-trad/assets/images/biz-01.jpg" alt="模具开发"><span class="no">01</span></figure>
         <figure class="g5-th" data-i="2"><img src="/pxid/yellow-trad/assets/images/biz-02.jpg" alt="注塑成型" loading="lazy"><span class="no">02</span></figure>
         <figure class="g5-th" data-i="3"><img src="/pxid/yellow-trad/assets/images/biz-03.jpg" alt="CNC 精密加工" loading="lazy"><span class="no">03</span></figure>
