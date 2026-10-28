@@ -528,6 +528,13 @@
   .zy12 .m09 .ex{display:none}
   .zy12 .m04 .hd,.zy12 .m06 .hd,.zy12 .m09 .hd{margin-bottom:24px}
 }
+/* Place each carousel card inside a physical screen when a hinge splits the viewport. */
+@media (max-width:1180px){
+  .pxid-segmented .zy12 .m01 .g,.pxid-segmented .zy12 .m05 .g,.pxid-segmented .zy12 .m06 .track,.pxid-segmented .zy12 .m09 .g{scroll-snap-type:x mandatory}
+  .pxid-segmented .zy12 .m01 .c,.pxid-segmented .zy12 .m05 .c,.pxid-segmented .zy12 .m06 .zycard,.pxid-segmented .zy12 .m09 .big,.pxid-segmented .zy12 .m09 .s{flex:0 0 calc(var(--pxid-seg0-width,50vw) - 56px);max-width:none;scroll-snap-align:none}
+  .pxid-segmented .zy12 .m01 .c:nth-child(odd),.pxid-segmented .zy12 .m05 .c:nth-child(odd),.pxid-segmented .zy12 .m09 .big,.pxid-segmented .zy12 .m09 .s:nth-child(even){margin-right:calc(var(--pxid-hinge-width,0px) + 40px);scroll-snap-align:start}
+  .pxid-segmented .zy12 .m06 .zycard:nth-child(odd){margin-right:calc(var(--pxid-hinge-width,0px) + 44px);scroll-snap-align:start}
+}
 
 </style>
 <style id="zy12-palette">
@@ -1003,9 +1010,9 @@
         track.scrollLeft = 0;
       });
     });
-    var step = 340;
-    sec.querySelector('[data-eq-l]').addEventListener('click', function () { track.scrollBy({ left: -step, behavior: RM ? 'auto' : 'smooth' }); });
-    sec.querySelector('[data-eq-r]').addEventListener('click', function () { track.scrollBy({ left: step, behavior: RM ? 'auto' : 'smooth' }); });
+    function step(){return document.documentElement.classList.contains('pxid-segmented') ? track.clientWidth : 340;}
+    sec.querySelector('[data-eq-l]').addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: RM ? 'auto' : 'smooth' }); });
+    sec.querySelector('[data-eq-r]').addEventListener('click', function () { track.scrollBy({ left: step(), behavior: RM ? 'auto' : 'smooth' }); });
   })();
 
   /* ---- #10 表单：本地校验后跳联系报价页 ---- */
