@@ -332,6 +332,8 @@
     .small .grid{grid-template-columns:1fr}
     /* ===== Mobile Nav (Premium) ===== */
     .hamburger{display:flex}
+    /* 移动端 logo 收窄：原 inline height:38px 在 375 屏占比 ~43%，与右侧汉堡不搭；缩到 30px（宽约 128px）更平衡 */
+    .brand img{height:30px!important;width:auto!important}
     .nav-right .btn-gold{display:none}
     body>header{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
 
@@ -364,6 +366,7 @@
     .fgrid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:560px){
+    .brand img{height:28px!important}
     .cards,.plat,.qstats{grid-template-columns:1fr}
     .case{flex:0 0 85%;min-width:240px}
     .strip .grid{grid-template-columns:repeat(2,1fr)}
