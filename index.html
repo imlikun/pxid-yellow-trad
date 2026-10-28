@@ -233,6 +233,10 @@
 .zy12 .m04 .ck li::before{content:"✓";color:var(--o);font-weight:700}
 .zy12 .m04 .more{font:600 15px/1 var(--head);color:var(--ink);border-bottom:2px solid var(--o);padding-bottom:4px}
 .zy12 .m04 .more:hover{color:var(--o)}
+.zy12 .m04 .m04-arrow{display:none;position:absolute;right:16px;bottom:16px;z-index:4;
+  width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--ink);
+  place-items:center;font-size:22px;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.zy12 .m04 .m04-arrow:active{transform:scale(.94)}
 
 /* ---------- #05 工作流程：背后 ghost 巨型标题 + 三张白卡 + ghost 序号 ---------- */
 .zy12 .m05{background:var(--bg2);padding:20px 0 100px;position:relative}
@@ -421,24 +425,25 @@
   .zy12 .m01 .swipe-nav{display:flex;justify-content:flex-end;gap:10px;padding:0 22px}
   .zy12 .m01 .swipe-nav button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);
     background:#fff;color:var(--ink);font-size:15px;display:grid;place-items:center;cursor:pointer}
-  /* m02 移动端：标题叠到车间大图上 + 右箭头 */
-  .zy12 .m02{padding-bottom:64px}
-  .zy12 .m02 .in{position:relative;display:flex;flex-direction:column}
-  .zy12 .m02 .top{grid-template-columns:1fr;gap:0;order:2}
-  .zy12 .m02 .fig{order:1;margin-top:0;position:relative}
-  .zy12 .m02 .fig img{height:340px}
-  .zy12 .m02 .fig::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-    background:linear-gradient(180deg,rgba(8,10,12,.62) 0%,rgba(8,10,12,.06) 46%,rgba(8,10,12,0) 70%)}
-  .zy12 .m02 .top > div:first-child{position:absolute;left:22px;right:22px;top:26px;z-index:3;color:#fff}
-  .zy12 .m02 .top > div:first-child .eb{color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.5)}
-  .zy12 .m02 .h2{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55);font-size:30px;line-height:38px}
-  .zy12 .m02 .copy{margin-top:22px}
-  .zy12 .m02 .fig-arrow{display:grid;position:absolute;right:18px;bottom:18px;z-index:4;width:44px;height:44px;
-    border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);place-items:center;font-size:18px;text-decoration:none}
+  /* m02 移动端：回退为「文字在上 / 图在下」（图1 实为 m04 而非 m02，按坤哥 2026-10-28 纠正） */
   .zy12 .m03{padding-bottom:60px}
   .zy12 .m04{padding:64px 0}
-  .zy12 .m04 .g{grid-template-columns:1fr}
-  .zy12 .m04 .pic img{height:240px}
+  .zy12 .m04 .g{grid-template-columns:1fr;position:relative}
+  .zy12 .m04 .tabs{flex-direction:row;overflow-x:auto;gap:8px;margin-bottom:14px;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .zy12 .m04 .tabs::-webkit-scrollbar{display:none}
+  .zy12 .m04 .tabs button{flex:0 0 auto;width:auto;padding:9px 15px;white-space:nowrap}
+  .zy12 .m04 .pic{position:relative}
+  .zy12 .m04 .pic img{height:340px}
+  .zy12 .m04 .desc{position:absolute;left:0;right:0;bottom:0;justify-content:flex-end;
+    padding:70px 22px 22px;color:#fff;
+    background:linear-gradient(to top,rgba(8,10,12,.95) 6%,rgba(8,10,12,.82) 42%,rgba(8,10,12,0) 100%)}
+  .zy12 .m04 .desc h3{color:#fff;font-size:22px;line-height:1.4;margin-bottom:10px}
+  .zy12 .m04 .desc p{color:rgba(255,255,255,.88);font-size:14px;margin-bottom:14px}
+  .zy12 .m04 .ck{gap:7px;margin-bottom:16px}
+  .zy12 .m04 .ck li{color:rgba(255,255,255,.92);font-size:13.5px}
+  .zy12 .m04 .ck li::before{color:#fff}
+  .zy12 .m04 .more{color:#fff;border-color:rgba(255,255,255,.85)}
+  .zy12 .m04 .m04-arrow{display:grid}
   .zy12 .m05{padding-bottom:64px}
   /* m05 移动端：三张流程卡 → 横向滑动 */
   .zy12 .m05 .g{display:flex;grid-template-columns:unset;gap:14px;overflow-x:auto;overflow-y:hidden;margin-top:40px;
@@ -449,10 +454,13 @@
   .zy12 .m05 .swipe-nav button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);
     background:#fff;color:var(--ink);font-size:15px;display:grid;place-items:center;cursor:pointer}
   .zy12 .m06{padding-top:64px}
-  .zy12 .m06 .track{padding:0 22px}
-  .zy12 .m06 .eqrow{grid-template-columns:1fr}
-  .zy12 .m06 .cap{left:26px;bottom:26px}
-  .zy12 .m06 .zynav{padding-top:0}
+  .zy12 .m06 .track{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;padding:0 22px 14px;scrollbar-width:none}
+  .zy12 .m06 .track::-webkit-scrollbar{display:none}
+  .zy12 .m06 .eqrow{flex:0 0 auto;display:flex;gap:12px}
+  .zy12 .m06 .zycard{flex:0 0 74%;max-width:74%;height:300px;aspect-ratio:auto;min-width:0;scroll-snap-align:start}
+  .zy12 .m06 .cap{left:18px;right:14px;bottom:18px}
+  .zy12 .m06 .zynav{display:flex;gap:10px;justify-content:flex-end}
   .zy12 .m07{padding:64px 0 50px;margin-top:-40px}
   .zy12 .m08{padding:64px 22px 70px}
   .zy12 .m09{padding:70px 22px 56px}
@@ -632,7 +640,8 @@
         <button type="button" data-zy-tab="2">模具设计与制造</button>
         <button type="button" data-zy-tab="3">放电与中走丝</button>
       </div>
-      <div class="pic"><img data-zy-pic src="/pxid/yellow-trad/assets/images/cap-02.jpg" alt="注塑成型" loading="lazy"></div>
+      <div class="pic"><img data-zy-pic src="/pxid/yellow-trad/assets/images/cap-02.jpg" alt="注塑成型" loading="lazy">
+        <button type="button" class="m04-arrow" data-zy-next aria-label="切换下一个工艺">&#8250;</button></div>
       <div class="desc">
         <h3 data-zy-title>90–530T 注塑量产</h3>
         <p data-zy-text>7 台海天 MA 系列注塑机，覆盖 90T 到 530T，从试模到稳定量产同一工厂完成。</p>
@@ -904,7 +913,7 @@
     stage.addEventListener('mouseleave', function () { ts = 1; tx = 0; ty = 0; kick(); });
   })();
 
-  /* ---- #04 产品 Tab ---- */
+  /* ---- #04 产品 Tab（移动端：描述浮于工艺图上，右箭头切换工艺） ---- */
   (function () {
     var sec = root.querySelector('.m04'); if (!sec) return;
     var DATA = [
@@ -916,7 +925,9 @@
     var tabs = [].slice.call(sec.querySelectorAll('[data-zy-tab]'));
     var img = sec.querySelector('[data-zy-pic]'), h3 = sec.querySelector('[data-zy-title]'),
         p = sec.querySelector('[data-zy-text]'), ul = sec.querySelector('[data-zy-list]'), more = sec.querySelector('.more');
+    var cur = 0;
     function set(k) {
+      cur = k;
       var d = DATA[k]; if (!d) return;
       tabs.forEach(function (b, n) { b.classList.toggle('on', n === k); });
       img.src = '/pxid/yellow-trad/assets/images/' + d.pic;
@@ -925,6 +936,8 @@
       more.href = d.href;
     }
     tabs.forEach(function (b, k) { b.addEventListener('click', function () { set(k); }); });
+    var nx = sec.querySelector('[data-zy-next]');
+    if (nx) nx.addEventListener('click', function () { set((cur + 1) % DATA.length); });
     set(0);
   })();
 
