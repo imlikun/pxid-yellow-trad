@@ -156,6 +156,7 @@
 .zy12 .m02 .fig{position:relative;margin-top:56px}
 .zy12 .m02 .fig img{width:100%;height:660px;object-fit:cover;
   --cut:96px;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
+.zy12 .m02 .fig-arrow{display:none}
 
 /* ---------- #03 数字统计：巨型描边数字（suffix 小一号）+ 每列独立短横线 ---------- */
 .zy12 .m03{background:#fff;padding:0 0 96px}
@@ -412,13 +413,41 @@
   .zy12 .in{padding:0 22px}
   .zy12 .m08,.zy12 .m09{padding-left:22px;padding-right:22px}
   .zy12 .m01{padding:64px 0 50px}
-  .zy12 .m01 .g{grid-template-columns:1fr}
+  /* m01 移动端：四张卖点卡 → 横向滑动，右箭头代表可切换 */
+  .zy12 .m01 .g{display:flex;grid-template-columns:unset;gap:14px;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:8px 22px 16px;margin:0 -22px;scrollbar-width:none}
+  .zy12 .m01 .g::-webkit-scrollbar{display:none}
+  .zy12 .m01 .c{flex:0 0 80%;max-width:80%;scroll-snap-align:start}
+  .zy12 .m01 .swipe-nav{display:flex;justify-content:flex-end;gap:10px;padding:0 22px}
+  .zy12 .m01 .swipe-nav button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);
+    background:#fff;color:var(--ink);font-size:15px;display:grid;place-items:center;cursor:pointer}
+  /* m02 移动端：标题叠到车间大图上 + 右箭头 */
   .zy12 .m02{padding-bottom:64px}
+  .zy12 .m02 .in{position:relative;display:flex;flex-direction:column}
+  .zy12 .m02 .top{grid-template-columns:1fr;gap:0;order:2}
+  .zy12 .m02 .fig{order:1;margin-top:0;position:relative}
+  .zy12 .m02 .fig img{height:340px}
+  .zy12 .m02 .fig::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(180deg,rgba(8,10,12,.62) 0%,rgba(8,10,12,.06) 46%,rgba(8,10,12,0) 70%)}
+  .zy12 .m02 .top > div:first-child{position:absolute;left:22px;right:22px;top:26px;z-index:3;color:#fff}
+  .zy12 .m02 .top > div:first-child .eb{color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.5)}
+  .zy12 .m02 .h2{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55);font-size:30px;line-height:38px}
+  .zy12 .m02 .copy{margin-top:22px}
+  .zy12 .m02 .fig-arrow{display:grid;position:absolute;right:18px;bottom:18px;z-index:4;width:44px;height:44px;
+    border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);place-items:center;font-size:18px;text-decoration:none}
   .zy12 .m03{padding-bottom:60px}
   .zy12 .m04{padding:64px 0}
   .zy12 .m04 .g{grid-template-columns:1fr}
   .zy12 .m04 .pic img{height:240px}
   .zy12 .m05{padding-bottom:64px}
+  /* m05 移动端：三张流程卡 → 横向滑动 */
+  .zy12 .m05 .g{display:flex;grid-template-columns:unset;gap:14px;overflow-x:auto;overflow-y:hidden;margin-top:40px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:8px 22px 16px;margin-left:-22px;margin-right:-22px;scrollbar-width:none}
+  .zy12 .m05 .g::-webkit-scrollbar{display:none}
+  .zy12 .m05 .c{flex:0 0 82%;max-width:82%;scroll-snap-align:start}
+  .zy12 .m05 .swipe-nav{display:flex;justify-content:flex-end;gap:10px;padding:0 22px}
+  .zy12 .m05 .swipe-nav button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);
+    background:#fff;color:var(--ink);font-size:15px;display:grid;place-items:center;cursor:pointer}
   .zy12 .m06{padding-top:64px}
   .zy12 .m06 .track{padding:0 22px}
   .zy12 .m06 .eqrow{grid-template-columns:1fr}
@@ -548,7 +577,7 @@
       <h3>一站式加工能力</h3><p>注塑、CNC、放电、中走丝、三坐标检测与装配测试一条线走完。</p></div>
     <div class="c rv" data-n="04" style="--d:.24s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></div>
       <h3>12 小时快速报价</h3><p>上传 3D 与 2D 图纸，当天拿到成本拆分、交期与可制造性建议。</p></div>
-  </div></div>
+  </div><div class="swipe-nav"><button type="button" data-swipe-l aria-label="向左滑动">&#8249;</button><button type="button" data-swipe-r aria-label="向右滑动">&#8250;</button></div></div>
 </section>
 
 <!-- ===== #02 关于我们 ===== -->
@@ -572,6 +601,7 @@
     </div>
     <div class="fig rv">
       <img src="/pxid/yellow-trad/assets/images/cap-01.jpg" alt="品向智造车间" loading="lazy">
+      <a class="fig-arrow" href="/pxid/yellow-trad/about.html" aria-label="了解更多关于我们">&#8250;</a>
     </div>
   </div>
 </section>
@@ -625,7 +655,7 @@
       <h3>报价 + DFM（12 小时）</h3><p>拿到成本拆分、模具方案与交期，同时给出可制造性建议，可签 NDA。</p></div>
     <div class="c rv" data-n="03" style="--d:.2s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
       <h3>模具制造 → 量产交付</h3><p>电极与模架加工、试模、注塑量产，出货前附尺寸检测报告。</p></div>
-  </div></div>
+  </div><div class="swipe-nav"><button type="button" data-swipe-l aria-label="向左滑动">&#8249;</button><button type="button" data-swipe-r aria-label="向右滑动">&#8250;</button></div></div>
 </section>
 
 <!-- ===== #06 设备库（横向轮播，原站无分类 Tab） ===== -->
@@ -896,6 +926,17 @@
     }
     tabs.forEach(function (b, k) { b.addEventListener('click', function () { set(k); }); });
     set(0);
+  })();
+
+  /* ---- #01/#05 移动端横向滑动箭头 ---- */
+  (function () {
+    ['.m01', '.m05'].forEach(function (sel) {
+      var sec = root.querySelector(sel); if (!sec) return;
+      var track = sec.querySelector('.g'); if (!track) return;
+      var l = sec.querySelector('[data-swipe-l]'), r = sec.querySelector('[data-swipe-r]');
+      if (l) l.addEventListener('click', function () { track.scrollBy({ left: -(track.clientWidth * 0.82), behavior: RM ? 'auto' : 'smooth' }); });
+      if (r) r.addEventListener('click', function () { track.scrollBy({ left: (track.clientWidth * 0.82), behavior: RM ? 'auto' : 'smooth' }); });
+    });
   })();
 
   /* ---- #06 设备：分类过滤 + 横向滚动 ---- */
