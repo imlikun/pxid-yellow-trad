@@ -145,6 +145,7 @@
 .zy12 .m02 .top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr);gap:80px;align-items:start}
 .zy12 .m02 .h2{font-size:52px;line-height:60px}
 .zy12 .m02 .h2 span{color:var(--o)}
+.zy12 .m02 .h2 .br-m{display:none}   /* 仅移动端生效的换行，桌面保持两行 */
 .zy12 .m02 .copy .lead{font:700 20px/1.55 var(--head);color:var(--ink);margin-bottom:18px}
 .zy12 .m02 .copy p{font-size:15.5px;color:var(--ink2);margin-bottom:12px}
 /* 正文压 2/3 + 按钮移到正文右侧同一行：整行总宽=lead 行宽（右侧列约 580px） */
@@ -425,7 +426,25 @@
   .zy12 .m01 .swipe-nav{display:flex;justify-content:flex-end;gap:10px;padding:0 22px}
   .zy12 .m01 .swipe-nav button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);
     background:#fff;color:var(--ink);font-size:15px;display:grid;place-items:center;cursor:pointer}
-  /* m02 移动端：回退为「文字在上 / 图在下」（图1 实为 m04 而非 m02，按坤哥 2026-10-28 纠正） */
+  /* m02 移动端：实拍图提到最上、标题压在图上，正文与按钮接在图下（2026-10-28 坤哥定：图先文后） */
+  .zy12 .m02{padding:34px 0 58px}
+  .zy12 .m02 .in{display:flex;flex-direction:column}
+  .zy12 .m02 .fig{order:1;margin-top:0}
+  .zy12 .m02 .fig.rv{opacity:1;transform:none}   /* 标题已绝对定位在图上，关掉下移淡入避免错位 */
+  .zy12 .m02 .fig img{height:388px;--cut:0px}
+  .zy12 .m02 .fig::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(180deg,rgba(8,10,12,.92) 0%,rgba(8,10,12,.84) 32%,rgba(8,10,12,.44) 55%,rgba(8,10,12,0) 78%)}
+  .zy12 .m02 .top{order:2;margin-top:24px;gap:0}
+  .zy12 .m02 .top > div:first-child{position:absolute;left:22px;right:22px;top:0;z-index:3;padding:24px 0 0}
+  .zy12 .m02 .top > div:first-child .eb{color:rgba(255,255,255,.84)}
+  .zy12 .m02 .h2{color:#fff;font-size:30px;line-height:37px;letter-spacing:-.3px;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+  .zy12 .m02 .h2 .br-m{display:inline}
+  .zy12 .m02 .top .h2 span{color:#fff;white-space:nowrap;background:var(--o);
+    padding:0 7px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .zy12 .m02 .copy .lead{font-size:16px;line-height:1.52;margin-bottom:12px}
+  .zy12 .m02 .copy p{font-size:14px;line-height:1.72;margin-bottom:9px}
+  .zy12 .m02 .copy .row{margin-top:8px}
+  .zy12 .m02 .copy .row .zybtn{padding:12px 20px;font-size:14px}
   .zy12 .m03{padding-bottom:60px}
   .zy12 .m04{padding:64px 0}
   .zy12 .m04 .g{grid-template-columns:1fr;position:relative}
@@ -594,7 +613,7 @@
     <div class="top">
       <div>
         <span class="eb">Who We Are</span>
-        <h2 class="h2">精密模具 <span>15 年</span>。<br>从图纸到量产，一站搞定。</h2>
+        <h2 class="h2">精密模具 <span>15 年</span>。<br>从图纸到量产，<br class="br-m">一站搞定。</h2>
       </div>
       <div class="copy">
         <p class="lead">淮安品向智能制造 —— 精密模具设计制造与注塑零件供应商。</p>

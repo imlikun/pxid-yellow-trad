@@ -308,10 +308,19 @@
     .cta-panel .acts{margin-top:28px}
   }
   @media(max-width:600px){
-    .cta-copy{padding:34px 22px 30px}
-    .cta-panel .acts{flex-direction:column}
-    .cta-panel .btn{width:100%}
-    .cta-media{min-height:196px}
+    /* 移动端：仅「左文右图」型 CTA —— 两个大按钮压成小胶囊，浮在下方实拍图上
+       2026-10-28 坤哥定；用 :has(.cta-media) 排除 capability-* 那套无图结构，.ab-cta 已是通栏图不参与 */
+    .cta:not(.ab-cta):has(.cta-media) .cta-panel .cta-copy{padding:34px 22px 24px;position:static}
+    .cta:not(.ab-cta):has(.cta-media) .cta-panel .cta-copy > *{position:relative;z-index:2}
+    .cta:not(.ab-cta):has(.cta-media) .cta-panel::after{z-index:0}
+    .cta:not(.ab-cta):has(.cta-media) .cta-panel .cta-media{min-height:300px}
+    .cta:not(.ab-cta):has(.cta-media) .cta-panel .acts{position:absolute;left:20px;right:20px;bottom:20px;margin-top:0;z-index:5;
+      display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px}
+    .cta:not(.ab-cta):has(.cta-media) .cta-panel .acts .btn{width:auto;flex:0 0 auto;white-space:nowrap;
+      padding:10px 15px;font-size:12.5px;border-radius:999px}
+    .cta:not(.ab-cta):has(.cta-media) .cta-panel .btn-line{border-color:rgba(255,255,255,.5);background:rgba(10,12,14,.46);
+      -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+    .cta:not(.ab-cta):has(.cta-media) .cta-panel .btn-gold{box-shadow:0 10px 24px rgba(0,0,0,.34)}
   }
 
   /* ===== Footer ===== */
